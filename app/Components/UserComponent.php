@@ -29,13 +29,12 @@ class UserComponent extends BaseComponent
         if (!$this->adminUser()) {
             $where = array_merge(array(['id', Auth::user()->id]), $where);
         } else {
-            $where = array_merge(array(['role_id', '<>', 1]), $where);
+//            $where = array_merge(array(['role_id', '<>', 1]), $where);
         }
 
         $users = User::where($where)->get();
-        $data = UserTableResource::collection($users);
 
-        return $data;
+        return UserTableResource::collection($users);
     }
 
     public function update(UpdateRequest $request, User $user)

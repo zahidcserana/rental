@@ -2,10 +2,10 @@
 
 namespace App\Components;
 
-use App\Models\Flat;
+use App\Http\Requests\Flat\DestroyRequest;
 use App\Http\Requests\Flat\StoreRequest;
 use App\Http\Requests\Flat\UpdateRequest;
-use App\Http\Requests\Flat\DestroyRequest;
+use App\Models\Flat;
 
 class FlatComponent extends BaseComponent
 {

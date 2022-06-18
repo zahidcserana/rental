@@ -5,9 +5,7 @@
                 <div class="col-xl-12">
                     <!--begin::Portlet-->
                     <div class="m-portlet">
-
                         <slot name="header"></slot>
-
                         <div class="m-portlet__body">
                             <!--begin::Section-->
                             <div class="m-section">
@@ -17,84 +15,42 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>House Name</label>
-                                                    <input
-                                                        class="form-control"
-                                                        type="text"
-                                                        v-model="form.name"
-                                                    />
+                                                    <input class="form-control" type="text" v-model="form.name" />
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6" :class="{'d-none': !$page.isAdmin}">
-                                                <user-list @userId="getUserId"/>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Code</label>
+                                                    <input class="form-control" type="text" v-model="form.code" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6" :class="{'d-none': !$page.props.isAdmin}">
+                                                <user-list @userId="getUserId" />
                                             </div>
                                         </div>
-
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>House Status</label
-                                                    ><br />
-                                                    <div
-                                                        class="form-check form-check-inline"
-                                                    >
-                                                        <input
-                                                            v-model="
+                                                    <label>House Status</label>
+                                                    <br />
+                                                    <div class="form-check form-check-inline">
+                                                        <input v-model="
                                                                 form.status
-                                                            "
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="status"
-                                                            value="ACTIVE"
-                                                        />
-                                                        <label
-                                                            class="form-check-label"
-                                                            for="product_active"
-                                                        >
-                                                            Active
-                                                        </label>
+                                                            " class="form-check-input" type="radio" name="status" value="ACTIVE" />
+                                                        <label class="form-check-label" for="product_active"> Active </label>
                                                     </div>
-                                                    <div
-                                                        class="form-check form-check-inline"
-                                                    >
-                                                        <input
-                                                            v-model="
+                                                    <div class="form-check form-check-inline">
+                                                        <input v-model="
                                                                 form.status
-                                                            "
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="status"
-                                                            value="INACTIVE"
-                                                        />
-                                                        <label
-                                                            class="form-check-label"
-                                                            for="product_inactive"
-                                                        >
-                                                            Inactive
-                                                        </label>
+                                                            " class="form-check-input" type="radio" name="status" value="INACTIVE" />
+                                                        <label class="form-check-label" for="product_inactive"> Inactive </label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="m-t-20 text-center">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary submit-btn"
-                                                wire:click.prevent="store()"
-                                                v-show="!editMode"
-                                                @click="save(form)"
-                                            >
-                                                Save
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary submit-btn"
-                                                wire:click.prevent="store()"
-                                                v-show="editMode"
-                                                @click="update(form)"
-                                            >
-                                                Update
-                                            </button>
+                                            <button type="button" class="btn btn-primary submit-btn" v-show="!editMode" @click="save(form)"> Save </button>
+                                            <button type="button" class="btn btn-primary submit-btn" v-show="editMode" @click="update(form)"> Update </button>
                                         </div>
                                     </form>
                                 </div>
@@ -125,6 +81,7 @@ export default {
             form: {
                 id: undefined,
                 name: null,
+                code: null,
                 user_id: '',
                 status: 'ACTIVE'
             }
@@ -134,6 +91,7 @@ export default {
         if (this.editMode) {
             this.form.id = this.param.data.id
             this.form.name = this.param.data.name
+            this.form.code = this.param.data.code
             this.form.user_id = this.param.data.user_id
             this.form.status = this.param.data.status
         }
@@ -142,6 +100,7 @@ export default {
         reset: function () {
             this.form = {
                 name: null,
+                code: null,
                 status: 'ACTIVE'
             }
         },

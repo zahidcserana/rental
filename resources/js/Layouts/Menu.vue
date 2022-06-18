@@ -1,3 +1,37 @@
+<script setup>
+import { Inertia } from '@inertiajs/inertia';
+import { Head, Link } from '@inertiajs/inertia-vue3';
+import JetNavLink from '@/Jetstream/NavLink.vue';
+import Menu from '@/Layouts/Menu.vue';
+
+const logout = () => {
+    Inertia.post(route('logout'));
+};
+const getRoute = () => {
+    if(this.croute === path) {
+        return 'm-menu__item  m-menu__item--active'
+    }
+    return 'm-menu__item'
+};
+const getMenu = (menu, prefix) => {
+    const settings = ['house', 'flat', 'customer']
+    const users = ['user', 'customer', 'role']
+    const dashboard = ['dashboard']
+    const accounting = ['invoice']
+
+    if(menu === 'settings' && settings.includes(prefix)) {
+        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
+    } else if(menu === 'dashboard' && dashboard.includes(prefix)) {
+        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
+    } else if(menu === 'accounting' && accounting.includes('proute')) {
+        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
+    } else if(menu === 'users' && users.includes('proute')) {
+        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
+    }
+    return 'm-menu__item  m-menu__item--submenu m-menu__item--tabs'
+};
+</script>
+
 <template>
     <div class="m-header__bottom">
       <div class="m-container m-container--fluid m-container--full-height m-page__container">
@@ -9,7 +43,7 @@
             </button>
             <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
               <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-                <li :class="getMenu('dashboard')" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                <li :class="getMenu('dashboard', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
                     <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')" class="m-menu__link m-menu__toggle">
                         <span class="m-menu__link-text"> Dashboard </span>
                         <i class="m-menu__hor-arrow la la-angle-down"></i>
@@ -597,7 +631,7 @@
                     </ul>
                   </div>
                 </li>
-                <li :class="getMenu('settings')" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                <li :class="getMenu('settings', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__link-text"> House </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
@@ -612,6 +646,18 @@
                             <span class="m-menu__link-text"> House </span>
                         </Link>
                       </li>
+                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                            <Link :href="route('flat.index')" class="m-menu__link ">
+                                <i class="m-menu__link-icon flaticon-clipboard"></i>
+                                <span class="m-menu__link-text"> Flat </span>
+                            </Link>
+                        </li>
+                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                            <Link :href="route('customer.index')" class="m-menu__link ">
+                                <i class="m-menu__link-icon flaticon-users"></i>
+                                <span class="m-menu__link-text"> Customer </span>
+                            </Link>
+                        </li>
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="builder.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-analytics"></i>
@@ -829,44 +875,3 @@
       </div>
     </div>
 </template>
-
-<script setup>
-import { Inertia } from '@inertiajs/inertia';
-import { Head, Link } from '@inertiajs/inertia-vue3';
-import JetNavLink from '@/Jetstream/NavLink.vue';
-import Menu from '@/Layouts/Menu.vue';
-
-
-defineProps({
-    croute: String,
-    proute: String,
-});
-
-
-const logout = () => {
-    Inertia.post(route('logout'));
-};
-const getRoute = () => {
-    if(this.croute === path) {
-        return 'm-menu__item  m-menu__item--active'
-    }
-    return 'm-menu__item'
-};
-const getMenu = (menu) => {
-    const settings = ['house', 'flat']
-    const users = ['user', 'customer', 'role']
-    const dashboard = ['dashboard']
-    const accounting = ['invoice']
-
-    if(menu === 'settings' && settings.includes('house')) {
-        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    } else if(menu === 'dashboard' && dashboard.includes('dashboard')) {
-        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    } else if(menu === 'accounting' && accounting.includes('proute')) {
-        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    } else if(menu === 'users' && users.includes('proute')) {
-        return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    }
-    return 'm-menu__item  m-menu__item--submenu m-menu__item--tabs'
-};
-</script>

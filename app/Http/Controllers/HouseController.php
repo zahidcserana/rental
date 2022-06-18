@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Inertia\Inertia;
-use App\Models\House;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\HouseResource;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\House\DestroyRequest;
 use App\Http\Requests\House\StoreRequest;
 use App\Http\Requests\House\UpdateRequest;
 use App\Http\Resources\HouseTableResource;
-use App\Http\Requests\House\DestroyRequest;
+use App\Models\House;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class HouseController extends Controller
 {
@@ -59,23 +58,37 @@ class HouseController extends Controller
 
     public function edit(House $house)
     {
-        $param['data'] =  $house;
+        $param['data'] = $house;
         $param['users'] = User::all();
 
-        return Inertia::render('house/edit', ['param' => $param]);
+        return Inertia::render('house/edit', [
+            'title' => 'Update House',
+            'link' => 'house.index',
+            'label' => 'House List',
+            'param' => $param,
+        ]);
+
+//        return Inertia::render('house/edit', ['param' => $param]);
     }
 
     public function update(UpdateRequest $request, House $house)
     {
         app()->house->update($request, $house);
 
-        return redirect()->back()->with('message',  __('Data successfully updated.'));
+        return redirect()->back()->with('message', __('Data successfully updated.'));
     }
 
     public function destroy(DestroyRequest $request, House $house)
     {
         app()->house->destroy($request, $house);
 
-        return redirect()->back()->with('message',  __('Data successfully deleted.'));
+        return redirect()->back()->with('message', __('Data successfully deleted.'));
+    }
+
+    public function houseList()
+    {
+        return response()->json(
+            app()->house->houseList()
+        );
     }
 }

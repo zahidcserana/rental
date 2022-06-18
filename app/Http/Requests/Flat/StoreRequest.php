@@ -14,8 +14,7 @@ class StoreRequest extends FormRequest
                 'exists:houses,id,deleted_at,NULL'
             ],
             'customer_id' => [
-                'required',
-                'exists:customers,id,deleted_at,NULL'
+                'sometimes'
             ],
             'name' => [
                 'required'

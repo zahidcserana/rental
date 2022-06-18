@@ -18,10 +18,11 @@ class HouseTableResource extends JsonResource
 
         $resource['id'] = $this->id;
         $resource['name'] = $this->name;
+        $resource['code'] = $this->code;
         $resource['slug'] = $this->slug;
         $resource['status'] = $this->status;
         $resource['created_at'] = $this->created_at;
-        // $resource['user'] = ['url' => route('user.edit', ['user' => $this->user]), 'name' => $this->user->name];
+         $resource['user'] = ['url' => route('user.edit', ['user' => $this->user]), 'name' => $this->user->name];
         $resource['link_edit'] = route('house.edit', ['house' => $this]);
         $resource['link_delete'] = ['token' => csrf_token(), 'url' => route('house.destroy', ['id' => $this->id, 'house' => $this])];
 

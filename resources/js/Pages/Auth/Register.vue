@@ -27,82 +27,52 @@ const submit = () => {
     <Head title="Register" />
 
     <JetAuthenticationCard>
-        <template #logo>
-            <JetAuthenticationCardLogo />
-        </template>
-
-        <JetValidationErrors class="mb-4" />
-
-        <form @submit.prevent="submit">
-            <div>
-                <JetLabel for="name" value="Name" />
-                <JetInput
-                    id="name"
-                    v-model="form.name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
+        <div class="m-login__signup">
+            <div class="m-login__head">
+                <h3 class="m-login__title">
+                    Sign Up
+                </h3>
+                <div class="m-login__desc">
+                    Enter your details to create your account:
+                </div>
             </div>
-
-            <div class="mt-4">
-                <JetLabel for="email" value="Email" />
-                <JetInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                />
-            </div>
-
-            <div class="mt-4">
-                <JetLabel for="password" value="Password" />
-                <JetInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-            </div>
-
-            <div class="mt-4">
-                <JetLabel for="password_confirmation" value="Confirm Password" />
-                <JetInput
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-            </div>
-
-            <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
-                <JetLabel for="terms">
-                    <div class="flex items-center">
-                        <JetCheckbox id="terms" v-model:checked="form.terms" name="terms" />
-
-                        <div class="ml-2">
-                            I agree to the <a target="_blank" :href="route('terms.show')" class="underline text-sm text-gray-600 hover:text-gray-900">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a>
-                        </div>
+            <form class="m-login__form m-form" action="">
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input" type="text" placeholder="Fullname" name="fullname">
+                </div>
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
+                </div>
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input" type="password" placeholder="Password" name="password">
+                </div>
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Confirm Password" name="rpassword">
+                </div>
+                <div class="row form-group m-form__group m-login__form-sub">
+                    <div class="col m--align-left">
+                        <label class="m-checkbox m-checkbox--light">
+                            <input type="checkbox" name="agree">
+                            I Agree the
+                            <a href="#" class="m-link m-link--focus">
+                                terms and conditions
+                            </a>
+                            .
+                            <span></span>
+                        </label>
+                        <span class="m-form__help"></span>
                     </div>
-                </JetLabel>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Already registered?
-                </Link>
-
-                <JetButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </JetButton>
-            </div>
-        </form>
+                </div>
+                <div class="m-login__form-action">
+                    <button id="m_login_signup_submit" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+                        Sign Up
+                    </button>
+                    &nbsp;&nbsp;
+                    <button id="m_login_signup_cancel" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
     </JetAuthenticationCard>
 </template>

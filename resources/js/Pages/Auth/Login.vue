@@ -33,57 +33,77 @@ const submit = () => {
     <Head title="Log in" />
 
     <JetAuthenticationCard>
-        <template #logo>
-            <JetAuthenticationCardLogo />
-        </template>
-
-        <JetValidationErrors class="mb-4" />
-
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
+        <div class="m-login__signin">
+            <div class="m-login__head">
+                <h3 class="m-login__title">
+                    Sign In To Admin
+                </h3>
+            </div>
+            <form class="m-login__form m-form" @submit.prevent="submit">
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input"  type="text" placeholder="Email" v-model="form.email" autocomplete="off">
+                </div>
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" v-model="form.password">
+                </div>
+                <div class="row m-login__form-sub">
+                    <div class="m-checkbox  m-checkbox&#45;&#45;light">
+                        <label class="flex items-center">
+                            <JetCheckbox v-model:checked="form.remember" name="remember" />
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+<!--                        <label class="m-checkbox  m-checkbox&#45;&#45;light">-->
+<!--                            <input type="checkbox" name="remember" >-->
+<!--                            Remember me-->
+<!--                            <span></span>-->
+<!--                        </label>-->
+                    </div>
+                    <div class="col m--align-right m-login__form-right">
+                        <a href="javascript:;" id="m_login_forget_password" class="m-link">
+                            Forget Password ?
+                        </a>
+                    </div>
+                </div>
+                <div class="m-login__form-action">
+                    <button type="submit" id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
+                        Sign In
+                    </button>
+                </div>
+            </form>
         </div>
 
-        <form @submit.prevent="submit">
-            <div>
-                <JetLabel for="email" value="Email" />
-                <JetInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                />
+        <div class="m-login__forget-password">
+            <div class="m-login__head">
+                <h3 class="m-login__title">
+                    Forgotten Password ?
+                </h3>
+                <div class="m-login__desc">
+                    Enter your email to reset your password:
+                </div>
             </div>
-
-            <div class="mt-4">
-                <JetLabel for="password" value="Password" />
-                <JetInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="current-password"
-                />
-            </div>
-
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <JetCheckbox v-model:checked="form.remember" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Forgot your password?
-                </Link>
-
-                <JetButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </JetButton>
-            </div>
-        </form>
+            <form class="m-login__form m-form" action="">
+                <div class="form-group m-form__group">
+                    <input class="form-control m-input" type="text" placeholder="Email" name="email" id="m_email" autocomplete="off">
+                </div>
+                <div class="m-login__form-action">
+                    <button id="m_login_forget_password_submit" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+                        Request
+                    </button>
+                    &nbsp;&nbsp;
+                    <button id="m_login_forget_password_cancel" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="m-login__account">
+							<span class="m-login__account-msg">
+								Don't have an account yet ?
+							</span>
+            &nbsp;&nbsp;
+            <a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">
+                Sign Up
+            </a>
+        </div>
     </JetAuthenticationCard>
 </template>

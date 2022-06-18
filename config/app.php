@@ -182,6 +182,14 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        \App\Providers\InvoiceComponentServiceProvider::class,
+        \App\Providers\InvoiceItemComponentServiceProvider::class,
+        \App\Providers\RoleComponentServiceProvider::class,
+        \App\Providers\CustomerComponentServiceProvider::class,
+        \App\Providers\HouseComponentServiceProvider::class,
+        \App\Providers\FlatComponentServiceProvider::class,
+        \App\Providers\UserComponentServiceProvider::class,
+        \App\Providers\MessageBagServiceProvider::class,
         /*
          * Package Service Providers...
          */

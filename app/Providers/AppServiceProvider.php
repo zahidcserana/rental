@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -25,18 +27,47 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Inertia::share([
-        //     'auth' => function () {
-        //         return [
-        //             'user' => Auth::user() ? [
-        //                 'id' => Auth::user()->id,
-        //                 'name' => Auth::user()->name,
-        //                 'email' => Auth::user()->email,
-        //                 'role' => Auth::user()->role->name,
-        //                 // 'menu_access' => \config('settings.menu_access')[Auth::user()->role->name],
-        //             ] : null,
-        //         ];
-        //     },
-        // ]);
+        Inertia::share([
+            'errors' => function () {
+                return Session::get('errors')
+                    ? Session::get('errors')->getBag('default')->getMessages()
+                    : (object) [];
+            },
+        ]);
+
+        Inertia::share('flash', function () {
+            return [
+                'message' => Session::get('message'),
+            ];
+        });
+
+        Inertia::share('isAdmin', function () {
+            if (!Auth::user()) {
+                return false;
+            }
+
+            return Auth::user()->role->name == 'Admin' ? true : false;
+        });
+
+        Inertia::share('route', function () {
+            return [
+                'prefix' => current(explode('.', Route::currentRouteName())),
+                'name' => Route::currentRouteName(),
+            ];
+        });
+
+        Inertia::share([
+            'auth' => function () {
+                return [
+                    'user' => Auth::user() ? [
+                        'id' => Auth::user()->id,
+                        'name' => Auth::user()->name,
+                        'email' => Auth::user()->email,
+                        'role' => Auth::user()->role->name,
+                        // 'menu_access' => \config('settings.menu_access')[Auth::user()->role->name],
+                    ] : null,
+                ];
+            },
+        ]);
     }
 }

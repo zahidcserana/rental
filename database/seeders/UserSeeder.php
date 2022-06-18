@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'id' => 2,
             'name' => 'Analytical Journey',
             'mobile' => '1234',
-            'email' => 'cms@analytical.com',
+            'email' => 'rent@analytical.com',
             'observe' => Carbon::now()->addMonths(1),
             'role_id' => User::ROLE_ADMINISTRATOR,
         ]);
@@ -39,15 +39,15 @@ class UserSeeder extends Seeder
         $creator = User::factory()->create([
             'id' => 3,
             'mobile' => '1235',
-            'email' => 'creator@cms.com',
+            'email' => 'admin@admin.com',
             'role_id' => User::ROLE_MEMBER,
-            'observe' => Carbon::now()->addDay(),
+            'observe' => Carbon::now()->addMonths(2),
         ]);
 
         $member = User::factory()->create([
             'id' => 4,
             'mobile' => '1236',
-            'email' => 'member@cms.com',
+            'email' => 'member@rent.com',
             'role_id' => User::ROLE_MEMBER,
             'observe' => Carbon::now()->addMonths(2),
         ]);

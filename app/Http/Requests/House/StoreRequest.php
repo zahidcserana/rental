@@ -2,26 +2,11 @@
 
 namespace App\Http\Requests\House;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\FormRequest;
 
 class StoreRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
-    public function rules()
+    public static function validationRules()
     {
         return [
             'user_id' => [
@@ -30,6 +15,9 @@ class StoreRequest extends FormRequest
             ],
             'name' => [
                 'required'
+            ],
+            'code' => [
+                'sometimes'
             ],
             'status' => [
                 'sometimes'

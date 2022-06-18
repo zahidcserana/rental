@@ -45,4 +45,17 @@ class CustomerComponent extends BaseComponent
 
         return $customer->flats;
     }
+
+    public function dropdownList()
+    {
+        $where = array();
+
+        if (!$this->adminUser()) {
+            $where = array_merge(array(['customers.user_id', Auth::user()->id]), $where);
+        }
+
+        $data = Customer::select('id', 'name')->where($where)->get();
+
+        return $data;
+    }
 }
