@@ -17,7 +17,6 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Customer Name</th>
-                                                <th v-if="$page.props.isAdmin">House Owner</th>
                                                 <th>Balance</th>
                                                 <th>Status</th>
                                                 <th>Flat</th>
@@ -32,13 +31,8 @@
                                                         {{ row.name }}
                                                     </jet-responsive-nav-link>
                                                 </td>
-                                                <td v-if="$page.props.isAdmin">
-                                                    <jet-responsive-nav-link :href="row.user.url">
-                                                        {{ row.user.name }}
-                                                    </jet-responsive-nav-link>
-                                                </td>
                                                 <td>{{ row.account_balance }}</td>
-                                                <td><span class="custom-badge" v-bind:class="row.status == 'ACTIVE' ? 'status-green' : 'status-red'">{{ row.status }}</span></td>
+                                                <td><span class="custom-badge" v-bind:class="row.status == 'active' ? 'status-green' : 'status-red'">{{ row.status }}</span></td>
                                                 <td>
                                                     <button class="btn btn-info" @click="viewFlat(row)">View</button>
                                                 </td>

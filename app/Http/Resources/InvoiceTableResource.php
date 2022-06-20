@@ -20,15 +20,17 @@ class InvoiceTableResource extends JsonResource
 
         $resource['id'] = $this->id;
         $resource['date'] = $this->date;
-        $resource['invoice_no'] = $this->direct_url;
-        $resource['total'] = $this->total;
+        $resource['number'] = $this->number;
+        $resource['subtotal'] = $this->subtotal;
         $resource['additional_cost'] = $this->additional_cost;
-        $resource['payable_amount'] = $this->payable_amount;
-        $resource['paid_amount'] = $this->paid_amount;
-        $resource['due_amount'] = $this->payable_amount - $this->paid_amount;
+        $resource['discount'] = $this->discount;
+        $resource['total'] = $this->total;
+        $resource['paid'] = $this->paid;
+        $resource['due_amount'] = $this->total - $this->paid;
         $resource['status'] = $this->status;
         $resource['customer'] = ['url' => route('customer.edit', ['customer' => $this->customer]), 'name' => $this->customer->name];
-        $resource['direct_url'] = ['url' => route('invoice.direct_url', ['direct_url' => $this->direct_url]), 'name' => $this->direct_url];
+        $resource['house'] = ['url' => route('house.edit', ['house' => $this->house]), 'name' => $this->house->name];
+//        $resource['direct_url'] = ['url' => route('invoice.direct_url', ['direct_url' => $this->number]), 'name' => $this->number];
         $resource['link_edit'] = route('invoice.edit', ['invoice' => $this]);
         $resource['link_delete'] = ['token' => csrf_token(), 'url' => route('invoice.destroy', ['id' => $this->id, 'invoice' => $this])];
 

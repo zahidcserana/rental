@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
@@ -46,7 +47,15 @@ class AppServiceProvider extends ServiceProvider
                 return false;
             }
 
-            return Auth::user()->role->name == 'Admin' ? true : false;
+            return Auth::user()->type == User::TYPE_ADMIN ? true : false;
+        });
+
+        Inertia::share('superAdmin', function () {
+            if (!Auth::user()) {
+                return false;
+            }
+
+            return Auth::user()->type == User::TYPE_ADMIN_SUPER ? true : false;
         });
 
         Inertia::share('route', function () {
@@ -63,7 +72,7 @@ class AppServiceProvider extends ServiceProvider
                         'id' => Auth::user()->id,
                         'name' => Auth::user()->name,
                         'email' => Auth::user()->email,
-                        'role' => Auth::user()->role->name,
+                        'role' => Auth::user()->type,
                         // 'menu_access' => \config('settings.menu_access')[Auth::user()->role->name],
                     ] : null,
                 ];

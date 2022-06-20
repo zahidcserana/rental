@@ -17,15 +17,15 @@ const getMenu = (menu, prefix) => {
     const settings = ['house', 'flat', 'customer']
     const users = ['user', 'customer', 'role']
     const dashboard = ['dashboard']
-    const accounting = ['invoice']
+    const accounts = ['invoice']
 
     if(menu === 'settings' && settings.includes(prefix)) {
         return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
     } else if(menu === 'dashboard' && dashboard.includes(prefix)) {
         return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    } else if(menu === 'accounting' && accounting.includes('proute')) {
+    } else if(menu === 'accounts' && accounts.includes(prefix)) {
         return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
-    } else if(menu === 'users' && users.includes('proute')) {
+    } else if(menu === 'users' && users.includes(prefix)) {
         return 'm-menu__item  m-menu__item--active  m-menu__item--active-tab  m-menu__item--submenu m-menu__item--tabs'
     }
     return 'm-menu__item  m-menu__item--submenu m-menu__item--tabs'
@@ -640,7 +640,7 @@ const getMenu = (menu, prefix) => {
                   <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs">
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                      <li v-if="$page.props.superAdmin" class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <Link :href="route('house.index')" class="m-menu__link ">
                             <i class="m-menu__link-icon flaticon-graphic-2"></i>
                             <span class="m-menu__link-text"> House </span>
@@ -695,21 +695,21 @@ const getMenu = (menu, prefix) => {
                     </ul>
                   </div>
                 </li>
-                <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                  <li :class="getMenu('accounts', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
-                    <span class="m-menu__link-text"> Reports </span>
+                    <span class="m-menu__link-text"> Account </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                   </a>
                   <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs">
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                        <a href="builder.html" class="m-menu__link ">
-                          <i class="m-menu__link-icon flaticon-graphic-2"></i>
-                          <span class="m-menu__link-text"> Orders </span>
-                        </a>
-                      </li>
+                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                            <Link :href="route('invoice.index')" class="m-menu__link ">
+                                <i class="m-menu__link-icon flaticon-graphic-2"></i>
+                                <span class="m-menu__link-text"> Invoice </span>
+                            </Link>
+                        </li>
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="builder.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-analytics"></i>

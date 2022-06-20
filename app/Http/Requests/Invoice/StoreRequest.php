@@ -9,6 +9,10 @@ class StoreRequest extends FormRequest
     public static function validationRules()
     {
         return [
+            'house_id' => [
+                'required',
+                'exists:houses,id,deleted_at,NULL'
+            ],
             'customer_id' => [
                 'required',
                 'exists:customers,id,deleted_at,NULL'
@@ -19,7 +23,7 @@ class StoreRequest extends FormRequest
             'additional_cost' => [
                 'sometimes'
             ],
-            'paid_amount' => [
+            'paid' => [
                 'sometimes'
             ],
             'date' => [

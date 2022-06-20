@@ -16,9 +16,6 @@ class UserResource extends JsonResource
     {
         $resource = parent::toArray($request);
 
-        $resource['role'] = new RoleResource($this->role);
-        unset($resource['role_id']);
-
         return $resource;
     }
 }

@@ -20,10 +20,11 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use SoftDeletes;
 
-    const ROLE_ADMINISTRATOR = 1;
-    const ROLE_MEMBER = 2;
+    const TYPE_ADMIN = 1;
+    const TYPE_MEMBER = 2;
+    const TYPE_ADMIN_SUPER = 3;
 
-    const ROLE_DEFAULT = self::ROLE_MEMBER;
+    const TYPE_DEFAULT = self::TYPE_ADMIN;
 
     /**
      * The attributes that are mass assignable.
@@ -34,7 +35,8 @@ class User extends Authenticatable
         'name',
         'email',
         'mobile',
-        'role_id',
+        'house_id',
+        'type',
         'password',
         'status',
     ];
@@ -76,16 +78,11 @@ class User extends Authenticatable
      */
     public function isAdmin()
     {
-        return $this->role_id == Role::ROLE_ADMINISTRATOR;
+        return $this->type == User::TYPE_ADMIN_SUPER;
     }
 
-    public function houses()
+    public function house()
     {
-        return $this->hasMany(House::class);
-    }
-
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(House::class)->withTrashed();
     }
 }

@@ -13,9 +13,9 @@ class Customer extends Model
 
     protected $guarded = [];
 
-    public function user()
+    public function house()
     {
-        return $this->belongsTo(User::class)->withTrashed();
+        return $this->belongsTo(House::class)->withTrashed();
     }
 
     public function flats()

@@ -15,20 +15,23 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('house_id')->unsigned()->index()->nullable();
             $table->bigInteger('customer_id')->unsigned()->index()->nullable();
-            $table->string('direct_url')->nullable();
+            $table->string('number')->nullable();
             $table->date('date')->nullable();
-            $table->decimal('total', 12, 2)->default(0);
+            $table->decimal('subtotal', 12, 2)->default(0);
             $table->decimal('additional_cost', 12, 2)->default(0);
-            $table->decimal('payable_amount', 12, 2)->default(0);
-            $table->decimal('paid_amount', 12, 2)->default(0);
-            $table->string('status', 50)->nullable();
+            $table->decimal('discount', 12, 2)->default(0);
+            $table->decimal('total', 12, 2)->default(0);
+            $table->decimal('paid', 12, 2)->default(0);
+            $table->string('status', 50)->default('pending');
             $table->string('comments')->nullable();
 
             $table->timestamps();
 
             $table->softDeletes('deleted_at', 0);
 
+            $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }

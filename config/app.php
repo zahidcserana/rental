@@ -184,7 +184,6 @@ return [
 
         \App\Providers\InvoiceComponentServiceProvider::class,
         \App\Providers\InvoiceItemComponentServiceProvider::class,
-        \App\Providers\RoleComponentServiceProvider::class,
         \App\Providers\CustomerComponentServiceProvider::class,
         \App\Providers\HouseComponentServiceProvider::class,
         \App\Providers\FlatComponentServiceProvider::class,

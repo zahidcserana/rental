@@ -1054,6 +1054,9 @@ select {
 .mr-auto {
   margin-right: auto;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
 }

@@ -20,9 +20,8 @@ class StoreRequest extends FormRequest
                 'email',
                 'unique:users'
             ],
-            'role_id' => [
-                'required',
-                'exists:roles,id,deleted_at,NULL'
+            'type' => [
+                'sometimes'
             ],
             'status' => [
                 'sometimes'

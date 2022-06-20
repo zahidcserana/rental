@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\House;
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -36,8 +37,8 @@ class Controller extends BaseController
     {
         $where = array();
 
-        if (!$this->adminUser()) {
-            $where = array_merge(array(['customers.user_id', Auth::user()->id]), $where);
+        if (Auth::user()->type != User::TYPE_ADMIN_SUPER) {
+            $where = array_merge(array(['customers.house_id', Auth::user()->house_id]), $where);
         }
 
         $data = Customer::select('id', 'name as label')->where($where)->get();

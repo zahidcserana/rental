@@ -19,6 +19,7 @@ class CreateFlatsTable extends Migration
             $table->bigInteger('customer_id')->unsigned()->index()->nullable();
             $table->string('name', 50);
             $table->string('slug')->nullable();
+            $table->string('description')->nullable();
             $table->decimal('rent', 12, 2)->default(0);
             $table->string('status', 50)->default('available');
 

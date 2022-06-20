@@ -15,7 +15,7 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->bigInteger('house_id')->unsigned()->index()->nullable();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->unique();
@@ -23,13 +23,13 @@ class CreateCustomersTable extends Migration
             $table->string('address')->nullable();
             $table->decimal('account_balance', 12, 2)->default(0);
             $table->decimal('advance_balance', 12, 2)->default(0);
-            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
+            $table->string('status')->default('active');
 
             $table->timestamps();
 
             $table->softDeletes('deleted_at', 0);
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
         });
     }
 

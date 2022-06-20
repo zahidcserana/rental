@@ -2,10 +2,11 @@
 
 namespace App\Components;
 
-use App\Models\Customer;
+use App\Http\Requests\Customer\DestroyRequest;
 use App\Http\Requests\Customer\StoreRequest;
 use App\Http\Requests\Customer\UpdateRequest;
-use App\Http\Requests\Customer\DestroyRequest;
+use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class CustomerComponent extends BaseComponent
@@ -39,19 +40,24 @@ class CustomerComponent extends BaseComponent
 
     public function customerFlat(Customer $customer)
     {
+        $flats = [];
         foreach ($customer->flats as $flat) {
             $flat->house;
+
+            if ($flat->house_id == $customer->house_id) {
+                $flats[] = $flat;
+            }
         }
 
-        return $customer->flats;
+        return $flats;
     }
 
     public function dropdownList()
     {
         $where = array();
 
-        if (!$this->adminUser()) {
-            $where = array_merge(array(['customers.user_id', Auth::user()->id]), $where);
+        if (Auth::user()->type != User::TYPE_ADMIN_SUPER) {
+            $where = array_merge(array(['customers.house_id', Auth::user()->house_id]), $where);
         }
 
         $data = Customer::select('id', 'name')->where($where)->get();

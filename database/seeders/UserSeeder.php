@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,40 +16,47 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $sadmin =  User::factory()->create([
+        $sadmin = User::factory()->create([
             'id' => 1,
             'name' => 'Analytical Journey',
             'email' => 'admin@analytical.com',
-            'mobile' => '123',
-            'password' => Hash::make('aj$21'),
-            'observe' => Carbon::now()->addMonths(12),
-            'role_id' => User::ROLE_ADMINISTRATOR,
+            'mobile' => '01708887754',
+            'password' => Hash::make('analyt$cal'),
+//            'observe' => Carbon::now()->addMonths(12),
+            'type' => User::TYPE_ADMIN_SUPER,
+            'house_id' => 1
         ]);
-
-        $admin =  User::factory()->create([
-            'id' => 2,
-            'name' => 'Analytical Journey',
-            'mobile' => '1234',
-            'email' => 'rent@analytical.com',
-            'observe' => Carbon::now()->addMonths(1),
-            'role_id' => User::ROLE_ADMINISTRATOR,
-        ]);
-
 
         $creator = User::factory()->create([
-            'id' => 3,
-            'mobile' => '1235',
+            'id' => 2,
+            'name' => 'Analytical Admin',
             'email' => 'admin@admin.com',
-            'role_id' => User::ROLE_MEMBER,
-            'observe' => Carbon::now()->addMonths(2),
+            'type' => User::TYPE_ADMIN,
+//            'observe' => Carbon::now()->addMonths(2),
+            'house_id' => 1
+        ]);
+        $member1 = User::factory()->create([
+            'id' => 3,
+            'email' => 'member@admin.com',
+            'type' => User::TYPE_MEMBER,
+//            'observe' => Carbon::now()->addMonths(2),
+            'house_id' => 1
         ]);
 
-        $member = User::factory()->create([
+        $admin = User::factory()->create([
             'id' => 4,
-            'mobile' => '1236',
-            'email' => 'member@rent.com',
-            'role_id' => User::ROLE_MEMBER,
-            'observe' => Carbon::now()->addMonths(2),
+            'name' => 'Analytical Rental',
+            'email' => 'rental@admin.com',
+//            'observe' => Carbon::now()->addMonths(1),
+            'type' => User::TYPE_ADMIN,
+            'house_id' => 2
+        ]);
+        $member2 = User::factory()->create([
+            'id' => 5,
+            'email' => 'user@admin.com',
+            'type' => User::TYPE_MEMBER,
+//            'observe' => Carbon::now()->addMonths(2),
+            'house_id' => 2
         ]);
     }
 }

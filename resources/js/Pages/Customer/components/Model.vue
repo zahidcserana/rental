@@ -26,10 +26,10 @@
                                                     <input class="form-control" type="text" v-model="form.mobile" />
                                                 </div>
                                             </div>
-                                            <div v-if="$page.props.isAdmin" class="col-sm-6" :class="{'d-none': !$page.props.isAdmin}">
-                                                <user-list @userId="getUserId"/>
-                                            </div>
-                                            <input v-else :set-value="setUser($page.props.user)" type="hidden" v-model="authUser">
+<!--                                            <div v-if="$page.props.isAdmin" class="col-sm-6" :class="{'d-none': !$page.props.isAdmin}">-->
+<!--                                                <user-list @userId="getUserId"/>-->
+<!--                                            </div>-->
+                                            <input v-if="form.house_id == null" :set-value="setUser($page.props.user)" type="hidden" v-model="authUser">
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -37,12 +37,16 @@
                                                     <label>Status</label>
                                                     <br />
                                                     <div class="form-check form-check-inline">
-                                                        <input v-model="form.status" class="form-check-input" type="radio" name="status" value="ACTIVE" />
-                                                        <label class="form-check-label" for="product_active" >ACTIVE</label>
+                                                        <input v-model="form.status" class="form-check-input" type="radio" name="status" value="pending" />
+                                                        <label class="form-check-label" for="product_active" >Pending</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input v-model="form.status" class="form-check-input" type="radio" name="status" value="active" />
+                                                        <label class="form-check-label" for="product_active" >Active</label>
                                                     </div>
                                                     <div class="form-check form-check-inline" >
-                                                        <input v-model=" form.status" class="form-check-input" type="radio" name="status" value="INACTIVE"/>
-                                                        <label class="form-check-label" for="product_inactive">INACTIVE</label>
+                                                        <input v-model=" form.status" class="form-check-input" type="radio" name="status" value="inactive"/>
+                                                        <label class="form-check-label" for="product_inactive">Inactive</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -80,10 +84,10 @@ export default {
             authUser: null,
             form: {
                 id: undefined,
-                user_id: null,
+                house_id: null,
                 name: null,
                 mobile: null,
-                status: 'ACTIVE'
+                status: 'pending'
             }
         }
     },
@@ -91,6 +95,7 @@ export default {
         if (this.editMode) {
             this.form.id = this.param.data.id
             this.form.name = this.param.data.name
+            this.form.house_id = this.param.data.house_id
             this.form.mobile = this.param.data.mobile
             this.form.status = this.param.data.status
         }
@@ -98,21 +103,21 @@ export default {
     methods: {
         reset: function () {
             this.form = {
-                user_id: null,
+                house_id: null,
                 name: null,
                 mobile: null,
-                status: 'ACTIVE'
+                status: 'pending'
             }
         },
         setUser (user) {
-          this.form.user_id = user.id
+          this.form.house_id = user.house_id
         },
-        getUserId (data) {
-            this.form.user_id = data
-        },
+        // getUserId (data) {
+        //     this.form.house_id = data
+        // },
         save: function (data) {
             this.$inertia.post('/customer', data)
-            this.reset()
+            // this.reset()
         },
         update: function (data) {
             data._method = 'PUT'

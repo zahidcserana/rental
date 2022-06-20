@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,16 +16,19 @@ class DatabaseSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-        // DB::table('customers')->truncate();
-        // DB::table('invoice_items')->truncate();
-        // DB::table('invoices')->truncate();
-        DB::table('roles')->truncate();
+        DB::table('flats')->truncate();
+        DB::table('houses')->truncate();
+//        DB::table('roles')->truncate();
+        DB::table('customers')->truncate();
+        DB::table('invoice_items')->truncate();
+        DB::table('invoices')->truncate();
         DB::table('users')->truncate();
 
         $this->call([
-            // CustomerSeeder::class,
-            // InvoiceSeeder::class,
-            RoleSeeder::class,
+//            RoleSeeder::class,
+            HouseSeeder::class,
+//            CustomerSeeder::class,
+            InvoiceSeeder::class,
             UserSeeder::class
         ]);
 

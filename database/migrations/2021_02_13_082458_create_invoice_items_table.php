@@ -17,7 +17,7 @@ class CreateInvoiceItemsTable extends Migration
             $table->id();
             $table->bigInteger('invoice_id')->unsigned()->index()->nullable();
             $table->bigInteger('flat_id')->unsigned()->index()->nullable();
-            $table->decimal('rent', 12, 2)->default(0);
+            $table->decimal('amount', 12, 2)->default(0);
 
             $table->timestamps();
 

@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use App\Events\SaveInvoice;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Invoice extends Model
 {
@@ -32,6 +32,11 @@ class Invoice extends Model
         return $this->belongsTo(Customer::class);
     }
 
+    public function house()
+    {
+        return $this->belongsTo(House::class);
+    }
+
     public function invoiceItems()
     {
         return $this->hasMany(InvoiceItem::class);
@@ -39,13 +44,13 @@ class Invoice extends Model
 
     public function calculateInvoice()
     {
-        $payableAmount = 0;
+        $subtotal = 0;
 
         foreach ($this->invoiceItems as $invoiceItem) {
-            $payableAmount += $invoiceItem->rent;
+            $subtotal += $invoiceItem->amount;
         }
 
-        $this->payable_amount = $payableAmount + $this->additional_cost;
+        $this->total = $subtotal + $this->additional_cost - $this->discount;
         $this->update();
     }
 }

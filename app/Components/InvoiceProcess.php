@@ -3,6 +3,7 @@
 namespace App\Components;
 
 use App\Models\Customer;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\Invoice\StoreRequest;
 use App\Http\Requests\InvoiceItem\StoreRequest as InvoiceItemStoreRequest;
@@ -14,7 +15,7 @@ class InvoiceProcess
     {
         Log::info('Invoice Cron: Start');
 
-        $customers = Customer::where('status', 'ACTIVE')->get();
+        $customers = Customer::where('status', 'active')->get();
 
         foreach ($customers as $customer) {
             if (!$customer->rentedFlats->count()) {
@@ -28,8 +29,9 @@ class InvoiceProcess
             }
 
             $requestData = array(
-                'date' => date('Y-m-d'),
-                'customer_id' => $customer->id
+                'date' => Carbon::now()->startOfMonth()->format('Y-m-d'),
+                'customer_id' => $customer->id,
+                'house_id' => $customer->house_id
             );
 
             $storeRequest = StoreRequest::make($requestData);
@@ -43,17 +45,16 @@ class InvoiceProcess
                 $itemData = [
                     'invoice_id' => $invoice->id,
                     'flat_id' => $flat->id,
-                    'rent' => $flat->rent
+                    'amount' => $flat->rent
                 ];
 
                 $storeRequest = InvoiceItemStoreRequest::make($itemData);
                 app()->invoiceItem->store($storeRequest);
             }
 
-            $directUrl = sprintf("%06d", $invoice->id);
+            $invoice->subtotal = $totalRent;
             $invoice->total = $totalRent;
-            $invoice->payable_amount = $totalRent;
-            $invoice->direct_url = $directUrl;
+            $invoice->number = sprintf("%06d", $invoice->id);
             $invoice->update();
         }
 

@@ -7,6 +7,7 @@ use App\Http\Requests\Flat\StoreRequest;
 use App\Http\Requests\Flat\UpdateRequest;
 use App\Http\Resources\FlatTableResource;
 use App\Models\Flat;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -18,15 +19,13 @@ class FlatController extends Controller
     {
         $flatCollection = Flat::query();
 
-        if (!$this->adminUser()) {
-            $flatCollection = $flatCollection->whereHas('house', function ($query) {
-                $query->where('user_id', Auth::user()->id);
+        if (Auth::user()->type != User::TYPE_ADMIN_SUPER) {
+            $flatCollection = $flatCollection->where('house_id', Auth::user()->house_id);
+        } else {
+            $flatCollection->when($request['house_id'], function ($q) use ($request) {
+                return $q->where('house_id', $request['house_id']);
             });
         }
-
-        $flatCollection->when($request['house_id'], function ($q) use ($request) {
-            return $q->where('house_id', $request['house_id']);
-        });
 
         $data = $flatCollection->get();
 
@@ -65,7 +64,7 @@ class FlatController extends Controller
     public function edit(Flat $flat)
     {
         $param['data'] = $flat;
-        $param['houses'] = $this->houseList();
+//        $param['houses'] = $this->houseList();
         $param['customers'] = $this->customerList();
         $param['status'] = \config('settings.flat_status');
 

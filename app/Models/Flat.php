@@ -13,9 +13,9 @@ class Flat extends Model
 
     protected $guarded = [];
 
+    const STATUS_PENDING = 'pending';
     const STATUS_AVAILABLE = 'available';
     const STATUS_RENTED = 'rented';
-    const STATUS_UNAVAILABLE = 'unavailable';
 
     public static function boot()
     {

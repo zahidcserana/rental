@@ -24,13 +24,23 @@ class House extends Model
         });
     }
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class)->withTrashed();
+        return $this->hasMany(User::class);
     }
 
     public function flats()
     {
         return $this->hasMany(Flat::class);
+    }
+
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
     }
 }

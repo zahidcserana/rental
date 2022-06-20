@@ -3,9 +3,9 @@
 return [
 
     'invoice_status' => [
+        'due' => 'Due',
         'paid' => 'Paid',
         'unpaid' => 'Unpaid',
-        'cancel' => 'Cancel',
     ],
 
     'flat_status' => [
@@ -15,6 +15,7 @@ return [
     ],
 
     'common_status' => [
+        'pending' => 'pending',
         'active' => 'active',
         'inactive' => 'inactive',
     ],

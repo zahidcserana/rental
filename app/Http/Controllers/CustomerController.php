@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Flat;
-use Inertia\Inertia;
-use App\Models\Customer;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\CustomerResource;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\Customer\DestroyRequest;
 use App\Http\Requests\Customer\StoreRequest;
 use App\Http\Requests\Customer\UpdateRequest;
 use App\Http\Resources\CustomerTableResource;
-use App\Http\Requests\Customer\DestroyRequest;
 use App\Http\Resources\FlatCollection;
+use App\Models\Customer;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class CustomerController extends Controller
 {
@@ -22,8 +21,8 @@ class CustomerController extends Controller
         $query = $request->query();
         $where = array();
 
-        if (!$this->adminUser()) {
-            $where = array_merge(array(['customers.user_id', Auth::user()->id]), $where);
+        if (Auth::user()->type != User::TYPE_ADMIN_SUPER) {
+            $where = array_merge(array(['customers.house_id', Auth::user()->house_id]), $where);
         }
 
         $data = Customer::where($where)->get();
@@ -58,7 +57,7 @@ class CustomerController extends Controller
 
     public function edit(Customer $customer)
     {
-        $param['data'] =  $customer;
+        $param['data'] = $customer;
 
         return Inertia::render('Customer/edit', [
             'title' => 'Update Customer',
@@ -72,14 +71,14 @@ class CustomerController extends Controller
     {
         app()->customer->update($request, $customer);
 
-        return redirect()->back()->with('message',  __('Data successfully updated.'));
+        return redirect()->back()->with('message', __('Data successfully updated.'));
     }
 
     public function destroy(DestroyRequest $request, Customer $customer)
     {
         app()->customer->destroy($request, $customer);
 
-        return redirect()->back()->with('message',  __('Data successfully deleted.'));
+        return redirect()->back()->with('message', __('Data successfully deleted.'));
     }
 
     public function customerFlat(Customer $customer)

@@ -14,10 +14,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>House</th>
+                                            <th>Flat Number</th>
                                             <th>Renter</th>
-                                            <th>Rent</th>
+                                            <th>Monthly Rent</th>
                                             <th>Status</th>
                                             <th>&nbsp;</th>
                                         </tr>
@@ -28,11 +27,6 @@
                                             <td>
                                                 <jet-responsive-nav-link :href="row.link_edit">
                                                     {{ row.name }}
-                                                </jet-responsive-nav-link>
-                                            </td>
-                                            <td>
-                                                <jet-responsive-nav-link :href="row.house.url">
-                                                    {{ row.house.name }}
                                                 </jet-responsive-nav-link>
                                             </td>
                                             <td>
@@ -97,6 +91,7 @@ export default {
                 INITIATING: "m-badge--metal",
                 APPROVED_BY_GM: "m-badge--info",
                 APPROVED_BY_DF: "m-badge--danger",
+                pending: "m-badge--primary",
                 available: "m-badge--primary",
                 rented: "m-badge--success",
                 unavailable: "m-badge--warning",

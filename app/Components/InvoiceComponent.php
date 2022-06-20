@@ -22,7 +22,7 @@ class InvoiceComponent extends BaseComponent
     {
         $input = $request->validated();
 
-        if ($invoice->status == $input['status'] && ($input['total'] + $input['additional_cost'] <= $input['paid_amount'])) {
+        if ($invoice->status == $input['status'] && ($input['total'] + $input['additional_cost'] <= $input['paid'])) {
             $input['status'] = 'paid';
         }
 

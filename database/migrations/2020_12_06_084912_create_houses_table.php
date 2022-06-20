@@ -18,14 +18,11 @@ class CreateHousesTable extends Migration
             $table->string('name');
             $table->string('code')->nullable();
             $table->string('slug')->nullable();
-            $table->bigInteger('user_id')->unsigned()->index()->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
+            $table->string('status')->default('pending');
 
             $table->timestamps();
 
             $table->softDeletes('deleted_at', 0);
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

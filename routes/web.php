@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FlatController;
+use App\Http\Controllers\InvoiceController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -49,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('customer', CustomerController::class);
     Route::resource('role', RoleController::class);
     Route::resource('invoice', InvoiceController::class);
-    Route::get('invoice/{direct_url}', [InvoiceController::class, 'view'])->name('invoice.direct_url');
+//    Route::get('invoice/{direct_url}', [InvoiceController::class, 'view'])->name('invoice.direct_url');
 
     Route::get('customer/flat/{customer}', [CustomerController::class, 'customerFlat'])->name('customer.flat');
     Route::get('/search/customer', [SearchController::class, 'searchCustomer'])->name('search.customer');

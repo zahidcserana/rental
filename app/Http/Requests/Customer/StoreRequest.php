@@ -9,9 +9,9 @@ class StoreRequest extends FormRequest
     public static function validationRules()
     {
         return [
-            'user_id' => [
+            'house_id' => [
                 'required',
-                'exists:users,id,deleted_at,NULL'
+                'exists:houses,id,deleted_at,NULL'
             ],
             'name' => [
                 'required'

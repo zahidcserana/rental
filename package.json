@@ -28,6 +28,7 @@
         "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
+        "@vuepic/vue-datepicker": "^3.2.2",
         "sweetalert2": "^11.4.17"
     }
 }
