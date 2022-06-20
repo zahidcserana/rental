@@ -15,7 +15,7 @@ class FlatFactory extends Factory
             'name' => $this->faker->name,
             'slug' => '',
             'description' => '',
-            'status' => 'available',
+            'status' => 'rented',
         ];
     }
 }

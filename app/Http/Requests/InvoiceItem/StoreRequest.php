@@ -17,7 +17,7 @@ class StoreRequest extends FormRequest
                 'required',
                 'exists:flats,id,deleted_at,NULL'
             ],
-            'rent' => [
+            'amount' => [
                 'sometimes'
             ]
         ];

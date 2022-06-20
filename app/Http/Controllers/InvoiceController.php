@@ -29,7 +29,7 @@ class InvoiceController extends Controller
             return $q->where('customer_id', $request['customer_id']);
         });
 
-        $request['status'] = empty($request['status']) ? 'unpaid' : ($request['status'] == 'all' ? null : $request['status']);
+//        $request['status'] = empty($request['status']) ? 'unpaid' : ($request['status'] == 'all' ? null : $request['status']);
         $request['date'] = $request['date'] ?? date('y-m-d');
 
         $month = empty($request['date_invoice']['month']) ? date('m') : $request['date_invoice']['month'] + 1;
@@ -47,7 +47,16 @@ class InvoiceController extends Controller
 
         $data = $dataCollection->get();
 
-        $param['data'] = InvoiceTableResource::collection($data);
+        $collection = InvoiceTableResource::collection($data);
+        $summary['subtotal'] = $collection->sum('subtotal');
+        $summary['additional_cost'] = $collection->sum('additional_cost');
+        $summary['discount'] = $collection->sum('discount');
+        $summary['total'] = $collection->sum('total');
+        $summary['paid'] = $collection->sum('paid');
+        $summary['due'] = $collection->sum('total') - $collection->sum('paid');
+
+        $param['summary'] = $summary;
+        $param['data'] = $collection;
         $param['customers'] = app()->customer->dropdownList();
         $param['status'] = \config('settings.invoice_status');
 

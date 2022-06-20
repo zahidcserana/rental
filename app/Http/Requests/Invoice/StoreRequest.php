@@ -26,6 +26,9 @@ class StoreRequest extends FormRequest
             'paid' => [
                 'sometimes'
             ],
+            'discount' => [
+                'sometimes'
+            ],
             'date' => [
                 'sometimes',
                 'date_format:Y-m-d'

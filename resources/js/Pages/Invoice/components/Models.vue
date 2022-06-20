@@ -28,7 +28,6 @@
                                             <div class="form-group form-focus">
                                                 <select class="form-control select mb-2 mr-sm-2"  v-model="query.status">
                                                     <option value="" selected>-- Status --</option>
-                                                    <option value="all" selected>All</option>
                                                     <option  v-for="(value, key, index) in param.status" :key="index" :value="key">{{value }}</option>
                                                 </select>
                                             </div>

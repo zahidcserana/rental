@@ -69,12 +69,12 @@
                                                         <span class="text-div">{{ param.data.subtotal }}</span>
                                                     </div>
                                                     <div class="summary-div">
-                                                        <label class="title-div">Discount</label>
-                                                        <input min="0" type="number" class="text-div form-control" v-model="form.discount" @keyup="getTotal"/>
-                                                    </div>
-                                                    <div class="summary-div">
                                                         <label class="title-div">Additional Amount</label>
                                                         <input min="0" type="number" class="text-div form-control" v-model="form.additional_cost" @keyup="getTotal"/>
+                                                    </div>
+                                                    <div class="summary-div">
+                                                        <label class="title-div">Discount</label>
+                                                        <input min="0" type="number" class="text-div form-control" v-model="form.discount" @keyup="getTotal"/>
                                                     </div>
                                                     <div class="summary-div">
                                                         <label class="title-div">Total Amount</label>
@@ -150,9 +150,9 @@ export default {
     created () {
         if (this.editMode) {
             this.form = this.param.data
+            this.total = this.param.data.total
 
-            this.total = parseFloat(this.param.data.total) + parseFloat(this.param.data.additional_cost) - parseFloat(this.param.data.discount)
-            this.due = this.total - parseFloat(this.param.data.paid)
+            this.due = this.param.data.total - parseFloat(this.param.data.paid)
         }
     },
     computed: {
@@ -176,7 +176,7 @@ export default {
             this.$inertia.post('/invoice/' + data.id, data)
         },
         getTotal: function () {
-            this.total = parseFloat(this.param.data.total) + parseFloat(this.form.additional_cost > 0 ? this.form.additional_cost : 0) - parseFloat(this.form.discount > 0 ? this.form.discount : 0)
+            this.total = parseFloat(this.param.data.subtotal) + parseFloat(this.form.additional_cost > 0 ? this.form.additional_cost : 0) - parseFloat(this.form.discount > 0 ? this.form.discount : 0)
             this.due = this.total - parseFloat(this.form.paid > 0 ? this.form.paid : 0)
         }
     }

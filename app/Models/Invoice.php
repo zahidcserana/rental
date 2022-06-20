@@ -15,7 +15,7 @@ class Invoice extends Model
 
     const STATUS_PAID = 'paid';
     const STATUS_UNPAID = 'unpaid';
-    const STATUS_CANCEL = 'cancel';
+    const STATUS_DUE = 'due';
 
 
     protected $attributes = [
@@ -51,6 +51,18 @@ class Invoice extends Model
         }
 
         $this->total = $subtotal + $this->additional_cost - $this->discount;
+        $this->status = $this->updateStatus();
         $this->update();
+    }
+
+    public function updateStatus()
+    {
+        if ($this->total <= $this->paid) {
+            return self::STATUS_PAID;
+        } else if ($this->total > $this->paid) {
+            return self::STATUS_DUE;
+        }
+
+        return self::STATUS_UNPAID;
     }
 }

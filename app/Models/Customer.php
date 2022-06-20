@@ -35,6 +35,6 @@ class Customer extends Model
 
     public function unpaidInvoices()
     {
-        return $this->invoices()->where('status', Invoice::STATUS_UNPAID);
+        return $this->invoices()->where('status', '<>', Invoice::STATUS_PAID);
     }
 }
