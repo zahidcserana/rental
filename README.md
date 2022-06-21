@@ -1,3 +1,4 @@
 ## Tasks
-- Invocie search - date: year+ month
+- Remove unused code
+- Dashboard summary
 - Expense Module

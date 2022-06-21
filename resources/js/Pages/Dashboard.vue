@@ -292,7 +292,7 @@ import Welcome from '@/Jetstream/Welcome.vue';
                 <div class="m-portlet__head">
                   <div class="m-portlet__head-caption">
                     <div class="m-portlet__head-title">
-                      <h3 class="m-portlet__head-text"> Application Sales </h3>
+                      <h3 class="m-portlet__head-text"> Invoice Dues </h3>
                     </div>
                   </div>
                   <div class="m-portlet__head-tools">
@@ -318,11 +318,11 @@ import Welcome from '@/Jetstream/Welcome.vue';
                             <thead>
                               <tr>
                                 <td class="m-widget11__label"> # </td>
-                                <td class="m-widget11__app"> Application </td>
-                                <td class="m-widget11__sales"> Sales </td>
-                                <td class="m-widget11__change"> Change </td>
-                                <td class="m-widget11__price"> Avg Price </td>
-                                <td class="m-widget11__total m--align-right"> Total </td>
+                                <td class="m-widget11__app"> Customer </td>
+                                <td class="m-widget11__sales"> Flat </td>
+                                <td class="m-widget11__change">Month </td>
+                                <td class="m-widget11__price"> Total Amount</td>
+                                <td class="m-widget11__total m--align-right"> Due Amount </td>
                               </tr>
                             </thead>
                             <!--end::Thead-->

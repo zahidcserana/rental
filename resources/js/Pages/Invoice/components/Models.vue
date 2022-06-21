@@ -55,7 +55,7 @@
                                                 <th>#</th>
                                                 <th>Month</th>
                                                 <th>Renter</th>
-                                                <th>Total</th>
+                                                <th>Subtotal</th>
                                                 <th>Additional Cost</th>
                                                 <th>Discount</th>
                                                 <th>Payable Amount</th>
@@ -78,7 +78,7 @@
                                                         <span class="m-menu__link-text">{{ row.customer.name }}</span>
                                                     </jet-responsive-nav-link>
                                                 </td>
-                                                <td>{{ row.total }}</td>
+                                                <td>{{ row.subtotal }}</td>
                                                 <td>{{ row.additional_cost }}</td>
                                                 <td>{{ row.discount }}</td>
                                                 <td>{{ row.total }}</td>
@@ -98,6 +98,15 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                            </tr>
+                                            <tr class="grand-total">
+                                                <td colspan="3">Grand Total</td>
+                                                <td>{{ param.summary.subtotal }}</td>
+                                                <td>{{ param.summary.additional_cost }}</td>
+                                                <td>{{ param.summary.discount }}</td>
+                                                <td>{{ param.summary.total }}</td>
+                                                <td>{{ param.summary.paid }}</td>
+                                                <td>{{ param.summary.due }}</td>
                                             </tr>
                                         </tbody>
                                     </table>

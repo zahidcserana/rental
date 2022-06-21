@@ -43,12 +43,13 @@ const getMenu = (menu, prefix) => {
             </button>
             <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
               <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-                <li :class="getMenu('dashboard', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                  <li :class="getMenu('dashboard', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
                     <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')" class="m-menu__link m-menu__toggle">
                         <span class="m-menu__link-text"> Dashboard </span>
                         <i class="m-menu__hor-arrow la la-angle-down"></i>
                         <i class="m-menu__ver-arrow la la-angle-right"></i>
                     </JetNavLink>
+
                   <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs">
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
@@ -58,7 +59,20 @@ const getMenu = (menu, prefix) => {
                                 <span class="m-menu__link-text"> Dashboard </span>
                             </Link>
                       </li>
-                      <li class="m-menu__item  m-menu__item--active " aria-haspopup="true">
+                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                            <Link :href="route('flat.index')" class="m-menu__link ">
+                                <i class="m-menu__link-icon flaticon-clipboard"></i>
+                                <span class="m-menu__link-text"> Flat </span>
+                            </Link>
+                        </li>
+                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                            <Link :href="route('invoice.index')" class="m-menu__link ">
+                                <i class="m-menu__link-icon flaticon-graphic-2"></i>
+                                <span class="m-menu__link-text"> Invoice </span>
+                            </Link>
+                        </li>
+<!--
+                      <li class="m-menu__item  m-menu__item&#45;&#45;active " aria-haspopup="true">
                         <a href="index.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-file"></i>
                           <span class="m-menu__link-text"> Reports </span>
@@ -70,15 +84,15 @@ const getMenu = (menu, prefix) => {
                           <span class="m-menu__link-text"> Finance </span>
                         </a>
                       </li>
-                      <li class="m-menu__item  m-menu__item--submenu m-menu__item--submenu-tabs" data-menu-submenu-toggle="click" aria-haspopup="true">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;submenu-tabs" data-menu-submenu-toggle="click" aria-haspopup="true">
                         <a href="#" class="m-menu__link m-menu__toggle">
                           <i class="m-menu__link-icon flaticon-users"></i>
                           <span class="m-menu__link-text"> Customers </span>
                           <i class="m-menu__hor-arrow la la-angle-down"></i>
                           <i class="m-menu__ver-arrow la la-angle-right"></i>
                         </a>
-                        <div class="m-menu__submenu  m-menu__submenu--fixed-xl m-menu__submenu--center">
-                          <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                        <div class="m-menu__submenu  m-menu__submenu&#45;&#45;fixed-xl m-menu__submenu&#45;&#45;center">
+                          <span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>
                           <div class="m-menu__subnav">
                             <ul class="m-menu__content">
                               <li class="m-menu__item">
@@ -127,7 +141,7 @@ const getMenu = (menu, prefix) => {
                                 <ul class="m-menu__inner">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Coca Cola CRM </span>
@@ -135,7 +149,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Delta Airlines Booking Site </span>
@@ -143,7 +157,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Malibu Accounting </span>
@@ -151,7 +165,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Vineseed Website Rewamp </span>
@@ -159,7 +173,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Zircon Mobile App </span>
@@ -167,7 +181,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Mercury CMS </span>
@@ -183,7 +197,7 @@ const getMenu = (menu, prefix) => {
                                 <ul class="m-menu__inner">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Staff Directory </span>
@@ -191,7 +205,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Client Directory </span>
@@ -199,7 +213,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Salary Reports </span>
@@ -207,7 +221,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Staff Payslips </span>
@@ -215,7 +229,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Corporate Expenses </span>
@@ -223,7 +237,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;dot">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Project Expenses </span>
@@ -273,15 +287,15 @@ const getMenu = (menu, prefix) => {
                           </div>
                         </div>
                       </li>
-                      <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel m-menu__item--submenu-tabs" data-menu-submenu-toggle="click" aria-haspopup="true">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;rel m-menu__item&#45;&#45;submenu-tabs" data-menu-submenu-toggle="click" aria-haspopup="true">
                         <a href="#" class="m-menu__link m-menu__toggle">
                           <i class="m-menu__link-icon flaticon-add"></i>
                           <span class="m-menu__link-text"> Actions </span>
                           <i class="m-menu__hor-arrow la la-angle-down"></i>
                           <i class="m-menu__ver-arrow la la-angle-right"></i>
                         </a>
-                        <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-                          <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                        <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left">
+                          <span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>
                           <ul class="m-menu__subnav">
                             <li class="m-menu__item " aria-haspopup="true">
                               <a href="inner2.html" class="m-menu__link ">
@@ -290,20 +304,20 @@ const getMenu = (menu, prefix) => {
                                   <span class="m-menu__link-wrap">
                                     <span class="m-menu__link-text"> Generate Reports </span>
                                     <span class="m-menu__link-badge">
-                                      <span class="m-badge m-badge--success"> 2 </span>
+                                      <span class="m-badge m-badge&#45;&#45;success"> 2 </span>
                                     </span>
                                   </span>
                                 </span>
                               </a>
                             </li>
-                            <li class="m-menu__item  m-menu__item--submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+                            <li class="m-menu__item  m-menu__item&#45;&#45;submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
                               <a href="#" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-icon flaticon-business"></i>
                                 <span class="m-menu__link-text"> Manage Orders </span>
                                 <i class="m-menu__hor-arrow la la-angle-right"></i>
                                 <i class="m-menu__ver-arrow la la-angle-right"></i>
                               </a>
-                              <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
+                              <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;right">
                                 <span class="m-menu__arrow "></span>
                                 <ul class="m-menu__subnav">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
@@ -339,14 +353,14 @@ const getMenu = (menu, prefix) => {
                                 </ul>
                               </div>
                             </li>
-                            <li class="m-menu__item  m-menu__item--submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+                            <li class="m-menu__item  m-menu__item&#45;&#45;submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
                               <a href="#" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-icon flaticon-chat-1"></i>
                                 <span class="m-menu__link-text"> Customer Feedbacks </span>
                                 <i class="m-menu__hor-arrow la la-angle-right"></i>
                                 <i class="m-menu__ver-arrow la la-angle-right"></i>
                               </a>
-                              <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
+                              <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;right">
                                 <span class="m-menu__arrow "></span>
                                 <ul class="m-menu__subnav">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
@@ -386,15 +400,15 @@ const getMenu = (menu, prefix) => {
                           </ul>
                         </div>
                       </li>
-                      <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel m-menu__item--submenu-tabs" data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;rel m-menu__item&#45;&#45;submenu-tabs" data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
                         <a href="#" class="m-menu__link m-menu__toggle">
                           <i class="m-menu__link-icon flaticon-line-graph"></i>
                           <span class="m-menu__link-text"> Reports </span>
                           <i class="m-menu__hor-arrow la la-angle-down"></i>
                           <i class="m-menu__ver-arrow la la-angle-right"></i>
                         </a>
-                        <div class="m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--left" style="width:600px">
-                          <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                        <div class="m-menu__submenu  m-menu__submenu&#45;&#45;fixed m-menu__submenu&#45;&#45;left" style="width:600px">
+                          <span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>
                           <div class="m-menu__subnav">
                             <ul class="m-menu__content">
                               <li class="m-menu__item">
@@ -443,7 +457,7 @@ const getMenu = (menu, prefix) => {
                                 <ul class="m-menu__inner">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Coca Cola CRM </span>
@@ -451,7 +465,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Delta Airlines Booking Site </span>
@@ -459,7 +473,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Malibu Accounting </span>
@@ -467,7 +481,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Vineseed Website Rewamp </span>
@@ -475,7 +489,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Zircon Mobile App </span>
@@ -483,7 +497,7 @@ const getMenu = (menu, prefix) => {
                                   </li>
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                                     <a href="inner2.html" class="m-menu__link ">
-                                      <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                      <i class="m-menu__link-bullet m-menu__link-bullet&#45;&#45;line">
                                         <span></span>
                                       </i>
                                       <span class="m-menu__link-text"> Mercury CMS </span>
@@ -495,13 +509,13 @@ const getMenu = (menu, prefix) => {
                           </div>
                         </div>
                       </li>
-                      <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel m-menu__item--more m-menu__item--submenu-tabs m-menu__item--icon-only" data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;rel m-menu__item&#45;&#45;more m-menu__item&#45;&#45;submenu-tabs m-menu__item&#45;&#45;icon-only" data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
                         <a href="#" class="m-menu__link m-menu__toggle">
                           <i class="m-menu__link-icon flaticon-more-v3"></i>
                           <span class="m-menu__link-text"></span>
                         </a>
-                        <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--pull">
-                          <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                        <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left m-menu__submenu&#45;&#45;pull">
+                          <span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>
                           <ul class="m-menu__subnav">
                             <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                               <a href="inner2.html" class="m-menu__link ">
@@ -509,14 +523,14 @@ const getMenu = (menu, prefix) => {
                                 <span class="m-menu__link-text"> eCommerce </span>
                               </a>
                             </li>
-                            <li class="m-menu__item  m-menu__item--submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+                            <li class="m-menu__item  m-menu__item&#45;&#45;submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
                               <a href="crud/datatable_v1.html" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-icon flaticon-computer"></i>
                                 <span class="m-menu__link-text"> Audience </span>
                                 <i class="m-menu__hor-arrow la la-angle-right"></i>
                                 <i class="m-menu__ver-arrow la la-angle-right"></i>
                               </a>
-                              <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
+                              <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;right">
                                 <span class="m-menu__arrow "></span>
                                 <ul class="m-menu__subnav">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
@@ -565,20 +579,20 @@ const getMenu = (menu, prefix) => {
                                   <span class="m-menu__link-wrap">
                                     <span class="m-menu__link-text"> Campaigns </span>
                                     <span class="m-menu__link-badge">
-                                      <span class="m-badge m-badge--success"> 3 </span>
+                                      <span class="m-badge m-badge&#45;&#45;success"> 3 </span>
                                     </span>
                                   </span>
                                 </span>
                               </a>
                             </li>
-                            <li class="m-menu__item  m-menu__item--submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+                            <li class="m-menu__item  m-menu__item&#45;&#45;submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
                               <a href="#" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-icon flaticon-infinity"></i>
                                 <span class="m-menu__link-text"> Cloud Manager </span>
                                 <i class="m-menu__hor-arrow la la-angle-right"></i>
                                 <i class="m-menu__ver-arrow la la-angle-right"></i>
                               </a>
-                              <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                              <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left">
                                 <span class="m-menu__arrow "></span>
                                 <ul class="m-menu__subnav">
                                   <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
@@ -588,7 +602,7 @@ const getMenu = (menu, prefix) => {
                                         <span class="m-menu__link-wrap">
                                           <span class="m-menu__link-text"> File Upload </span>
                                           <span class="m-menu__link-badge">
-                                            <span class="m-badge m-badge--danger"> 3 </span>
+                                            <span class="m-badge m-badge&#45;&#45;danger"> 3 </span>
                                           </span>
                                         </span>
                                       </span>
@@ -618,9 +632,9 @@ const getMenu = (menu, prefix) => {
                           </ul>
                         </div>
                       </li>
-                      <li class="m-menu__item  m-menu__item--actions" aria-haspopup="true">
-                        <div class="m-menu__link m-menu__link--toggle-skip">
-                          <a href="#" class="btn btn-focus m-btn m-btn--icon m-btn--pill">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;actions" aria-haspopup="true">
+                        <div class="m-menu__link m-menu__link&#45;&#45;toggle-skip">
+                          <a href="#" class="btn btn-focus m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;pill">
                             <span>
                               <i class="la la-plus"></i>
                               <span> New order </span>
@@ -628,10 +642,12 @@ const getMenu = (menu, prefix) => {
                           </a>
                         </div>
                       </li>
+                        -->
                     </ul>
                   </div>
+
                 </li>
-                <li :class="getMenu('settings', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                  <li :class="getMenu('settings', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__link-text"> House </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
@@ -753,9 +769,9 @@ const getMenu = (menu, prefix) => {
                     </ul>
                   </div>
                 </li>
-                <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                  <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
-                    <span class="m-menu__link-text"> Orders </span>
+                    <span class="m-menu__link-text"> Reports </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                   </a>
@@ -795,9 +811,9 @@ const getMenu = (menu, prefix) => {
                     </ul>
                   </div>
                 </li>
-                <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
+                  <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
-                    <span class="m-menu__link-text"> Customers </span>
+                    <span class="m-menu__link-text"> Expense </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                   </a>
