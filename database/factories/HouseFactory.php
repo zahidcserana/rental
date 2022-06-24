@@ -18,6 +18,7 @@ class HouseFactory extends Factory
     {
         return [
             'name' => $this->faker->name() . "'s House",
+            'address' => $this->faker->address(),
             'code' => 'H-' . $this->faker->numberBetween(100, 999)
         ];
     }

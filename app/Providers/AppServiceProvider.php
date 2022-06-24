@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
@@ -68,11 +69,13 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share([
             'auth' => function () {
                 return [
+                    'today' => Carbon::now()->format('M d, Y'),
                     'user' => Auth::user() ? [
                         'id' => Auth::user()->id,
                         'name' => Auth::user()->name,
                         'email' => Auth::user()->email,
                         'role' => Auth::user()->type,
+                        'house' => Auth::user()->house,
                         // 'menu_access' => \config('settings.menu_access')[Auth::user()->role->name],
                     ] : null,
                 ];

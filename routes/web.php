@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FlatController;
 use App\Http\Controllers\InvoiceController;
 use Inertia\Inertia;
@@ -34,9 +35,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+//    Route::get('/', function () {
+//        return Inertia::render('Dashboard');
+//    })->name('dashboard');
 });
 
 Route::group(['middleware' => 'auth'], function () {
