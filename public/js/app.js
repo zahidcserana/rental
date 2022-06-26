@@ -34943,7 +34943,7 @@ var _window$document$getE;
 
 
 
-var appName = ((_window$document$getE = window.document.getElementsByTagName('title')[0]) === null || _window$document$getE === void 0 ? void 0 : _window$document$getE.innerText) || 'Laravel';
+var appName = ((_window$document$getE = window.document.getElementsByTagName('title')[0]) === null || _window$document$getE === void 0 ? void 0 : _window$document$getE.innerText) || 'AnalyticalJ';
 (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
   title: function title(_title) {
     return "".concat(_title, " - ").concat(appName);
@@ -35029,7 +35029,8 @@ __webpack_require__.r(__webpack_exports__);
  // const HTTP = axios s
 
 var HTTP = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: "http://rental.local/",
+  baseURL: "http://hrent-aj.herokuapp.com/",
+  // baseURL: `http://rental.local/`,
   // baseURL: `http://rent.local/`,
   // baseURL: `https://afchms.cerebrum.host/`,
   headers: {
