@@ -17,9 +17,9 @@ class HouseFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name() . "'s House",
-            'address' => $this->faker->address(),
-            'code' => 'H-' . $this->faker->numberBetween(100, 999)
+//            'name' => $this->faker->name() . "'s House",
+//            'address' => $this->faker->address(),
+//            'code' => 'H-' . $this->faker->numberBetween(100, 999)
         ];
     }
 }
