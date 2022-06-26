@@ -6,7 +6,9 @@ use App\Http\Resources\FlatTableResource;
 use App\Http\Resources\InvoiceTableResource;
 use App\Models\Customer;
 use App\Models\Flat;
+use App\Models\House;
 use App\Models\Invoice;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Database\Seeders\ResetSeeder;
 use Illuminate\Http\Request;
@@ -68,9 +70,21 @@ class DashboardController extends Controller
         DB::table('invoices')->truncate();
         DB::table('users')->truncate();
 
-        $seeder = new ResetSeeder();
+        House::create([
+            'id' => 1,
+            'name' => 'Mirpur House',
+        ]);
 
-        $seeder->run();
+        User::create([
+            'id' => 2,
+            'name' => 'Analytical Admin',
+            'email' => 'admin@admin.com',
+            'type' => User::TYPE_ADMIN,
+            'house_id' => 1
+        ]);
+
+//        $seeder = new ResetSeeder();
+//        $seeder->run();
 
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
@@ -82,7 +96,5 @@ class DashboardController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->intended(RouteServiceProvider::HOME);
-
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
