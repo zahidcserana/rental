@@ -14,6 +14,8 @@ use Database\Seeders\ResetSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -78,9 +80,12 @@ class DashboardController extends Controller
         User::create([
             'id' => 2,
             'name' => 'Analytical Admin',
+            'mobile' => '01708887754',
             'email' => 'admin@admin.com',
             'type' => User::TYPE_ADMIN,
-            'house_id' => 1
+            'house_id' => 1,
+            'password' => Hash::make('secret'), // secret
+            'remember_token' => Str::random(10),
         ]);
 
 //        $seeder = new ResetSeeder();
