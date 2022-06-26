@@ -63,14 +63,14 @@ class DashboardController extends Controller
 
     public function reset(Request $request)
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+//        DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-        DB::table('flats')->truncate();
-        DB::table('houses')->truncate();
-        DB::table('customers')->truncate();
-        DB::table('invoice_items')->truncate();
-        DB::table('invoices')->truncate();
-        DB::table('users')->truncate();
+//        DB::table('flats')->truncate();
+//        DB::table('houses')->truncate();
+//        DB::table('customers')->truncate();
+//        DB::table('invoice_items')->truncate();
+//        DB::table('invoices')->truncate();
+//        DB::table('users')->truncate();
 
         House::create([
             'id' => 1,
@@ -92,13 +92,13 @@ class DashboardController extends Controller
 //        $seeder->run();
 
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
-
-        Auth::logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
+//        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+//
+//        Auth::logout();
+//
+//        $request->session()->invalidate();
+//
+//        $request->session()->regenerateToken();
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
