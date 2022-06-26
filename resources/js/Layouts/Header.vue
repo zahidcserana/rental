@@ -19,9 +19,9 @@ const logout = () => {
           <div class="m-stack__item m-brand m-stack__item--left">
             <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
               <div class="m-stack__item m-stack__item--middle m-brand__logo">
-                <a href="index.html" class="m-brand__logo-wrapper">
-                  <img alt="" src="/assets/demo/demo8/media/img/logo/logo.png" class="m-brand__logo-default" />
-                  <img alt="" src="/assets/demo/demo8/media/img/logo/logo_inverse.png" class="m-brand__logo-inverse" />
+                <a :href="route('dashboard')" class="m-brand__logo-wrapper">
+                  <img alt="" :src="$page.props.config.company.images.sidebar" class="m-brand__logo-default" />
+                  <img alt="" :src="$page.props.config.company.images.sidebar" class="m-brand__logo-inverse" />
                 </a>
               </div>
               <div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -42,7 +42,10 @@ const logout = () => {
           <!--begin::Search-->
           <div class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable- m-header-search--skin-" id="m_quicksearch" data-search-type="default">
             <!--begin::Search Form -->
-            <form class="m-header-search__form">
+              <div class="">
+                  <p class="header-title">{{ $page.props.config.title }}</p>
+              </div>
+<!--            <form class="m-header-search__form">
               <div class="m-header-search__wrapper">
                 <span class="m-header-search__icon-search" id="m_quicksearch_search">
                   <i class="la la-search"></i>
@@ -57,7 +60,7 @@ const logout = () => {
                   <i class="la la-remove"></i>
                 </span>
               </div>
-            </form>
+            </form>-->
             <!--end::Search Form -->
             <!--begin::Search Results -->
             <div class="m-dropdown__wrapper">
@@ -262,14 +265,14 @@ const logout = () => {
                     <li class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
                     <a href="#" class="m-nav__link m-dropdown__toggle">
                       <span class="m-topbar__userpic">
-                        <img src="/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
+                        <img :src="$page.props.config.company.images.profile" class="m--img-rounded m--marginless m--img-centered" alt="" />
                       </span>
                       <span class="m-nav__link-icon m-topbar__usericon  m--hide">
                         <span class="m-nav__link-icon-wrapper">
                           <i class="flaticon-user-ok"></i>
                         </span>
                       </span>
-                      <span class="m-topbar__username m--hide"> Nick </span>
+                      <span class="m-topbar__username m--hide"> {{ $page.props.user.name }} </span>
                     </a>
                     <div class="m-dropdown__wrapper">
                       <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
@@ -277,11 +280,11 @@ const logout = () => {
                         <div class="m-dropdown__header m--align-center">
                           <div class="m-card-user m-card-user--skin-light">
                             <div class="m-card-user__pic">
-                              <img src="/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
+                              <img :src="$page.props.config.images.user" class="m--img-rounded m--marginless" alt="" />
                             </div>
                             <div class="m-card-user__details">
-                              <span class="m-card-user__name m--font-weight-500"> Mark Andre </span>
-                              <a href="" class="m-card-user__email m--font-weight-300 m-link"> mark.andre@gmail.com </a>
+                              <span class="m-card-user__name m--font-weight-500"> {{ $page.props.user.name }} </span>
+                              <a href="" class="m-card-user__email m--font-weight-300 m-link"> {{ $page.props.user.email }} </a>
                             </div>
                           </div>
                         </div>
@@ -291,19 +294,19 @@ const logout = () => {
                               <li class="m-nav__section m--hide">
                                 <span class="m-nav__section-text"> Section </span>
                               </li>
-                              <li class="m-nav__item">
+<!--                              <li class="m-nav__item">
                                 <a href="#" class="m-nav__link">
                                   <i class="m-nav__link-icon flaticon-profile-1"></i>
                                   <span class="m-nav__link-title">
                                     <span class="m-nav__link-wrap">
                                       <span class="m-nav__link-text"> My Profile </span>
                                       <span class="m-nav__link-badge">
-                                        <span class="m-badge m-badge--success"> 2 </span>
+                                        <span class="m-badge m-badge&#45;&#45;success"> 2 </span>
                                       </span>
                                     </span>
                                   </span>
                                 </a>
-                              </li>
+                              </li>-->
                               <li class="m-nav__item">
                                     <form @submit.prevent="logout" >
                                         <button class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"> Logout </button>

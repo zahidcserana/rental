@@ -18,7 +18,11 @@ class CustomerTableResource extends JsonResource
 
         $resource['id'] = $this->id;
         $resource['name'] = $this->name;
-        $resource['slug'] = $this->slug;
+        $resource['email'] = $this->email;
+        $resource['mobile'] = $this->mobile;
+        $resource['nid'] = $this->nid;
+        $resource['address'] = $this->address;
+        $resource['advance_balance'] = $this->advance_balance;
         $resource['account_balance'] = $this->account_balance;
         $resource['status'] = $this->status;
         $resource['flats'] = new FlatCollection($this->flats);

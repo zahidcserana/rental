@@ -32,6 +32,7 @@ class InvoiceTableResource extends JsonResource
         $resource['house'] = ['url' => route('house.edit', ['house' => $this->house]), 'name' => $this->house->name];
 //        $resource['direct_url'] = ['url' => route('invoice.direct_url', ['direct_url' => $this->number]), 'name' => $this->number];
         $resource['link_edit'] = route('invoice.edit', ['invoice' => $this]);
+        $resource['link_show'] = route('invoice.show', ['invoice' => $this]);
         $resource['link_delete'] = ['token' => csrf_token(), 'url' => route('invoice.destroy', ['id' => $this->id, 'invoice' => $this])];
 
         return $resource;

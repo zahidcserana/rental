@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
@@ -65,6 +66,10 @@ class AppServiceProvider extends ServiceProvider
                 'name' => Route::currentRouteName(),
             ];
         });
+
+        Inertia::share([
+            'config' => Config::get('settings'),
+        ]);
 
         Inertia::share([
             'auth' => function () {

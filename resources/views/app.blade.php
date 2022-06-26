@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="{{ asset('assets/vendors/base/vendors.bundle.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/demo/demo8/base/style.bundle.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-        <link rel="shortcut icon" href="{{ asset('assets/demo/demo8/media/img/logo/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     </head>
 	<body style="background-image: url({{asset('/assets/app/media/img/bg/bg-7.jpg')}})" class="m-page--fluid m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
 

@@ -17,7 +17,11 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Customer Name</th>
-                                                <th>Balance</th>
+                                                <th>Email</th>
+                                                <th>Mobile</th>
+                                                <th>NID</th>
+                                                <th>Advance</th>
+                                                <th>Due</th>
                                                 <th>Status</th>
                                                 <th>Flat</th>
                                                 <th></th>
@@ -31,6 +35,10 @@
                                                         {{ row.name }}
                                                     </jet-responsive-nav-link>
                                                 </td>
+                                                <td>{{ row.email }}</td>
+                                                <td>{{ row.mobile }}</td>
+                                                <td>{{ row.nid }}</td>
+                                                <td>{{ row.advance_balance }}</td>
                                                 <td>{{ row.account_balance }}</td>
                                                 <td><span class="custom-badge" v-bind:class="row.status == 'active' ? 'status-green' : 'status-red'">{{ row.status }}</span></td>
                                                 <td>

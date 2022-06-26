@@ -42,7 +42,7 @@ class FlatController extends Controller
 
     public function create()
     {
-        $param['houses'] = $this->houseList();
+//        $param['houses'] = $this->houseList();
         $param['customers'] = $this->customerList();
         $param['status'] = \config('settings.flat_status');
 

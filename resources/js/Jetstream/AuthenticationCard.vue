@@ -10,7 +10,7 @@ $('body').addClass('m--skin- m-header--fixed m-header--fixed-mobile m-aside-left
                 <div class="m-login__container">
                     <div class="m-login__logo">
                         <a href="#">
-                            <img src="assets/app/media/img//logos/logo-1.png">
+                            <img :src="$page.props.config.company.images.reload">
                         </a>
                     </div>
 

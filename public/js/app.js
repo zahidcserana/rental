@@ -23970,12 +23970,14 @@ __webpack_require__.r(__webpack_exports__);
   props: ['param', 'editMode'],
   data: function data() {
     return {
-      authUser: null,
       form: {
         id: undefined,
-        house_id: null,
         name: null,
         mobile: null,
+        email: null,
+        nid: null,
+        address: null,
+        advance_balance: null,
         status: 'pending'
       }
     };
@@ -23984,8 +23986,11 @@ __webpack_require__.r(__webpack_exports__);
     if (this.editMode) {
       this.form.id = this.param.data.id;
       this.form.name = this.param.data.name;
-      this.form.house_id = this.param.data.house_id;
       this.form.mobile = this.param.data.mobile;
+      this.form.email = this.param.data.email;
+      this.form.nid = this.param.data.nid;
+      this.form.address = this.param.data.address;
+      this.form.advance_balance = this.param.data.advance_balance;
       this.form.status = this.param.data.status;
     }
   },
@@ -23995,12 +24000,16 @@ __webpack_require__.r(__webpack_exports__);
         house_id: null,
         name: null,
         mobile: null,
+        email: null,
+        nid: null,
+        address: null,
+        advance_balance: null,
         status: 'pending'
       };
     },
-    setUser: function setUser(user) {
-      this.form.house_id = user.house_id;
-    },
+    // setUser (user) {
+    //   this.form.house_id = user.house_id
+    // },
     // getUserId (data) {
     //     this.form.house_id = data
     // },
@@ -24317,7 +24326,6 @@ __webpack_require__.r(__webpack_exports__);
         id: undefined,
         name: null,
         rent: null,
-        house_id: '',
         customer_id: '',
         status: 'available'
       }
@@ -24348,9 +24356,9 @@ __webpack_require__.r(__webpack_exports__);
       data._method = 'PUT';
       this.$inertia.post('/flat/' + data.id, data);
     },
-    setHouse: function setHouse(user) {
-      this.form.house_id = user.house_id;
-    },
+    // setHouse (user) {
+    //     this.form.house_id = user.house_id
+    // },
     // setHouse (rowId) {
     //     this.form.house_id = rowId
     // },
@@ -24743,6 +24751,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['param'],
+  methods: {
+    formatDate: function formatDate(value) {
+      return moment(String(value)).format("MMMM YYYY");
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/create.vue?vue&type=script&setup=true&lang=js":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/create.vue?vue&type=script&setup=true&lang=js ***!
@@ -24866,6 +24896,51 @@ __webpack_require__.r(__webpack_exports__);
     var __returned__ = {
       AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       Models: _components_Models__WEBPACK_IMPORTED_MODULE_1__["default"],
+      Alert: _Pages_Component_Alert__WEBPACK_IMPORTED_MODULE_2__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _components_Show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Show */ "./resources/js/Pages/Invoice/components/Show.vue");
+/* harmony import */ var _Pages_Component_Alert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Pages/Component/Alert */ "./resources/js/Pages/Component/Alert.vue");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'show',
+  props: {
+    title: String,
+    flash: Object,
+    errors: Object,
+    link: String,
+    label: String,
+    param: Object
+  },
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var __returned__ = {
+      AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Show: _components_Show__WEBPACK_IMPORTED_MODULE_1__["default"],
       Alert: _Pages_Component_Alert__WEBPACK_IMPORTED_MODULE_2__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -26234,19 +26309,19 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "m-login__container"
 };
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_5 = {
   "class": "m-login__logo"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+};
+var _hoisted_6 = {
   href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/app/media/img//logos/logo-1.png"
-})])], -1
-/* HOISTED */
-);
-
+};
+var _hoisted_7 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: _ctx.$page.props.config.company.images.reload
+  }, null, 8
+  /* PROPS */
+  , _hoisted_7)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])]);
 }
 
 /***/ }),
@@ -27282,606 +27357,6 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "m_quick_sidebar",
-  "class": "m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-quick-sidebar__content m--hide"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  id: "m_quick_sidebar_close",
-  "class": "m-quick-sidebar__close"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "la la-close"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  id: "m_quick_sidebar_tabs",
-  "class": "nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand",
-  role: "tablist"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item m-tabs__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link m-tabs__link active",
-  "data-toggle": "tab",
-  href: "#m_quick_sidebar_tabs_messenger",
-  role: "tab"
-}, " Messages ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item m-tabs__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link m-tabs__link",
-  "data-toggle": "tab",
-  href: "#m_quick_sidebar_tabs_settings",
-  role: "tab"
-}, " Settings ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item m-tabs__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link m-tabs__link",
-  "data-toggle": "tab",
-  href: "#m_quick_sidebar_tabs_logs",
-  role: "tab"
-}, " Logs ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-pane active m-scrollable",
-  id: "m_quick_sidebar_tabs_messenger",
-  role: "tabpanel"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger m-messenger--message-arrow m-messenger--skin-light"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__messages"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--in"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-pic"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/app/media/img//users/user3.jpg",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-username"
-}, " Megan wrote "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Hi Bob. What time will be the meeting ? ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--out"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Hi Megan. It's at 2.30PM ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--in"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-pic"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/app/media/img//users/user3.jpg",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-username"
-}, " Megan wrote "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Will the development team be joining ? ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--out"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Yes sure. I invited them as well ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__datetime"
-}, " 2:30PM "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--in"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-pic"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/app/media/img//users/user3.jpg",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-username"
-}, " Megan wrote "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Noted. For the Coca-Cola Mobile App project as well ? ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--out"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Yes, sure. ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--out"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Please also prepare the quotation for the Loop CRM project as well. ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__datetime"
-}, " 3:15PM "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--in"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-no-pic m--bg-fill-danger"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " M ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-username"
-}, " Megan wrote "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Noted. I will prepare it. ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--out"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Thanks Megan. I will see you later. ")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message m-messenger__message--in"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-pic"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/app/media/img//users/user3.jpg",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-arrow"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-username"
-}, " Megan wrote "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__message-text"
-}, " Sure. See you in the meeting soon. ")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__seperator"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__form"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__form-controls"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "text",
-  name: "",
-  placeholder: "Type here...",
-  "class": "m-messenger__form-input"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-messenger__form-tools"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-messenger__form-attachment"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "la la-paperclip"
-})])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-pane m-scrollable",
-  id: "m_quick_sidebar_tabs_settings",
-  role: "tabpanel"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__heading"
-}, " General Settings "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Email Notifications "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  checked: "checked",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Site Tracking "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " SMS Alerts "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Backup Storage "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Audit Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  checked: "checked",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__heading"
-}, " System Settings "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " System Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Error Reporting "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Applications Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Backup Servers "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  checked: "checked",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-settings__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-label"
-}, " Audit Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-settings__item-control"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-switch m-switch--outline m-switch--icon-check m-switch--brand"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "checkbox",
-  name: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])])])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "tab-pane m-scrollable",
-  id: "m_quick_sidebar_tabs_logs",
-  role: "tabpanel"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__heading"
-}, " System Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__items"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 12 new users registered "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-badge m-badge--warning m-badge--wide"
-}, " important ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " Just now ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " System shutdown "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 11 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-danger"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " New invoice received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 20 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-warning"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Database overloaded 89% "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-badge m-badge--success m-badge--wide"
-}, " resolved ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 1 hr ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " System error "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 2 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Production server down "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-badge m-badge--danger m-badge--wide"
-}, " pending ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 3 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Production server up "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 5 hrs ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__heading"
-}, " Applications Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__items"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" New order received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-badge m-badge--info m-badge--wide"
-}, " urgent ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 7 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " 12 new users registered "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " Just now ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " System shutdown "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 11 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-danger"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " New invoices received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 20 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-warning"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Database overloaded 89% "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 1 hr ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" System error "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-badge m-badge--info m-badge--wide"
-}, " pending ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 2 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Production server down "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 3 hrs ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__heading"
-}, " Server Logs "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__items"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Production server up "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 5 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " New order received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 7 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " 12 new users registered "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " Just now ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " System shutdown "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 11 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-danger"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " New invoice received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 20 mins ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-warning"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Database overloaded 89% "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 1 hr ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " System error "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 2 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Production server down "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 3 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-success"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " Production server up "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 5 hrs ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-list-timeline__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__badge m-list-timeline__badge--state-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-list-timeline__text"
-}, " New order received "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-list-timeline__time"
-}, " 1117 hrs ")])])])])])])])], -1
-/* HOISTED */
-);
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-scroll-top m-scroll-top--skin-top",
   "data-toggle": "m-scroll-top",
   "data-scroll-offset": "500",
@@ -27892,10 +27367,8 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"m-nav-sticky\" style=\"margin-top:30px;\"><!--\n\t\t\t&lt;li class=&quot;m-nav-sticky__item&quot; data-toggle=&quot;m-tooltip&quot; title=&quot;Showcase&quot; data-placement=&quot;left&quot;&gt;\n\t\t\t\t&lt;a href=&quot;&quot;&gt;\n\t\t\t\t\t&lt;i class=&quot;la la-eye&quot;&gt;&lt;/i&gt;\n\t\t\t\t&lt;/a&gt;\n\t\t\t&lt;/li&gt;\n\t\t\t&lt;li class=&quot;m-nav-sticky__item&quot; data-toggle=&quot;m-tooltip&quot; title=&quot;Pre-sale Chat&quot; data-placement=&quot;left&quot;&gt;\n\t\t\t\t&lt;a href=&quot;&quot; &gt;\n\t\t\t\t\t&lt;i class=&quot;la la-comments-o&quot;&gt;&lt;/i&gt;\n\t\t\t\t&lt;/a&gt;\n\t\t\t&lt;/li&gt;\n\t\t\t--><li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Purchase\" data-placement=\"left\"><a href=\"https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes\" target=\"_blank\"><i class=\"la la-cart-arrow-down\"></i></a></li><li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Documentation\" data-placement=\"left\"><a href=\"https://keenthemes.com/metronic/documentation.html\" target=\"_blank\"><i class=\"la la-code-fork\"></i></a></li><li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Support\" data-placement=\"left\"><a href=\"https://keenthemes.com/forums/forum/support/metronic5/\" target=\"_blank\"><i class=\"la la-life-ring\"></i></a></li></ul>", 1);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin:: Page "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Footer "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Footer ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end:: Page "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Quick Sidebar "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Quick Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Scroll Top "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Scroll Top "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Quick Nav "), _hoisted_4], 64
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin:: Page "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Footer "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Footer ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end:: Page "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Quick Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\t\t<div id=\"m_quick_sidebar\" class=\"m-quick-sidebar m-quick-sidebar&#45;&#45;tabbed m-quick-sidebar&#45;&#45;skin-light\">\n\t\t\t<div class=\"m-quick-sidebar__content m&#45;&#45;hide\">\n\t\t\t\t<span id=\"m_quick_sidebar_close\" class=\"m-quick-sidebar__close\">\n\t\t\t\t\t<i class=\"la la-close\"></i>\n\t\t\t\t</span>\n\t\t\t\t<ul id=\"m_quick_sidebar_tabs\" class=\"nav nav-tabs m-tabs m-tabs-line m-tabs-line&#45;&#45;brand\" role=\"tablist\">\n\t\t\t\t\t<li class=\"nav-item m-tabs__item\">\n\t\t\t\t\t\t<a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_quick_sidebar_tabs_messenger\" role=\"tab\">\n\t\t\t\t\t\t\tMessages\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"nav-item m-tabs__item\">\n\t\t\t\t\t\t<a class=\"nav-link m-tabs__link\" \t\tdata-toggle=\"tab\" href=\"#m_quick_sidebar_tabs_settings\" role=\"tab\">\n\t\t\t\t\t\t\tSettings\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"nav-item m-tabs__item\">\n\t\t\t\t\t\t<a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_quick_sidebar_tabs_logs\" role=\"tab\">\n\t\t\t\t\t\t\tLogs\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t\t<div class=\"tab-content\">\n\t\t\t\t\t<div class=\"tab-pane active m-scrollable\" id=\"m_quick_sidebar_tabs_messenger\" role=\"tabpanel\">\n\t\t\t\t\t\t<div class=\"m-messenger m-messenger&#45;&#45;message-arrow m-messenger&#45;&#45;skin-light\">\n\t\t\t\t\t\t\t<div class=\"m-messenger__messages\">\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;in\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-pic\">\n\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/app/media/img//users/user3.jpg\" alt=\"\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-username\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tMegan wrote\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tHi Bob. What time will be the meeting ?\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;out\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tHi Megan. It's at 2.30PM\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;in\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-pic\">\n\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/app/media/img//users/user3.jpg\" alt=\"\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-username\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tMegan wrote\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tWill the development team be joining ?\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;out\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tYes sure. I invited them as well\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__datetime\">\n\t\t\t\t\t\t\t\t\t2:30PM\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;in\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-pic\">\n\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/app/media/img//users/user3.jpg\"  alt=\"\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-username\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tMegan wrote\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tNoted. For the Coca-Cola Mobile App project as well ?\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;out\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tYes, sure.\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;out\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tPlease also prepare the quotation for the Loop CRM project as well.\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__datetime\">\n\t\t\t\t\t\t\t\t\t3:15PM\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;in\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-no-pic m&#45;&#45;bg-fill-danger\">\n\t\t\t\t\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\t\t\t\tM\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-username\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tMegan wrote\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tNoted. I will prepare it.\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;out\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tThanks Megan. I will see you later.\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message m-messenger__message&#45;&#45;in\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-pic\">\n\t\t\t\t\t\t\t\t\t\t\t<img src=\"assets/app/media/img//users/user3.jpg\"  alt=\"\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-body\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-content\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-username\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tMegan wrote\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"m-messenger__message-text\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tSure. See you in the meeting soon.\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"m-messenger__seperator\"></div>\n\t\t\t\t\t\t\t<div class=\"m-messenger__form\">\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__form-controls\">\n\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"\" placeholder=\"Type here...\" class=\"m-messenger__form-input\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-messenger__form-tools\">\n\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-messenger__form-attachment\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"la la-paperclip\"></i>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"tab-pane  m-scrollable\" id=\"m_quick_sidebar_tabs_settings\" role=\"tabpanel\">\n\t\t\t\t\t\t<div class=\"m-list-settings\">\n\t\t\t\t\t\t\t<div class=\"m-list-settings__group\">\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__heading\">\n\t\t\t\t\t\t\t\t\tGeneral Settings\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tEmail Notifications\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tSite Tracking\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tSMS Alerts\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tBackup Storage\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tAudit Logs\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"m-list-settings__group\">\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__heading\">\n\t\t\t\t\t\t\t\t\tSystem Settings\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tSystem Logs\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tError Reporting\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tApplications Logs\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tBackup Servers\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-settings__item\">\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-label\">\n\t\t\t\t\t\t\t\t\t\tAudit Logs\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"m-list-settings__item-control\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand\">\n\t\t\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"tab-pane  m-scrollable\" id=\"m_quick_sidebar_tabs_logs\" role=\"tabpanel\">\n\t\t\t\t\t\t<div class=\"m-list-timeline\">\n\t\t\t\t\t\t\t<div class=\"m-list-timeline__group\">\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__heading\">\n\t\t\t\t\t\t\t\t\tSystem Logs\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__items\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\t12 new users registered\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"m-badge m-badge&#45;&#45;warning m-badge&#45;&#45;wide\">\n\t\t\t\t\t\t\t\t\t\t\t\timportant\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\tJust now\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem shutdown\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t11 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew invoice received\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t20 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tDatabase overloaded 89%\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\">\n\t\t\t\t\t\t\t\t\t\t\t\tresolved\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t1 hr\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem error\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t2 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server down\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\">\n\t\t\t\t\t\t\t\t\t\t\t\tpending\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t3 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server up\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t5 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"m-list-timeline__group\">\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__heading\">\n\t\t\t\t\t\t\t\t\tApplications Logs\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__items\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew order received\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\">\n\t\t\t\t\t\t\t\t\t\t\t\turgent\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t7 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\t12 new users registered\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\tJust now\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem shutdown\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t11 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew invoices received\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t20 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tDatabase overloaded 89%\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t1 hr\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem error\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\">\n\t\t\t\t\t\t\t\t\t\t\t\tpending\n\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t2 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server down\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t3 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"m-list-timeline__group\">\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__heading\">\n\t\t\t\t\t\t\t\t\tServer Logs\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__items\">\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server up\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t5 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew order received\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t7 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\t12 new users registered\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\tJust now\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem shutdown\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t11 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew invoice received\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t20 mins\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tDatabase overloaded 89%\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t1 hr\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tSystem error\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t2 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server down\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t3 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tProduction server up\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t5 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"m-list-timeline__item\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"m-list-timeline__text\">\n\t\t\t\t\t\t\t\t\t\t\tNew order received\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<span class=\"m-list-timeline__time\">\n\t\t\t\t\t\t\t\t\t\t\t1117 hrs\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Quick Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Scroll Top "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Scroll Top "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Quick Nav "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\t\t<ul class=\"m-nav-sticky\" style=\"margin-top: 30px;\">\n\t\t\t<li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Showcase\" data-placement=\"left\">\n\t\t\t\t<a href=\"\">\n\t\t\t\t\t<i class=\"la la-eye\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t\t<li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Pre-sale Chat\" data-placement=\"left\">\n\t\t\t\t<a href=\"\" >\n\t\t\t\t\t<i class=\"la la-comments-o\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t\t<li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Purchase\" data-placement=\"left\">\n\t\t\t\t<a href=\"https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes\" target=\"_blank\">\n\t\t\t\t\t<i class=\"la la-cart-arrow-down\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t\t<li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Documentation\" data-placement=\"left\">\n\t\t\t\t<a href=\"https://keenthemes.com/metronic/documentation.html\" target=\"_blank\">\n\t\t\t\t\t<i class=\"la la-code-fork\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t\t<li class=\"m-nav-sticky__item\" data-toggle=\"m-tooltip\" title=\"Support\" data-placement=\"left\">\n\t\t\t\t<a href=\"https://keenthemes.com/forums/forum/support/metronic5/\" target=\"_blank\">\n\t\t\t\t\t<i class=\"la la-life-ring\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t</ul>")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -27918,12 +27391,109 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "m-grid__item m-footer"
 };
+var _hoisted_2 = {
+  "class": "m-container m-container--fluid m-container--full-height m-page__container"
+};
+var _hoisted_3 = {
+  "class": "m-footer__wrapper"
+};
+var _hoisted_4 = {
+  "class": "m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop"
+};
+var _hoisted_5 = {
+  "class": "m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last"
+};
+var _hoisted_6 = {
+  "class": "m-footer__copyright"
+};
+var _hoisted_7 = ["href"];
+var _hoisted_8 = {
+  "class": "m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first"
+};
+var _hoisted_9 = {
+  "class": "m-footer__nav m-nav m-nav--inline m--pull-right"
+};
+var _hoisted_10 = {
+  "class": "m-nav__item"
+};
+var _hoisted_11 = ["href"];
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"m-container m-container--fluid m-container--full-height m-page__container\"><div class=\"m-footer__wrapper\"><div class=\"m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop\"><div class=\"m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last\"><span class=\"m-footer__copyright\"> 2017 © Metronic theme by <a href=\"https://keenthemes.com\" class=\"m-link\"> Keenthemes </a></span></div><div class=\"m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first\"><ul class=\"m-footer__nav m-nav m-nav--inline m--pull-right\"><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\"><span class=\"m-nav__link-text\"> About </span></a></li><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\"><span class=\"m-nav__link-text\"> Privacy </span></a></li><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\"><span class=\"m-nav__link-text\"> T&amp;C </span></a></li><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\"><span class=\"m-nav__link-text\"> Purchase </span></a></li><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\" data-toggle=\"m-tooltip\" title=\"Support Center\" data-placement=\"left\"><i class=\"m-nav__link-icon flaticon-info m--icon-font-size-lg3\"></i></a></li></ul></div></div></div></div>", 1);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__link-text"
+}, " Home ", -1
+/* HOISTED */
+);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_13 = [_hoisted_12];
+var _hoisted_14 = {
+  "class": "m-nav__item"
+};
+var _hoisted_15 = ["href"];
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__link-text"
+}, " Invoice ", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = [_hoisted_16];
+var _hoisted_18 = {
+  "class": "m-nav__item"
+};
+var _hoisted_19 = ["href"];
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__link-text"
+}, " Flat ", -1
+/* HOISTED */
+);
+
+var _hoisted_21 = [_hoisted_20];
+var _hoisted_22 = {
+  "class": "m-nav__item"
+};
+var _hoisted_23 = ["href"];
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-nav__link-icon flaticon-info m--icon-font-size-lg3"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_25 = [_hoisted_24];
 function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.year) + " © " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.moto) + " by ", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.$page.props.config.company.website,
+    target: "_blank",
+    "class": "m-link"
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.title), 9
+  /* TEXT, PROPS */
+  , _hoisted_7)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('dashboard'),
+    "class": "m-nav__link"
+  }, _hoisted_13, 8
+  /* PROPS */
+  , _hoisted_11)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('invoice.index'),
+    "class": "m-nav__link"
+  }, _hoisted_17, 8
+  /* PROPS */
+  , _hoisted_15)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('flat.index'),
+    "class": "m-nav__link"
+  }, _hoisted_21, 8
+  /* PROPS */
+  , _hoisted_19)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.$page.props.config.company.contact,
+    "class": "m-nav__link",
+    "data-toggle": "m-tooltip",
+    title: "Support Center",
+    "data-placement": "left"
+  }, _hoisted_25, 8
+  /* PROPS */
+  , _hoisted_23)])])])])])])]);
 }
 
 /***/ }),
@@ -27957,78 +27527,195 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "m-stack m-stack--ver m-stack--desktop"
 };
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"m-stack__item m-brand m-stack__item--left\"><div class=\"m-stack m-stack--ver m-stack--general m-stack--inline\"><div class=\"m-stack__item m-stack__item--middle m-brand__logo\"><a href=\"index.html\" class=\"m-brand__logo-wrapper\"><img alt=\"\" src=\"/assets/demo/demo8/media/img/logo/logo.png\" class=\"m-brand__logo-default\"><img alt=\"\" src=\"/assets/demo/demo8/media/img/logo/logo_inverse.png\" class=\"m-brand__logo-inverse\"></a></div><div class=\"m-stack__item m-stack__item--middle m-brand__tools\"><!-- begin::Responsive Header Menu Toggler--><a id=\"m_aside_header_menu_mobile_toggle\" href=\"javascript:;\" class=\"m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block\"><span></span></a><!-- end::Responsive Header Menu Toggler--><!-- begin::Topbar Toggler--><a id=\"m_aside_header_topbar_mobile_toggle\" href=\"javascript:;\" class=\"m-brand__icon m--visible-tablet-and-mobile-inline-block\"><i class=\"flaticon-more\"></i></a><!--end::Topbar Toggler--></div></div></div>", 1);
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable- m-header-search--skin-\" id=\"m_quicksearch\" data-search-type=\"default\"><!--begin::Search Form --><form class=\"m-header-search__form\"><div class=\"m-header-search__wrapper\"><span class=\"m-header-search__icon-search\" id=\"m_quicksearch_search\"><i class=\"la la-search\"></i></span><span class=\"m-header-search__input-wrapper\"><input autocomplete=\"off\" type=\"text\" name=\"q\" class=\"m-header-search__input\" value=\"\" placeholder=\"Search...\" id=\"m_quicksearch_input\"></span><span class=\"m-header-search__icon-close\" id=\"m_quicksearch_close\"><i class=\"la la-remove\"></i></span><span class=\"m-header-search__icon-cancel\" id=\"m_quicksearch_cancel\"><i class=\"la la-remove\"></i></span></div></form><!--end::Search Form --><!--begin::Search Results --><div class=\"m-dropdown__wrapper\"><div class=\"m-dropdown__arrow m-dropdown__arrow--center\"></div><div class=\"m-dropdown__inner\"><div class=\"m-dropdown__body\"><div class=\"m-dropdown__scrollable m-scrollable\" data-max-height=\"300\" data-mobile-max-height=\"200\"><div class=\"m-dropdown__content m-list-search m-list-search--skin-light\"></div></div></div></div></div><!--end::Search Results --></div>", 1);
-
+var _hoisted_5 = {
+  "class": "m-stack__item m-brand m-stack__item--left"
+};
+var _hoisted_6 = {
+  "class": "m-stack m-stack--ver m-stack--general m-stack--inline"
+};
 var _hoisted_7 = {
+  "class": "m-stack__item m-stack__item--middle m-brand__logo"
+};
+var _hoisted_8 = ["href"];
+var _hoisted_9 = ["src"];
+var _hoisted_10 = ["src"];
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "m-stack__item m-stack__item--middle m-brand__tools"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Responsive Header Menu Toggler"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  id: "m_aside_header_menu_mobile_toggle",
+  href: "javascript:;",
+  "class": "m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Responsive Header Menu Toggler"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Topbar Toggler"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  id: "m_aside_header_topbar_mobile_toggle",
+  href: "javascript:;",
+  "class": "m-brand__icon m--visible-tablet-and-mobile-inline-block"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "flaticon-more"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Topbar Toggler")], -1
+/* HOISTED */
+);
+
+var _hoisted_12 = {
+  "class": "m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable- m-header-search--skin-",
+  id: "m_quicksearch",
+  "data-search-type": "default"
+};
+var _hoisted_13 = {
+  "class": ""
+};
+var _hoisted_14 = {
+  "class": "header-title"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"m-dropdown__wrapper\"><div class=\"m-dropdown__arrow m-dropdown__arrow--center\"></div><div class=\"m-dropdown__inner\"><div class=\"m-dropdown__body\"><div class=\"m-dropdown__scrollable m-scrollable\" data-max-height=\"300\" data-mobile-max-height=\"200\"><div class=\"m-dropdown__content m-list-search m-list-search--skin-light\"></div></div></div></div></div>", 1);
+
+var _hoisted_16 = {
   "class": "m-stack__item m-stack__item--right m-header-head",
   id: "m_header_nav"
 };
-var _hoisted_8 = {
+var _hoisted_17 = {
   id: "m_header_topbar",
   "class": "m-topbar m-stack m-stack--ver m-stack--general"
 };
-var _hoisted_9 = {
+var _hoisted_18 = {
   "class": "m-stack__item m-topbar__nav-wrapper"
 };
-var _hoisted_10 = {
+var _hoisted_19 = {
   "class": "m-topbar__nav m-nav m-nav--inline"
 };
-var _hoisted_11 = {
+var _hoisted_20 = {
   "class": "m-nav__item m-topbar__user-profile m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light",
   "data-dropdown-toggle": "click"
 };
+var _hoisted_21 = {
+  href: "#",
+  "class": "m-nav__link m-dropdown__toggle"
+};
+var _hoisted_22 = {
+  "class": "m-topbar__userpic"
+};
+var _hoisted_23 = ["src"];
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"#\" class=\"m-nav__link m-dropdown__toggle\"><span class=\"m-topbar__userpic\"><img src=\"/assets/app/media/img/users/user4.jpg\" class=\"m--img-rounded m--marginless m--img-centered\" alt=\"\"></span><span class=\"m-nav__link-icon m-topbar__usericon m--hide\"><span class=\"m-nav__link-icon-wrapper\"><i class=\"flaticon-user-ok\"></i></span></span><span class=\"m-topbar__username m--hide\"> Nick </span></a>", 1);
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__link-icon m-topbar__usericon m--hide"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__link-icon-wrapper"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "flaticon-user-ok"
+})])], -1
+/* HOISTED */
+);
 
-var _hoisted_13 = {
+var _hoisted_25 = {
+  "class": "m-topbar__username m--hide"
+};
+var _hoisted_26 = {
   "class": "m-dropdown__wrapper"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_15 = {
+var _hoisted_28 = {
   "class": "m-dropdown__inner"
 };
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"m-dropdown__header m--align-center\"><div class=\"m-card-user m-card-user--skin-light\"><div class=\"m-card-user__pic\"><img src=\"/assets/app/media/img/users/user4.jpg\" class=\"m--img-rounded m--marginless\" alt=\"\"></div><div class=\"m-card-user__details\"><span class=\"m-card-user__name m--font-weight-500\"> Mark Andre </span><a href=\"\" class=\"m-card-user__email m--font-weight-300 m-link\"> mark.andre@gmail.com </a></div></div></div>", 1);
-
-var _hoisted_17 = {
+var _hoisted_29 = {
+  "class": "m-dropdown__header m--align-center"
+};
+var _hoisted_30 = {
+  "class": "m-card-user m-card-user--skin-light"
+};
+var _hoisted_31 = {
+  "class": "m-card-user__pic"
+};
+var _hoisted_32 = ["src"];
+var _hoisted_33 = {
+  "class": "m-card-user__details"
+};
+var _hoisted_34 = {
+  "class": "m-card-user__name m--font-weight-500"
+};
+var _hoisted_35 = {
+  href: "",
+  "class": "m-card-user__email m--font-weight-300 m-link"
+};
+var _hoisted_36 = {
   "class": "m-dropdown__body"
 };
-var _hoisted_18 = {
+var _hoisted_37 = {
   "class": "m-dropdown__content"
 };
-var _hoisted_19 = {
+var _hoisted_38 = {
   "class": "m-nav m-nav--skin-light"
 };
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"m-nav__section m--hide\"><span class=\"m-nav__section-text\"> Section </span></li><li class=\"m-nav__item\"><a href=\"#\" class=\"m-nav__link\"><i class=\"m-nav__link-icon flaticon-profile-1\"></i><span class=\"m-nav__link-title\"><span class=\"m-nav__link-wrap\"><span class=\"m-nav__link-text\"> My Profile </span><span class=\"m-nav__link-badge\"><span class=\"m-badge m-badge--success\"> 2 </span></span></span></span></a></li>", 2);
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "m-nav__section m--hide"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-nav__section-text"
+}, " Section ")], -1
+/* HOISTED */
+);
 
-var _hoisted_22 = {
+var _hoisted_40 = {
   "class": "m-nav__item"
 };
-var _hoisted_23 = ["onSubmit"];
+var _hoisted_41 = ["onSubmit"];
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"
 }, " Logout ", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = [_hoisted_24];
+var _hoisted_43 = [_hoisted_42];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Brand "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Brand "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Search"), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Search"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Topbar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                  <li class=\"m-nav__item m-topbar__notifications m-dropdown m-dropdown&#45;&#45;large m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-center \tm-dropdown&#45;&#45;mobile-full-width\" data-dropdown-toggle=\"click\" data-dropdown-persistent=\"true\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\" id=\"m_topbar_notification_icon\">\n                      <span class=\"m-nav__link-badge m-badge m-badge&#45;&#45;dot m-badge&#45;&#45;dot-small m-badge&#45;&#45;danger\"></span>\n                      <span class=\"m-nav__link-icon\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-music-2\"></i>\n                        </span>\n                      </span>\n                    </a>\n                    <div class=\"m-dropdown__wrapper\">\n                      <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;center\"></span>\n                      <div class=\"m-dropdown__inner\">\n                        <div class=\"m-dropdown__header m&#45;&#45;align-center\">\n                          <span class=\"m-dropdown__header-title\"> 9 New </span>\n                          <span class=\"m-dropdown__header-subtitle\"> User Notifications </span>\n                        </div>\n                        <div class=\"m-dropdown__body\">\n                          <div class=\"m-dropdown__content\">\n                            <ul class=\"nav nav-tabs m-tabs m-tabs-line m-tabs-line&#45;&#45;brand\" role=\"tablist\">\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#topbar_notifications_notifications\" role=\"tab\"> Alerts </a>\n                              </li>\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#topbar_notifications_events\" role=\"tab\"> Events </a>\n                              </li>\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#topbar_notifications_logs\" role=\"tab\"> Logs </a>\n                              </li>\n                            </ul>\n                            <div class=\"tab-content\">\n                              <div class=\"tab-pane active\" id=\"topbar_notifications_notifications\" role=\"tabpanel\">\n                                <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"250\" data-mobile-max-height=\"200\">\n                                  <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                                    <div class=\"m-list-timeline__items\">\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge -m-list-timeline__badge&#45;&#45;state-success\"></span>\n                                        <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                                        <span class=\"m-list-timeline__time\"> Just now </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 14 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> New invoice received </span>\n                                        <span class=\"m-list-timeline__time\"> 20 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 1 hr </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item m-list-timeline__item&#45;&#45;read\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item m-list-timeline__item&#45;&#45;read\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> Production server down </span>\n                                        <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> Production server up </span>\n                                        <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                              <div class=\"tab-pane\" id=\"topbar_notifications_events\" role=\"tabpanel\">\n                                <div class=\"m-scrollable\" m-scrollabledata-scrollable=\"true\" data-max-height=\"250\" data-mobile-max-height=\"200\">\n                                  <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                                    <div class=\"m-list-timeline__items\">\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-success\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New order received </a>\n                                        <span class=\"m-list-timeline__time\"> Just now </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-danger\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New invoice received </a>\n                                        <span class=\"m-list-timeline__time\"> 20 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-success\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> Production server up </a>\n                                        <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New order received </a>\n                                        <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> System shutdown </a>\n                                        <span class=\"m-list-timeline__time\"> 11 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> Production server down </a>\n                                        <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                              <div class=\"tab-pane\" id=\"topbar_notifications_logs\" role=\"tabpanel\">\n                                <div class=\"m-stack m-stack&#45;&#45;ver m-stack&#45;&#45;general\" style=\"min-height: 180px;\">\n                                  <div class=\"m-stack__item m-stack__item&#45;&#45;center m-stack__item&#45;&#45;middle\">\n                                    <span class=\"\"> All caught up! <br> No new logs. </span>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </li>\n                  <li class=\"m-nav__item m-topbar__quick-actions m-dropdown m-dropdown&#45;&#45;skin-light m-dropdown&#45;&#45;large m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push m-dropdown&#45;&#45;mobile-full-width m-dropdown&#45;&#45;skin-light\" data-dropdown-toggle=\"click\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\">\n                      <span class=\"m-nav__link-badge m-badge m-badge&#45;&#45;dot m-badge&#45;&#45;info m&#45;&#45;hide\"></span>\n                      <span class=\"m-nav__link-icon\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-share\"></i>\n                        </span>\n                      </span>\n                    </a>\n                    <div class=\"m-dropdown__wrapper\">\n                      <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                      <div class=\"m-dropdown__inner\">\n                        <div class=\"m-dropdown__header m&#45;&#45;align-center\">\n                          <span class=\"m-dropdown__header-title\"> Quick Actions </span>\n                          <span class=\"m-dropdown__header-subtitle\"> Shortcuts </span>\n                        </div>\n                        <div class=\"m-dropdown__body m-dropdown__body&#45;&#45;paddingless\">\n                          <div class=\"m-dropdown__content\">\n                            <div class=\"m-scrollable\" data-scrollable=\"false\" data-max-height=\"380\" data-mobile-max-height=\"200\">\n                              <div class=\"m-nav-grid m-nav-grid&#45;&#45;skin-light\">\n                                <div class=\"m-nav-grid__row\">\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-file\"></i>\n                                    <span class=\"m-nav-grid__text\"> Generate Report </span>\n                                  </a>\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-time\"></i>\n                                    <span class=\"m-nav-grid__text\"> Add New Event </span>\n                                  </a>\n                                </div>\n                                <div class=\"m-nav-grid__row\">\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-folder\"></i>\n                                    <span class=\"m-nav-grid__text\"> Create New Task </span>\n                                  </a>\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-clipboard\"></i>\n                                    <span class=\"m-nav-grid__text\"> Completed Tasks </span>\n                                  </a>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </li>\n                  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Brand "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('dashboard'),
+    "class": "m-brand__logo-wrapper"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    alt: "",
+    src: _ctx.$page.props.config.company.images.sidebar,
+    "class": "m-brand__logo-default"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    alt: "",
+    src: _ctx.$page.props.config.company.images.sidebar,
+    "class": "m-brand__logo-inverse"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_10)], 8
+  /* PROPS */
+  , _hoisted_8)]), _hoisted_11])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Brand "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Search"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Search Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.title), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <form class=\"m-header-search__form\">\n              <div class=\"m-header-search__wrapper\">\n                <span class=\"m-header-search__icon-search\" id=\"m_quicksearch_search\">\n                  <i class=\"la la-search\"></i>\n                </span>\n                <span class=\"m-header-search__input-wrapper\">\n                  <input autocomplete=\"off\" type=\"text\" name=\"q\" class=\"m-header-search__input\" value=\"\" placeholder=\"Search...\" id=\"m_quicksearch_input\">\n                </span>\n                <span class=\"m-header-search__icon-close\" id=\"m_quicksearch_close\">\n                  <i class=\"la la-remove\"></i>\n                </span>\n                <span class=\"m-header-search__icon-cancel\" id=\"m_quicksearch_cancel\">\n                  <i class=\"la la-remove\"></i>\n                </span>\n              </div>\n            </form>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Search Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Search Results "), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Search Results ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Search"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Topbar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                  <li class=\"m-nav__item m-topbar__notifications m-dropdown m-dropdown&#45;&#45;large m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-center \tm-dropdown&#45;&#45;mobile-full-width\" data-dropdown-toggle=\"click\" data-dropdown-persistent=\"true\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\" id=\"m_topbar_notification_icon\">\n                      <span class=\"m-nav__link-badge m-badge m-badge&#45;&#45;dot m-badge&#45;&#45;dot-small m-badge&#45;&#45;danger\"></span>\n                      <span class=\"m-nav__link-icon\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-music-2\"></i>\n                        </span>\n                      </span>\n                    </a>\n                    <div class=\"m-dropdown__wrapper\">\n                      <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;center\"></span>\n                      <div class=\"m-dropdown__inner\">\n                        <div class=\"m-dropdown__header m&#45;&#45;align-center\">\n                          <span class=\"m-dropdown__header-title\"> 9 New </span>\n                          <span class=\"m-dropdown__header-subtitle\"> User Notifications </span>\n                        </div>\n                        <div class=\"m-dropdown__body\">\n                          <div class=\"m-dropdown__content\">\n                            <ul class=\"nav nav-tabs m-tabs m-tabs-line m-tabs-line&#45;&#45;brand\" role=\"tablist\">\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#topbar_notifications_notifications\" role=\"tab\"> Alerts </a>\n                              </li>\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#topbar_notifications_events\" role=\"tab\"> Events </a>\n                              </li>\n                              <li class=\"nav-item m-tabs__item\">\n                                <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#topbar_notifications_logs\" role=\"tab\"> Logs </a>\n                              </li>\n                            </ul>\n                            <div class=\"tab-content\">\n                              <div class=\"tab-pane active\" id=\"topbar_notifications_notifications\" role=\"tabpanel\">\n                                <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"250\" data-mobile-max-height=\"200\">\n                                  <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                                    <div class=\"m-list-timeline__items\">\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge -m-list-timeline__badge&#45;&#45;state-success\"></span>\n                                        <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                                        <span class=\"m-list-timeline__time\"> Just now </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 14 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> New invoice received </span>\n                                        <span class=\"m-list-timeline__time\"> 20 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 1 hr </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item m-list-timeline__item&#45;&#45;read\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                                        </span>\n                                        <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item m-list-timeline__item&#45;&#45;read\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> Production server down </span>\n                                        <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge\"></span>\n                                        <span class=\"m-list-timeline__text\"> Production server up </span>\n                                        <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                              <div class=\"tab-pane\" id=\"topbar_notifications_events\" role=\"tabpanel\">\n                                <div class=\"m-scrollable\" m-scrollabledata-scrollable=\"true\" data-max-height=\"250\" data-mobile-max-height=\"200\">\n                                  <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                                    <div class=\"m-list-timeline__items\">\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-success\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New order received </a>\n                                        <span class=\"m-list-timeline__time\"> Just now </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-danger\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New invoice received </a>\n                                        <span class=\"m-list-timeline__time\"> 20 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-success\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> Production server up </a>\n                                        <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> New order received </a>\n                                        <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> System shutdown </a>\n                                        <span class=\"m-list-timeline__time\"> 11 mins </span>\n                                      </div>\n                                      <div class=\"m-list-timeline__item\">\n                                        <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;state1-info\"></span>\n                                        <a href=\"\" class=\"m-list-timeline__text\"> Production server down </a>\n                                        <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                                      </div>\n                                    </div>\n                                  </div>\n                                </div>\n                              </div>\n                              <div class=\"tab-pane\" id=\"topbar_notifications_logs\" role=\"tabpanel\">\n                                <div class=\"m-stack m-stack&#45;&#45;ver m-stack&#45;&#45;general\" style=\"min-height: 180px;\">\n                                  <div class=\"m-stack__item m-stack__item&#45;&#45;center m-stack__item&#45;&#45;middle\">\n                                    <span class=\"\"> All caught up! <br> No new logs. </span>\n                                  </div>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </li>\n                  <li class=\"m-nav__item m-topbar__quick-actions m-dropdown m-dropdown&#45;&#45;skin-light m-dropdown&#45;&#45;large m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push m-dropdown&#45;&#45;mobile-full-width m-dropdown&#45;&#45;skin-light\" data-dropdown-toggle=\"click\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\">\n                      <span class=\"m-nav__link-badge m-badge m-badge&#45;&#45;dot m-badge&#45;&#45;info m&#45;&#45;hide\"></span>\n                      <span class=\"m-nav__link-icon\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-share\"></i>\n                        </span>\n                      </span>\n                    </a>\n                    <div class=\"m-dropdown__wrapper\">\n                      <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                      <div class=\"m-dropdown__inner\">\n                        <div class=\"m-dropdown__header m&#45;&#45;align-center\">\n                          <span class=\"m-dropdown__header-title\"> Quick Actions </span>\n                          <span class=\"m-dropdown__header-subtitle\"> Shortcuts </span>\n                        </div>\n                        <div class=\"m-dropdown__body m-dropdown__body&#45;&#45;paddingless\">\n                          <div class=\"m-dropdown__content\">\n                            <div class=\"m-scrollable\" data-scrollable=\"false\" data-max-height=\"380\" data-mobile-max-height=\"200\">\n                              <div class=\"m-nav-grid m-nav-grid&#45;&#45;skin-light\">\n                                <div class=\"m-nav-grid__row\">\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-file\"></i>\n                                    <span class=\"m-nav-grid__text\"> Generate Report </span>\n                                  </a>\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-time\"></i>\n                                    <span class=\"m-nav-grid__text\"> Add New Event </span>\n                                  </a>\n                                </div>\n                                <div class=\"m-nav-grid__row\">\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-folder\"></i>\n                                    <span class=\"m-nav-grid__text\"> Create New Task </span>\n                                  </a>\n                                  <a href=\"#\" class=\"m-nav-grid__item\">\n                                    <i class=\"m-nav-grid__icon flaticon-clipboard\"></i>\n                                    <span class=\"m-nav-grid__text\"> Completed Tasks </span>\n                                  </a>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </li>\n                  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: _ctx.$page.props.config.company.images.profile,
+    "class": "m--img-rounded m--marginless m--img-centered",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_23)]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: _ctx.$page.props.config.images.user,
+    "class": "m--img-rounded m--marginless",
+    alt: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_32)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.email), 1
+  /* TEXT */
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                              <li class=\"m-nav__item\">\n                                <a href=\"#\" class=\"m-nav__link\">\n                                  <i class=\"m-nav__link-icon flaticon-profile-1\"></i>\n                                  <span class=\"m-nav__link-title\">\n                                    <span class=\"m-nav__link-wrap\">\n                                      <span class=\"m-nav__link-text\"> My Profile </span>\n                                      <span class=\"m-nav__link-badge\">\n                                        <span class=\"m-badge m-badge&#45;&#45;success\"> 2 </span>\n                                      </span>\n                                    </span>\n                                  </span>\n                                </a>\n                              </li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.logout, ["prevent"])
-  }, _hoisted_25, 40
+  }, _hoisted_43, 40
   /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_23)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n                  <li id=\"m_quick_sidebar_toggle\" class=\"m-nav__item\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\">\n                      <span class=\"m-nav__link-icon m-nav__link-icon-alt\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-grid-menu\"></i>\n                        </span>\n                      </span>\n                    </a>\n                  </li>\n")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Topbar ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Menu"])]);
+  , _hoisted_41)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n                  <li id=\"m_quick_sidebar_toggle\" class=\"m-nav__item\">\n                    <a href=\"#\" class=\"m-nav__link m-dropdown__toggle\">\n                      <span class=\"m-nav__link-icon m-nav__link-icon-alt\">\n                        <span class=\"m-nav__link-icon-wrapper\">\n                          <i class=\"flaticon-grid-menu\"></i>\n                        </span>\n                      </span>\n                    </a>\n                  </li>\n")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Topbar ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Menu"])]);
 }
 
 /***/ }),
@@ -28075,271 +27762,278 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "m-menu__nav m-menu__nav--submenu-arrow"
 };
+var _hoisted_8 = ["href", "active"];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
-}, " Dashboard ", -1
+}, "Dashboard", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__hor-arrow la la-angle-down"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__ver-arrow la la-angle-right"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_11 = {
+var _hoisted_12 = [_hoisted_9, _hoisted_10, _hoisted_11];
+var _hoisted_13 = {
   "class": "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs"
 };
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__arrow m-menu__arrow--adjust"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_13 = {
+var _hoisted_15 = {
   "class": "m-menu__subnav"
 };
-var _hoisted_14 = {
+var _hoisted_16 = {
   "class": "m-menu__item",
   "data-redirect": "true",
   "aria-haspopup": "true"
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__link-icon flaticon-support"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
 }, " Dashboard ", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = {
+var _hoisted_19 = {
   "class": "m-menu__item",
   "data-redirect": "true",
   "aria-haspopup": "true"
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__link-icon flaticon-clipboard"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
 }, " Flat ", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = {
+var _hoisted_22 = {
   "class": "m-menu__item",
   "data-redirect": "true",
   "aria-haspopup": "true"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__link-icon flaticon-graphic-2"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "m-menu__link m-menu__toggle"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_25 = ["href"];
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
-}, " House "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__hor-arrow la la-angle-down"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__ver-arrow la la-angle-right"
-})], -1
+}, " Settings ", -1
 /* HOISTED */
 );
 
-var _hoisted_24 = {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__hor-arrow la la-angle-down"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__ver-arrow la la-angle-right"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_29 = [_hoisted_26, _hoisted_27, _hoisted_28];
+var _hoisted_30 = {
   "class": "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs"
 };
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__arrow m-menu__arrow--adjust"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_26 = {
+var _hoisted_32 = {
   "class": "m-menu__subnav"
 };
-var _hoisted_27 = {
+var _hoisted_33 = {
   key: 0,
   "class": "m-menu__item",
   "data-redirect": "true",
   "aria-haspopup": "true"
 };
 
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__link-icon flaticon-graphic-2"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-menu__link-text"
-}, " House ", -1
-/* HOISTED */
-);
-
-var _hoisted_30 = {
-  "class": "m-menu__item",
-  "data-redirect": "true",
-  "aria-haspopup": "true"
-};
-
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__link-icon flaticon-clipboard"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-menu__link-text"
-}, " Flat ", -1
-/* HOISTED */
-);
-
-var _hoisted_33 = {
-  "class": "m-menu__item",
-  "data-redirect": "true",
-  "aria-haspopup": "true"
-};
-
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__link-icon flaticon-users"
+  "class": "m-menu__link-icon flaticon-graphic-2"
 }, null, -1
 /* HOISTED */
 );
 
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
-}, " Customer ", -1
+}, " House ", -1
 /* HOISTED */
 );
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-analytics\"></i><span class=\"m-menu__link-text\"> Bills </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-notes\"></i><span class=\"m-menu__link-text\"> IPO </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-clipboard\"></i><span class=\"m-menu__link-text\"> Tax Management </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-alarm-1\"></i><span class=\"m-menu__link-text\"> Invoices </span></a></li><li class=\"m-menu__item m-menu__item--actions\" aria-haspopup=\"true\"><div class=\"m-menu__link m-menu__link--toggle-skip\"><a href=\"#\" class=\"btn btn-danger m-btn m-btn--icon m-btn--pill\"><span><i class=\"la la-cloud-download\"></i><span> Generate report </span></span></a></div></li>", 5);
-
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "m-menu__link m-menu__toggle"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-menu__link-text"
-}, " Account "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__hor-arrow la la-angle-down"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-menu__ver-arrow la la-angle-right"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_42 = {
-  "class": "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs"
-};
-
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-menu__arrow m-menu__arrow--adjust"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_44 = {
-  "class": "m-menu__subnav"
-};
-var _hoisted_45 = {
+var _hoisted_36 = {
   "class": "m-menu__item",
   "data-redirect": "true",
   "aria-haspopup": "true"
 };
 
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__link-icon flaticon-clipboard"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-menu__link-text"
+}, " Flat ", -1
+/* HOISTED */
+);
+
+var _hoisted_39 = {
+  "class": "m-menu__item",
+  "data-redirect": "true",
+  "aria-haspopup": "true"
+};
+
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__link-icon flaticon-users"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-menu__link-text"
+}, " Customer ", -1
+/* HOISTED */
+);
+
+var _hoisted_42 = ["href"];
+
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-menu__link-text"
+}, " Account ", -1
+/* HOISTED */
+);
+
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__hor-arrow la la-angle-down"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "m-menu__ver-arrow la la-angle-right"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_46 = [_hoisted_43, _hoisted_44, _hoisted_45];
+var _hoisted_47 = {
+  "class": "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs"
+};
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "m-menu__arrow m-menu__arrow--adjust"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_49 = {
+  "class": "m-menu__subnav"
+};
+var _hoisted_50 = {
+  "class": "m-menu__item",
+  "data-redirect": "true",
+  "aria-haspopup": "true"
+};
+
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "m-menu__link-icon flaticon-graphic-2"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-menu__link-text"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-analytics\"></i><span class=\"m-menu__link-text\"> Customers </span></a></li><li class=\"m-menu__item\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-notes\"></i><span class=\"m-menu__link-text\"> Revenue </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-clipboard\"></i><span class=\"m-menu__link-text\"> Invoices </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-alarm-1\"></i><span class=\"m-menu__link-text\"> Bills </span></a></li><li class=\"m-menu__item m-menu__item--actions\" aria-haspopup=\"true\"><div class=\"m-menu__link m-menu__link--toggle-skip\"><div class=\"dropdown\"><a href=\"#\" class=\"btn btn-primary m-btn m-btn--icon m-btn--pill m-btn--air dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"la la-cloud-download\"></i>   Export </a><div class=\"dropdown-menu dropdown-menu-right\"><a class=\"dropdown-item\" href=\"#\"><i class=\"flaticon-share\"></i> Action </a><a class=\"dropdown-item\" href=\"#\"><i class=\"flaticon-settings\"></i> Another action </a><a class=\"dropdown-item\" href=\"#\"><i class=\"flaticon-graphic-2\"></i> Something else </a></div></div></div></li>", 5);
-
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"m-menu__item m-menu__item--submenu m-menu__item--tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\"><a href=\"#\" class=\"m-menu__link m-menu__toggle\"><span class=\"m-menu__link-text\"> Reports </span><i class=\"m-menu__hor-arrow la la-angle-down\"></i><i class=\"m-menu__ver-arrow la la-angle-right\"></i></a><div class=\"m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs\"><span class=\"m-menu__arrow m-menu__arrow--adjust\"></span><ul class=\"m-menu__subnav\"><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-graphic-2\"></i><span class=\"m-menu__link-text\"> Pending </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-analytics\"></i><span class=\"m-menu__link-text\"> Delivered </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-notes\"></i><span class=\"m-menu__link-text\"> Canceled </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-clipboard\"></i><span class=\"m-menu__link-text\"> Customer Care </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-alarm-1\"></i><span class=\"m-menu__link-text\"> Payments </span></a></li></ul></div></li><li class=\"m-menu__item m-menu__item--submenu m-menu__item--tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\"><a href=\"#\" class=\"m-menu__link m-menu__toggle\"><span class=\"m-menu__link-text\"> Expense </span><i class=\"m-menu__hor-arrow la la-angle-down\"></i><i class=\"m-menu__ver-arrow la la-angle-right\"></i></a><div class=\"m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs\"><span class=\"m-menu__arrow m-menu__arrow--adjust\"></span><ul class=\"m-menu__subnav\"><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-settings-1\"></i><span class=\"m-menu__link-text\"> Orders </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-imac\"></i><span class=\"m-menu__link-text\"> Feedbacks </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-paper-plane\"></i><span class=\"m-menu__link-text\"> Customer Support </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner2.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-multimedia\"></i><span class=\"m-menu__link-text\"> Statistics </span></a></li></ul></div></li><li class=\"m-menu__item m-menu__item--submenu m-menu__item--tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\"><a href=\"#\" class=\"m-menu__link m-menu__toggle\"><span class=\"m-menu__link-text\"> Tools </span><i class=\"m-menu__hor-arrow la la-angle-down\"></i><i class=\"m-menu__ver-arrow la la-angle-right\"></i></a><div class=\"m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs\"><span class=\"m-menu__arrow m-menu__arrow--adjust\"></span><ul class=\"m-menu__subnav\"><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-settings-1\"></i><span class=\"m-menu__link-text\"> Build Tools </span></a></li><li class=\"m-menu__item\" aria-haspopup=\"true\"><a href=\"builder.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-imac\"></i><span class=\"m-menu__link-text\"> Layout Builder </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-paper-plane\"></i><span class=\"m-menu__link-text\"> Documentatiion </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"inner2.html\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-multimedia\"></i><span class=\"m-menu__link-text\"> Reviews </span></a></li></ul></div></li>", 3);
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"m-menu__item m-menu__item--submenu m-menu__item--tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\"><a href=\"#\" class=\"m-menu__link m-menu__toggle\"><span class=\"m-menu__link-text\"> Reports </span><i class=\"m-menu__hor-arrow la la-angle-down\"></i><i class=\"m-menu__ver-arrow la la-angle-right\"></i></a><div class=\"m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs\"><span class=\"m-menu__arrow m-menu__arrow--adjust\"></span><ul class=\"m-menu__subnav\"><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"javascript:void(0)\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-graphic-2\"></i><span class=\"m-menu__link-text\"> Invoice </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"javascript:void(0)\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-analytics\"></i><span class=\"m-menu__link-text\"> Customer </span></a></li><!--                      &lt;li class=&quot;m-menu__item &quot; data-redirect=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;\n                        &lt;a href=&quot;builder.html&quot; class=&quot;m-menu__link &quot;&gt;\n                          &lt;i class=&quot;m-menu__link-icon flaticon-notes&quot;&gt;&lt;/i&gt;\n                          &lt;span class=&quot;m-menu__link-text&quot;&gt; Canceled &lt;/span&gt;\n                        &lt;/a&gt;\n                      &lt;/li&gt;\n                      &lt;li class=&quot;m-menu__item &quot; data-redirect=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;\n                        &lt;a href=&quot;builder.html&quot; class=&quot;m-menu__link &quot;&gt;\n                          &lt;i class=&quot;m-menu__link-icon flaticon-clipboard&quot;&gt;&lt;/i&gt;\n                          &lt;span class=&quot;m-menu__link-text&quot;&gt; Customer Care &lt;/span&gt;\n                        &lt;/a&gt;\n                      &lt;/li&gt;\n                      &lt;li class=&quot;m-menu__item &quot; data-redirect=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;\n                        &lt;a href=&quot;builder.html&quot; class=&quot;m-menu__link &quot;&gt;\n                          &lt;i class=&quot;m-menu__link-icon flaticon-alarm-1&quot;&gt;&lt;/i&gt;\n                          &lt;span class=&quot;m-menu__link-text&quot;&gt; Payments &lt;/span&gt;\n                        &lt;/a&gt;\n                      &lt;/li&gt;--></ul></div></li><li class=\"m-menu__item m-menu__item--submenu m-menu__item--tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\"><a href=\"#\" class=\"m-menu__link m-menu__toggle\"><span class=\"m-menu__link-text\"> Expense </span><i class=\"m-menu__hor-arrow la la-angle-down\"></i><i class=\"m-menu__ver-arrow la la-angle-right\"></i></a><div class=\"m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs\"><span class=\"m-menu__arrow m-menu__arrow--adjust\"></span><ul class=\"m-menu__subnav\"><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"javascript:void(0)\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-settings-1\"></i><span class=\"m-menu__link-text\"> Expense </span></a></li><li class=\"m-menu__item\" data-redirect=\"true\" aria-haspopup=\"true\"><a href=\"javascript:void(0)\" class=\"m-menu__link\"><i class=\"m-menu__link-icon flaticon-imac\"></i><span class=\"m-menu__link-text\"> Type </span></a></li><!--                      &lt;li class=&quot;m-menu__item &quot; data-redirect=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;\n                        &lt;a href=&quot;inner.html&quot; class=&quot;m-menu__link &quot;&gt;\n                          &lt;i class=&quot;m-menu__link-icon flaticon-paper-plane&quot;&gt;&lt;/i&gt;\n                          &lt;span class=&quot;m-menu__link-text&quot;&gt; Customer Support &lt;/span&gt;\n                        &lt;/a&gt;\n                      &lt;/li&gt;\n                      &lt;li class=&quot;m-menu__item &quot; data-redirect=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;\n                        &lt;a href=&quot;inner2.html&quot; class=&quot;m-menu__link &quot;&gt;\n                          &lt;i class=&quot;m-menu__link-icon flaticon-multimedia&quot;&gt;&lt;/i&gt;\n                          &lt;span class=&quot;m-menu__link-text&quot;&gt; Statistics &lt;/span&gt;\n                        &lt;/a&gt;\n                      &lt;/li&gt;--></ul></div></li>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" begin::Horizontal Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.getMenu('dashboard', _ctx.$page.props.route.prefix)),
     "data-menu-submenu-toggle": "tab",
     "aria-haspopup": "true"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetNavLink"], {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: _ctx.route('dashboard'),
-    active: _ctx.route().current('dashboard'),
-    "class": "m-menu__link m-menu__toggle"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8, _hoisted_9, _hoisted_10];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
+    "class": "m-menu__link m-menu__toggle",
+    active: _ctx.route().current('dashboard')
+  }, _hoisted_12, 8
   /* PROPS */
-  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
     href: _ctx.route('dashboard'),
     "class": "m-menu__link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_15, _hoisted_16];
+      return [_hoisted_17, _hoisted_18];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
     href: _ctx.route('flat.index'),
     "class": "m-menu__link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_18, _hoisted_19];
+      return [_hoisted_20, _hoisted_21];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
     href: _ctx.route('invoice.index'),
     "class": "m-menu__link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_21, _hoisted_22];
+      return [_hoisted_23, _hoisted_24];
     }),
     _: 1
     /* STABLE */
@@ -28352,32 +28046,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.getMenu('settings', _ctx.$page.props.route.prefix)),
     "data-menu-submenu-toggle": "tab",
     "aria-haspopup": "true"
-  }, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_26, [_ctx.$page.props.superAdmin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('house.index'),
-    "class": "m-menu__link"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_28, _hoisted_29];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: _ctx.route('flat.index'),
-    "class": "m-menu__link"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_31, _hoisted_32];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
+    "class": "m-menu__link m-menu__toggle"
+  }, _hoisted_29, 8
   /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('customer.index'),
+  , _hoisted_25), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_32, [_ctx.$page.props.superAdmin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('house.index'),
     "class": "m-menu__link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -28388,27 +28063,56 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])]), _hoisted_36])])], 2
-  /* CLASS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.getMenu('accounts', _ctx.$page.props.route.prefix)),
-    "data-menu-submenu-toggle": "tab",
-    "aria-haspopup": "true"
-  }, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('invoice.index'),
+  , ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('flat.index'),
     "class": "m-menu__link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_46, _hoisted_47];
+      return [_hoisted_37, _hoisted_38];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href"])]), _hoisted_48])])], 2
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('customer.index'),
+    "class": "m-menu__link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_40, _hoisted_41];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-analytics\"></i>\n                          <span class=\"m-menu__link-text\"> Bills </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-notes\"></i>\n                          <span class=\"m-menu__link-text\"> IPO </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-clipboard\"></i>\n                          <span class=\"m-menu__link-text\"> Tax Management </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-alarm-1\"></i>\n                          <span class=\"m-menu__link-text\"> Invoices </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item  m-menu__item&#45;&#45;actions\" aria-haspopup=\"true\">\n                        <div class=\"m-menu__link m-menu__link&#45;&#45;toggle-skip\">\n                          <a href=\"#\" class=\"btn btn-danger m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;pill\">\n                            <span>\n                              <i class=\"la la-cloud-download\"></i>\n                              <span> Generate report </span>\n                            </span>\n                          </a>\n                        </div>\n                      </li>")])])], 2
   /* CLASS */
-  ), _hoisted_53])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Horizontal Menu ")])])]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.getMenu('accounts', _ctx.$page.props.route.prefix)),
+    "data-menu-submenu-toggle": "tab",
+    "aria-haspopup": "true"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('invoice.index'),
+    "class": "m-menu__link m-menu__toggle"
+  }, _hoisted_46, 8
+  /* PROPS */
+  , _hoisted_42), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('invoice.index'),
+    "class": "m-menu__link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_51, _hoisted_52];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-analytics\"></i>\n                          <span class=\"m-menu__link-text\"> Customers </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" aria-haspopup=\"true\">\n                        <a href=\"inner.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-notes\"></i>\n                          <span class=\"m-menu__link-text\"> Revenue </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-clipboard\"></i>\n                          <span class=\"m-menu__link-text\"> Invoices </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-alarm-1\"></i>\n                          <span class=\"m-menu__link-text\"> Bills </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item  m-menu__item&#45;&#45;actions\" aria-haspopup=\"true\">\n                        <div class=\"m-menu__link m-menu__link&#45;&#45;toggle-skip\">\n                          <div class=\"dropdown\">\n                            <a href=\"#\" class=\"btn btn-primary m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;pill m-btn&#45;&#45;air   dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              <i class=\"la la-cloud-download\"></i> &nbsp;&nbsp;Export </a>\n                            <div class=\"dropdown-menu dropdown-menu-right\">\n                              <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"flaticon-share\"></i> Action </a>\n                              <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"flaticon-settings\"></i> Another action </a>\n                              <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"flaticon-graphic-2\"></i> Something else </a>\n                            </div>\n                          </div>\n                        </div>\n                      </li>")])])], 2
+  /* CLASS */
+  ), _hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <li class=\"m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;tabs\" data-menu-submenu-toggle=\"tab\" aria-haspopup=\"true\">\n                  <a href=\"#\" class=\"m-menu__link m-menu__toggle\">\n                    <span class=\"m-menu__link-text\"> Tools </span>\n                    <i class=\"m-menu__hor-arrow la la-angle-down\"></i>\n                    <i class=\"m-menu__ver-arrow la la-angle-right\"></i>\n                  </a>\n                  <div class=\"m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left m-menu__submenu&#45;&#45;tabs\">\n                    <span class=\"m-menu__arrow m-menu__arrow&#45;&#45;adjust\"></span>\n                    <ul class=\"m-menu__subnav\">\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"inner.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-settings-1\"></i>\n                          <span class=\"m-menu__link-text\"> Build Tools </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" aria-haspopup=\"true\">\n                        <a href=\"builder.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-imac\"></i>\n                          <span class=\"m-menu__link-text\"> Layout Builder </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"inner.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-paper-plane\"></i>\n                          <span class=\"m-menu__link-text\"> Documentatiion </span>\n                        </a>\n                      </li>\n                      <li class=\"m-menu__item \" data-redirect=\"true\" aria-haspopup=\"true\">\n                        <a href=\"inner2.html\" class=\"m-menu__link \">\n                          <i class=\"m-menu__link-icon flaticon-multimedia\"></i>\n                          <span class=\"m-menu__link-text\"> Reviews </span>\n                        </a>\n                      </li>\n                    </ul>\n                  </div>\n                </li>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end::Horizontal Menu ")])])]);
 }
 
 /***/ }),
@@ -29151,49 +28855,21 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "m-login__signin"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "m-login__head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-  "class": "m-login__title"
-}, " Sign In To Admin ")], -1
-/* HOISTED */
-);
-
-var _hoisted_3 = ["onSubmit"];
-var _hoisted_4 = {
-  "class": "form-group m-form__group"
 };
+var _hoisted_3 = {
+  "class": "m-login__title"
+};
+var _hoisted_4 = ["onSubmit"];
 var _hoisted_5 = {
   "class": "form-group m-form__group"
 };
 var _hoisted_6 = {
-  "class": "row m-login__form-sub"
-};
-var _hoisted_7 = {
-  "class": "m-checkbox m-checkbox--light"
-};
-var _hoisted_8 = {
-  "class": "flex items-center"
+  "class": "form-group m-form__group"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "ml-2 text-sm text-gray-600"
-}, "Remember me", -1
-/* HOISTED */
-);
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col m--align-right m-login__form-right"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "javascript:;",
-  id: "m_login_forget_password",
-  "class": "m-link"
-}, " Forget Password ? ")], -1
-/* HOISTED */
-);
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-login__form-action"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
@@ -29203,59 +28879,17 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-login__forget-password"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-login__head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-  "class": "m-login__title"
-}, " Forgotten Password ? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-login__desc"
-}, " Enter your email to reset your password: ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-  "class": "m-login__form m-form",
-  action: ""
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "form-group m-form__group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  "class": "form-control m-input",
-  type: "text",
-  placeholder: "Email",
-  name: "email",
-  id: "m_email",
-  autocomplete: "off"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-login__form-action"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  id: "m_login_forget_password_submit",
-  "class": "btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary"
-}, " Request "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("    "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  id: "m_login_forget_password_cancel",
-  "class": "btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn"
-}, " Cancel ")])])], -1
-/* HOISTED */
-);
-
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-login__account"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-login__account-msg"
-}, " Don't have an account yet ? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("    "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "javascript:;",
-  id: "m_login_signup",
-  "class": "m-link m-link--light m-login__account-link"
-}, " Sign Up ")], -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "Log in"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetAuthenticationCard"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.title), 1
+      /* TEXT */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         "class": "m-login__form m-form",
         onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submit, ["prevent"])
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "form-control m-input",
         type: "text",
         placeholder: "Email",
@@ -29265,7 +28899,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "off"
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         "class": "form-control m-input m-login__form-input--last",
         type: "password",
         placeholder: "Password",
@@ -29274,17 +28908,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         })
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetCheckbox"], {
-        checked: $setup.form.remember,
-        "onUpdate:checked": _cache[2] || (_cache[2] = function ($event) {
-          return $setup.form.remember = $event;
-        }),
-        name: "remember"
-      }, null, 8
-      /* PROPS */
-      , ["checked"]), _hoisted_9]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <label class=\"m-checkbox  m-checkbox&#45;&#45;light\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <input type=\"checkbox\" name=\"remember\" >"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            Remember me"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <span></span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </label>")]), _hoisted_10]), _hoisted_11], 40
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"row m-login__form-sub\">\n                    <div class=\"m-checkbox  m-checkbox&#45;&#45;light\">\n                        <label class=\"flex items-center\">\n                            <JetCheckbox v-model:checked=\"form.remember\" name=\"remember\" />\n                            <span class=\"ml-2 text-sm text-gray-600\">Remember me</span>\n                        </label>\n                        <label class=\"m-checkbox  m-checkbox&#45;&#45;light\">\n                            <input type=\"checkbox\" name=\"remember\" >\n                            Remember me\n                            <span></span>\n                        </label>\n                    </div>\n                    <div class=\"col m&#45;&#45;align-right m-login__form-right\">\n                        <Link v-if=\"canResetPassword\" :href=\"route('password.request')\" class=\"m-link\">\n                            Forgot your password?\n                        </Link>\n                        <a href=\"javascript:;\" id=\"m_login_forget_password\" class=\"m-link\">\n                            Forget Password ?\n                        </a>\n                    </div>\n                </div>"), _hoisted_7], 40
       /* PROPS, HYDRATE_EVENTS */
-      , _hoisted_3)]), _hoisted_12, _hoisted_13];
+      , _hoisted_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div class=\"m-login__forget-password\">\n            <div class=\"m-login__head\">\n                <h3 class=\"m-login__title\">\n                    Forgotten Password ?\n                </h3>\n                <div class=\"m-login__desc\">\n                    Enter your email to reset your password:\n                </div>\n            </div>\n            <form class=\"m-login__form m-form\" action=\"\">\n                <div class=\"form-group m-form__group\">\n                    <input class=\"form-control m-input\" type=\"text\" placeholder=\"Email\" name=\"email\" id=\"m_email\" autocomplete=\"off\">\n                </div>\n                <div class=\"m-login__form-action\">\n                    <button id=\"m_login_forget_password_submit\" class=\"btn m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;custom m-btn&#45;&#45;air m-login__btn m-login__btn&#45;&#45;primary\">\n                        Request\n                    </button>\n                    &nbsp;&nbsp;\n                    <button id=\"m_login_forget_password_cancel\" class=\"btn m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;custom m-btn&#45;&#45;air m-login__btn\">\n                        Cancel\n                    </button>\n                </div>\n            </form>\n        </div>\n        <div class=\"m-login__account\">\n\t\t\t\t\t\t\t<span class=\"m-login__account-msg\">\n\t\t\t\t\t\t\t\tDon't have an account yet ?\n\t\t\t\t\t\t\t</span>\n            &nbsp;&nbsp;\n            <a href=\"javascript:;\" id=\"m_login_signup\" class=\"m-link m-link&#45;&#45;light m-login__account-link\">\n                Sign Up\n            </a>\n        </div>")];
     }),
     _: 1
     /* STABLE */
@@ -30068,59 +29694,102 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_16 = ["set-value"];
-var _hoisted_17 = {
-  "class": "row"
-};
-var _hoisted_18 = {
+var _hoisted_16 = {
   "class": "col-sm-6"
 };
-var _hoisted_19 = {
+var _hoisted_17 = {
   "class": "form-group"
 };
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Status", -1
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Email", -1
 /* HOISTED */
 );
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_19 = {
+  "class": "col-sm-6"
+};
+var _hoisted_20 = {
+  "class": "form-group"
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "NID", -1
 /* HOISTED */
 );
 
 var _hoisted_22 = {
+  "class": "col-sm-6"
+};
+var _hoisted_23 = {
+  "class": "form-group"
+};
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Address", -1
+/* HOISTED */
+);
+
+var _hoisted_25 = {
+  "class": "col-sm-6"
+};
+var _hoisted_26 = {
+  "class": "form-group"
+};
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Advance Balance", -1
+/* HOISTED */
+);
+
+var _hoisted_28 = {
+  "class": "row"
+};
+var _hoisted_29 = {
+  "class": "col-sm-6"
+};
+var _hoisted_30 = {
+  "class": "form-group"
+};
+
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Status", -1
+/* HOISTED */
+);
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_33 = {
   "class": "form-check form-check-inline"
 };
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-check-label",
   "for": "product_active"
 }, "Pending", -1
 /* HOISTED */
 );
 
-var _hoisted_24 = {
+var _hoisted_35 = {
   "class": "form-check form-check-inline"
 };
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-check-label",
   "for": "product_active"
 }, "Active", -1
 /* HOISTED */
 );
 
-var _hoisted_26 = {
+var _hoisted_37 = {
   "class": "form-check form-check-inline"
 };
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-check-label",
   "for": "product_inactive"
 }, "Inactive", -1
 /* HOISTED */
 );
 
-var _hoisted_28 = {
+var _hoisted_39 = {
   "class": "m-t-20 text-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -30140,17 +29809,40 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.mobile]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <div v-if=\"$page.props.isAdmin\" class=\"col-sm-6\" :class=\"{'d-none': !$page.props.isAdmin}\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                <user-list @userId=\"getUserId\"/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            </div>"), $data.form.house_id == null ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
-    key: 0,
-    "set-value": $options.setUser(_ctx.$page.props.user),
-    type: "hidden",
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.mobile]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-control",
+    type: "text",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.authUser = $event;
+      return $data.form.email = $event;
     })
-  }, null, 8
-  /* PROPS */
-  , _hoisted_16)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.authUser]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-control",
+    type: "text",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.form.nid = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.nid]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-control",
+    type: "text",
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.form.address = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.address]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-control",
+    type: "text",
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+      return $data.form.advance_balance = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.advance_balance]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <div v-if=\"$page.props.isAdmin\" class=\"col-sm-6\" :class=\"{'d-none': !$page.props.isAdmin}\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                <user-list @userId=\"getUserId\"/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <input v-if=\"form.house_id == null\" :set-value=\"setUser($page.props.user)\" type=\"hidden\" v-model=\"authUser\">")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $data.form.status = $event;
     }),
     "class": "form-check-input",
@@ -30159,8 +29851,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "pending"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_23]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_34]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.form.status = $event;
     }),
     "class": "form-check-input",
@@ -30169,8 +29861,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "active"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_36]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
       return $data.form.status = $event;
     }),
     "class": "form-check-input",
@@ -30179,10 +29871,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: "inactive"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_27])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), _hoisted_38])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary submit-btn",
-    onClick: _cache[6] || (_cache[6] = function ($event) {
+    onClick: _cache[9] || (_cache[9] = function ($event) {
       return $options.save($data.form);
     })
   }, "Save", 512
@@ -30190,7 +29882,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, !$props.editMode]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary submit-btn",
-    onClick: _cache[7] || (_cache[7] = function ($event) {
+    onClick: _cache[10] || (_cache[10] = function ($event) {
       return $options.update($data.form);
     })
   }, "Update", 512
@@ -30241,7 +29933,7 @@ var _hoisted_9 = {
   "class": "table table-striped m-table"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "#"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Customer Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Balance"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Flat"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "#"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Customer Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Email"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Mobile"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "NID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Advance"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Due"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Flat"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1
 /* HOISTED */
 );
 
@@ -30375,7 +30067,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
-    , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.account_balance), 1
+    , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.email), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.mobile), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.nid), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.advance_balance), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.account_balance), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["custom-badge", row.status == 'active' ? 'status-green' : 'status-red'])
@@ -30612,101 +30312,48 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_6 = {
-  "class": "m-content"
+  "class": "title-total"
 };
 var _hoisted_7 = {
-  "class": "row"
+  "class": "m-content"
 };
 var _hoisted_8 = {
-  "class": "col-xl-4"
+  "class": "row"
 };
 var _hoisted_9 = {
+  "class": "col-xl-4"
+};
+var _hoisted_10 = {
   "class": "m-portlet m-portlet--bordered-semi m-portlet--full-height m-portlet--rounded"
 };
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_11 = {
   "class": "m-portlet__head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-caption"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "m-portlet__head-text"
-}, " Customer ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-portlet__head-tools"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-portlet__nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push",
-  "data-dropdown-toggle": "hover",
-  "aria-expanded": "true"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"
-}, " All "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust",
-  style: {
-    "left": "auto",
-    "right": "36.5px"
-  }
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__inner"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-share"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Activity ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-chat-1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Messages ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " FAQ ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-lifebuoy"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Support ")])])])])])])])])])])], -1
+}, " Customer ")])], -1
 /* HOISTED */
 );
 
-var _hoisted_11 = {
+var _hoisted_13 = {
+  "class": "m-portlet__head-tools"
+};
+var _hoisted_14 = {
+  "class": "title-total"
+};
+var _hoisted_15 = {
   "class": "m-portlet__body"
 };
-var _hoisted_12 = {
+var _hoisted_16 = {
   "class": "m-widget4"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__chart m-portlet-fit--sides m--margin-top-10 m--margin-top-20",
   style: {
     "height": "260px"
@@ -30717,7 +30364,7 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__img m-widget4__img--logo"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "assets/app/media/img/client-logos/logo3.png",
@@ -30726,124 +30373,87 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_15 = {
+var _hoisted_19 = {
   "class": "m-widget4__info"
 };
-var _hoisted_16 = {
+var _hoisted_20 = {
   "class": "m-widget4__title"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_18 = {
+var _hoisted_22 = {
   "class": "m-widget4__sub"
 };
-var _hoisted_19 = {
+var _hoisted_23 = {
   "class": "m-widget4__ext"
 };
-var _hoisted_20 = {
+var _hoisted_24 = {
   "class": "m-widget4__number m--font-danger"
 };
-var _hoisted_21 = {
+var _hoisted_25 = {
   "class": "col-xl-4"
 };
-var _hoisted_22 = {
+var _hoisted_26 = {
   "class": "m-portlet m-portlet--bordered-semi m-portlet--widget-fit m-portlet--full-height m-portlet--skin-light m-portlet--rounded m-portlet--rounded-force"
 };
-
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_27 = {
   "class": "m-portlet__head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_28 = {
   "class": "m-portlet__head-caption"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_29 = {
   "class": "m-portlet__head-title"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+};
+var _hoisted_30 = {
   "class": "m-portlet__head-text m--font-light"
-}, " Activity ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-portlet__head-tools"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-portlet__nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push",
-  "data-dropdown-toggle": "hover"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-genderless m--font-light"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__inner"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__section m-nav__section--first"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__section-text"
-}, " Quick Actions ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-share"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Activity ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-chat-1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Messages ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " FAQ ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-lifebuoy"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Support ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__separator m-nav__separator--fit"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm"
-}, " Cancel ")])])])])])])])])])], -1
+};
+var _hoisted_31 = {
+  "class": "title-total"
+};
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_24 = {
+var _hoisted_33 = {
+  "class": "title-total"
+};
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_35 = {
+  "class": "m-portlet__head-tools"
+};
+var _hoisted_36 = {
+  "class": "title-caption"
+};
+
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_38 = {
+  "class": "title-caption"
+};
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_40 = {
   "class": "m-portlet__body"
 };
-var _hoisted_25 = {
+var _hoisted_41 = {
   "class": "m-widget17"
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget17__visual m-widget17__visual--chart m-portlet-fit--top m-portlet-fit--sides m--bg-danger"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget17__chart",
@@ -30856,17 +30466,17 @@ var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_27 = {
+var _hoisted_43 = {
   "class": "m-widget17__stats"
 };
-var _hoisted_28 = {
+var _hoisted_44 = {
   "class": "m-widget17__items m-widget17__items-col1"
 };
-var _hoisted_29 = {
+var _hoisted_45 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-truck m--font-brand"
@@ -30874,20 +30484,20 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Customer ", -1
 /* HOISTED */
 );
 
-var _hoisted_32 = {
+var _hoisted_48 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_33 = {
+var _hoisted_49 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-paper-plane m--font-info"
@@ -30895,23 +30505,23 @@ var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Flat ", -1
 /* HOISTED */
 );
 
-var _hoisted_36 = {
+var _hoisted_52 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_37 = {
+var _hoisted_53 = {
   "class": "m-widget17__items m-widget17__items-col2"
 };
-var _hoisted_38 = {
+var _hoisted_54 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-pie-chart m--font-success"
@@ -30919,20 +30529,20 @@ var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_41 = {
+var _hoisted_57 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_42 = {
+var _hoisted_58 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-time m--font-danger"
@@ -30940,23 +30550,23 @@ var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_45 = {
+var _hoisted_61 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_46 = {
+var _hoisted_62 = {
   "class": "col-xl-4"
 };
-var _hoisted_47 = {
+var _hoisted_63 = {
   "class": "m-portlet m-portlet--bordered-semi m-portlet--full-height m-portlet--rounded m-portlet--rounded-force"
 };
 
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head m-portlet__head--fit"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-caption"
@@ -30969,119 +30579,112 @@ var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_49 = {
+var _hoisted_65 = {
   "class": "m-portlet__body"
 };
-var _hoisted_50 = {
+var _hoisted_66 = {
   "class": "m-widget19"
 };
-
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_67 = {
   "class": "m-widget19__pic m-portlet-fit--top m-portlet-fit--sides",
   style: {
     "min-height-": "286px"
   }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/images/house.jpg",
-  alt: ""
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+};
+var _hoisted_68 = ["src"];
+
+var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "m-widget19__title m--font-light"
-}, " House Rent Mangement "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-widget19__shadow"
-})], -1
+}, " House Rent Mangement ", -1
 /* HOISTED */
 );
 
-var _hoisted_52 = {
+var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "m-widget19__shadow"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_71 = {
   "class": "m-widget19__content"
 };
-var _hoisted_53 = {
+var _hoisted_72 = {
   "class": "m-widget19__header"
 };
-
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_73 = {
   "class": "m-widget19__user-img"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "m-widget19__img",
-  src: "assets/images/user.png",
-  alt: ""
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_55 = {
+};
+var _hoisted_74 = ["src"];
+var _hoisted_75 = {
   "class": "m-widget19__info"
 };
-var _hoisted_56 = {
+var _hoisted_76 = {
   "class": "m-widget19__username"
 };
 
-var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_77 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_58 = {
+var _hoisted_78 = {
   "class": "m-widget19__time"
 };
-
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_79 = {
   "class": "m-widget19__stats"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+};
+var _hoisted_80 = {
   "class": "m-widget19__number m--font-brand"
-}, " 18 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+};
+
+var _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget19__comment"
-}, " Comments ")], -1
+}, " Tk. Paid ", -1
 /* HOISTED */
 );
 
-var _hoisted_60 = {
+var _hoisted_82 = {
   "class": "m-widget19__body"
 };
 
-var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_86 = {
   "class": "m-widget19__action"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"
-}, " Read More ")], -1
-/* HOISTED */
-);
-
-var _hoisted_65 = {
+};
+var _hoisted_87 = ["href"];
+var _hoisted_88 = {
   "class": "row"
 };
-var _hoisted_66 = {
+var _hoisted_89 = {
   "class": "col-xl-8"
 };
-var _hoisted_67 = {
+var _hoisted_90 = {
   "class": "m-portlet m-portlet--full-height m-portlet--rounded"
 };
-var _hoisted_68 = {
+var _hoisted_91 = {
   "class": "m-portlet__head"
 };
-var _hoisted_69 = {
+var _hoisted_92 = {
   "class": "m-portlet__head-caption"
 };
-var _hoisted_70 = {
+var _hoisted_93 = {
   "class": "m-portlet__head-title"
 };
-var _hoisted_71 = {
+var _hoisted_94 = {
   "class": "m-portlet__head-text"
 };
 
-var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_95 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-tools"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm",
@@ -31104,27 +30707,27 @@ var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_73 = {
+var _hoisted_96 = {
   "class": "m-portlet__body"
 };
-var _hoisted_74 = {
+var _hoisted_97 = {
   "class": "tab-content"
 };
-var _hoisted_75 = {
+var _hoisted_98 = {
   "class": "tab-pane active",
   id: "m_widget11_tab1_content"
 };
-var _hoisted_76 = {
+var _hoisted_99 = {
   "class": "m-widget11"
 };
-var _hoisted_77 = {
+var _hoisted_100 = {
   "class": "table-responsive"
 };
-var _hoisted_78 = {
+var _hoisted_101 = {
   "class": "table"
 };
 
-var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_102 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__label"
 }, " # "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__app"
@@ -31140,7 +30743,7 @@ var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_103 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox"
@@ -31148,53 +30751,47 @@ var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_81 = {
+var _hoisted_104 = {
   "class": "m-menu__link-text"
 };
-var _hoisted_82 = {
+var _hoisted_105 = {
   "class": "m--align-right m--font-brand"
 };
-
-var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_106 = {
   "class": "m-widget11__action m--align-right"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
-}, " Generate Report ")], -1
-/* HOISTED */
-);
-
-var _hoisted_84 = {
+};
+var _hoisted_107 = ["href"];
+var _hoisted_108 = {
   "class": "tab-pane",
   id: "m_widget11_tab2_content"
 };
-var _hoisted_85 = {
+var _hoisted_109 = {
   "class": "m-widget11"
 };
-var _hoisted_86 = {
+var _hoisted_110 = {
   "class": "table-responsive"
 };
-var _hoisted_87 = {
+var _hoisted_111 = {
   "class": "table"
 };
 
-var _hoisted_88 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_112 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__label"
 }, " # "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__app"
-}, " Application "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+}, " Customer "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__sales"
-}, " Sales "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+}, " Invoice "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__change"
-}, " Change "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+}, "Month "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__price"
-}, " Avg Price "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+}, " Total(Tk) "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__total m--align-right"
-}, " Total ")])], -1
+}, " Due(Tk) ")])], -1
 /* HOISTED */
 );
 
-var _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_113 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox"
@@ -31202,110 +30799,53 @@ var _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_90 = {
+var _hoisted_114 = {
   "class": "m-menu__link-text"
 };
-var _hoisted_91 = {
+var _hoisted_115 = {
   "class": "m--align-right m--font-brand"
 };
-
-var _hoisted_92 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_116 = {
   "class": "m-widget11__action m--align-right"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
-}, " Generate Report ")], -1
-/* HOISTED */
-);
-
-var _hoisted_93 = {
+};
+var _hoisted_117 = ["href"];
+var _hoisted_118 = {
   "class": "col-xl-4"
 };
-var _hoisted_94 = {
+var _hoisted_119 = {
   "class": "m-portlet m-portlet--full-height m-portlet--fit m-portlet--rounded"
 };
-
-var _hoisted_95 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_120 = {
   "class": "m-portlet__head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+
+var _hoisted_121 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-caption"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "m-portlet__head-text"
-}, " Available Flats ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-portlet__head-tools"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-portlet__nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push",
-  "data-dropdown-toggle": "hover"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"
-}, " Today "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__wrapper"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__inner"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__body"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-dropdown__content"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "m-nav"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-share"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Activity ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-chat-1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Messages ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-info"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " FAQ ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "m-nav__item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "",
-  "class": "m-nav__link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "m-nav__link-icon flaticon-lifebuoy"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "m-nav__link-text"
-}, " Support ")])])])])])])])])])])], -1
+}, " Available Flats ")])], -1
 /* HOISTED */
 );
 
-var _hoisted_96 = {
+var _hoisted_122 = {
+  "class": "m-portlet__head-tools"
+};
+var _hoisted_123 = {
+  "class": "title-total"
+};
+var _hoisted_124 = {
   "class": "m-portlet__body"
 };
-var _hoisted_97 = {
+var _hoisted_125 = {
   "class": "m-widget4 m-widget4--chart-bottom",
   style: {
     "min-height": "350px"
   }
 };
 
-var _hoisted_98 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_126 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__ext"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
@@ -31316,20 +30856,20 @@ var _hoisted_98 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_99 = {
+var _hoisted_127 = {
   "class": "m-widget4__info"
 };
-var _hoisted_100 = {
+var _hoisted_128 = {
   "class": "m-widget4__text"
 };
-var _hoisted_101 = {
+var _hoisted_129 = {
   "class": "m-widget4__ext"
 };
-var _hoisted_102 = {
+var _hoisted_130 = {
   "class": "m-widget4__number m--font-accent"
 };
 
-var _hoisted_103 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_131 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__chart m-portlet-fit--sides m--margin-top-20 m-portlet-fit--bottom1",
   style: {
     "height": "120px"
@@ -31343,49 +30883,78 @@ var _hoisted_103 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["AppLayout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BEGIN: Subheader "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.today), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BEGIN: Subheader "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.today), 1
       /* TEXT */
-      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("              <span class=\"m-subheader__daterange\" id=\"m_dashboard_daterangepicker\">\n                <span class=\"m-subheader__daterange-label\">\n                  <span class=\"m-subheader__daterange-title\"></span>\n                  <span class=\"m-subheader__daterange-date m&#45;&#45;font-brand\"></span>\n                </span>\n                <a href=\"#\" class=\"btn btn-sm btn-brand m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;custom m-btn&#45;&#45;pill\">\n                  <i class=\"la la-angle-down\"></i>\n                </a>\n              </span>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" END: Subheader "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Top Products"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget5"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.customer, function (row) {
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("              <span class=\"m-subheader__daterange\" id=\"m_dashboard_daterangepicker\">\n                <span class=\"m-subheader__daterange-label\">\n                  <span class=\"m-subheader__daterange-title\"></span>\n                  <span class=\"m-subheader__daterange-date m&#45;&#45;font-brand\"></span>\n                </span>\n                <a href=\"#\" class=\"btn btn-sm btn-brand m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;custom m-btn&#45;&#45;pill\">\n                  <i class=\"la la-angle-down\"></i>\n                </a>\n              </span>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" END: Subheader "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Top Products"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerCount), 1
+      /* TEXT */
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget5"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.customer, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: row.id,
           "class": "m-widget4__item"
-        }, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
+        }, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
         /* TEXT */
-        ), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.mobile), 1
+        ), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.mobile), 1
         /* TEXT */
-        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.account_balance), 1
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.account_balance), 1
         /* TEXT */
         )])]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 5")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Top Products")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Activity"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_32, " Total:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.customer), 1
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 5")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Top Products")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Activity"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.title), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, "Total:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.flat), 1
+      ), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.mobile), 1
       /* TEXT */
-      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_hoisted_39, _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_41, "Due No:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.invoice), 1
+      )]), _hoisted_34])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.caption), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_hoisted_43, _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_45, " Last Month Due:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      ), _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.email), 1
       /* TEXT */
-      )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Activity")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Blog"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [_hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
+      )]), _hoisted_39])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_48, " Total:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerCount), 1
       /* TEXT */
-      ), _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.email), 1
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_hoisted_50, _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_52, "Rented:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatRentedCount), 1
       /* TEXT */
-      )]), _hoisted_59]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" House:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.name) + " ", 1
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [_hoisted_55, _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_57, "Due No:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.invoice), 1
       /* TEXT */
-      ), _hoisted_61, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Code:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.code) + " ", 1
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, [_hoisted_59, _hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_61, " Last Month Due:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
       /* TEXT */
-      ), _hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Address:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.address) + " ", 1
+      )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Activity")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Blog"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [_hoisted_64, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        src: _ctx.$page.props.config.images.house,
+        alt: ""
+      }, null, 8
+      /* PROPS */
+      , _hoisted_68), _hoisted_69, _hoisted_70]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        "class": "m-widget19__img",
+        src: _ctx.$page.props.config.images.user,
+        alt: ""
+      }, null, 8
+      /* PROPS */
+      , _hoisted_74)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_76, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
       /* TEXT */
-      ), _hoisted_63])]), _hoisted_64])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Blog")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Application Sales"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_69, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_71, " Invoice Due Total: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalDue) + " Tk,   Last Month Due: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      ), _hoisted_77, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.email), 1
       /* TEXT */
-      )])]), _hoisted_72]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_77, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_78, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_79, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoiceLastMonth.data, function (row) {
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_79, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.lastMonthCollect), 1
+      /* TEXT */
+      ), _hoisted_81])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" House:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.name) + " ", 1
+      /* TEXT */
+      ), _hoisted_83, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Code:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.code) + " ", 1
+      /* TEXT */
+      ), _hoisted_84, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Address:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.address) + " ", 1
+      /* TEXT */
+      ), _hoisted_85])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        href: _ctx.$page.props.config.company.contact,
+        type: "button",
+        "class": "btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"
+      }, " Read More ", 8
+      /* PROPS */
+      , _hoisted_87)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Blog")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_88, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_89, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Application Sales"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_90, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_94, " Invoice Due Total: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalDue) + " Tk,   Last Month Due: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      /* TEXT */
+      )])]), _hoisted_95]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_96, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_97, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_98, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_101, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_102, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoiceLastMonth.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
           key: row.id
-        }, [_hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_103, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.customer.url
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_81, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_104, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
             /* TEXT */
             )];
           }),
@@ -31411,19 +30980,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_82, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_105, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
         /* TEXT */
         )]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), _hoisted_83]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_84, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_88, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoice.data, function (row) {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_106, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        href: _ctx.route('invoice.index', {
+          'status': 'due'
+        }),
+        type: "button",
+        "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
+      }, " View ", 8
+      /* PROPS */
+      , _hoisted_107)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_108, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_110, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_111, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_112, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoice.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
           key: row.id
-        }, [_hoisted_89, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.customer.url
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_90, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_114, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
             /* TEXT */
             )];
           }),
@@ -31449,20 +31026,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_91, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_115, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
         /* TEXT */
         )]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), _hoisted_92]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Application Sales")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Latest Updates"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_94, [_hoisted_95, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_96, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_97, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.flat.data, function (row) {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_116, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        href: _ctx.route('invoice.index'),
+        type: "button",
+        "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
+      }, " View ", 8
+      /* PROPS */
+      , _hoisted_117)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Application Sales")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_118, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Latest Updates"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_120, [_hoisted_121, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_123, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatAvailableCount), 1
+      /* TEXT */
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_124, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_125, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.flatAvailable.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: row.id,
           "class": "m-widget4__item"
-        }, [_hoisted_98, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_126, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_127, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.link_edit
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_100, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_128, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
             /* TEXT */
             )];
           }),
@@ -31471,12 +31056,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_101, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_102, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
+        , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_129, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_130, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
         /* TEXT */
         )])]);
       }), 128
       /* KEYED_FRAGMENT */
-      )), _hoisted_103])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Latest Updates")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet  m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Activities </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                        <a href=\"#\" class=\"m-portlet__nav-link m-portlet__nav-link&#45;&#45;icon m-portlet__nav-link&#45;&#45;icon-xl m-dropdown__toggle\">\n                          <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                        </a>\n                        <div class=\"m-dropdown__wrapper\">\n                          <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                          <div class=\"m-dropdown__inner\">\n                            <div class=\"m-dropdown__body\">\n                              <div class=\"m-dropdown__content\">\n                                <ul class=\"m-nav\">\n                                  <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                    <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                      <span class=\"m-nav__link-text\"> Activity </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                      <span class=\"m-nav__link-text\"> Messages </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                      <span class=\"m-nav__link-text\"> FAQ </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                      <span class=\"m-nav__link-text\"> Support </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit\"></li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Cancel </a>\n                                  </li>\n                                </ul>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide\" data-scrollbar-shown=\"true\" data-scrollable=\"true\" data-max-height=\"380\" style=\"overflow: visible; height: 380px; max-height: 380px; position: relative;\">\n                    &lt;!&ndash;Begin::Timeline 2 &ndash;&gt;\n                    <div class=\"m-timeline-2\">\n                      <div class=\"m-timeline-2__items  m&#45;&#45;padding-top-25 m&#45;&#45;padding-bottom-30\">\n                        <div class=\"m-timeline-2__item\">\n                          <span class=\"m-timeline-2__item-time\"> 10:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text  m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 12:45 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-success\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m-timeline-2__item-text&#45;&#45;bold\"> AEOL Meeting With </div>\n                          <div class=\"m-list-pics m-list-pics&#45;&#45;sm m&#45;&#45;padding-left-20\">\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_4.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_13.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_11.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_14.jpg\" title=\"\">\n                            </a>\n                          </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 14:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Make Deposit <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> USD 700 </a> To ESL. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-warning\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-info\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Placed a new order in <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> SIGNATURE MOBILE </a> marketplace. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Received a new feedback on <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> FinancePro App </a> product. </div>\n                        </div>\n                      </div>\n                    </div>\n                    &lt;!&ndash;End::Timeline 2 &ndash;&gt;\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Notifications </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget2_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget2_tab2_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget2_tab1_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget2_tab2_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-focus\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> There are many variations of passages of Lorem Ipsum available. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-primary\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-success\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> The standard chunk of Lorem Ipsum used since the 1500s is reproduced. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Latin words, combined with a handful of model sentence structures. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-info\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-danger\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem Ipsum is therefore always free from repetition, injected humour. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-8\">\n              <div class=\"m-portlet m-portlet&#45;&#45;mobile  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Exclusive Datatable Plugin </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item\">\n                        <div class=\"m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                          <a href=\"#\" class=\"m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill  m-dropdown__toggle\">\n                            <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                          </a>\n                          <div class=\"m-dropdown__wrapper\">\n                            <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                            <div class=\"m-dropdown__inner\">\n                              <div class=\"m-dropdown__body\">\n                                <div class=\"m-dropdown__content\">\n                                  <ul class=\"m-nav\">\n                                    <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                      <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                        <span class=\"m-nav__link-text\"> Create Post </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                        <span class=\"m-nav__link-text\"> Send Messages </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-multimedia-2\"></i>\n                                        <span class=\"m-nav__link-text\"> Upload File </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__section\">\n                                      <span class=\"m-nav__section-text\"> Useful Links </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                        <span class=\"m-nav__link-text\"> FAQ </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                        <span class=\"m-nav__link-text\"> Support </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit m&#45;&#45;hide\"></li>\n                                    <li class=\"m-nav__item m&#45;&#45;hide\">\n                                      <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Submit </a>\n                                    </li>\n                                  </ul>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  &lt;!&ndash;begin: Datatable &ndash;&gt;\n                  <div class=\"m_datatable\" id=\"m_datatable_latest_orders\"></div>\n                  &lt;!&ndash;end: Datatable &ndash;&gt;\n                </div>\n              </div>\n            </div>\n            <div class=\"col-xl-4\">\n              &lt;!&ndash;begin:: Widgets/Audit Log&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Audit Log </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget4_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab2_content\" role=\"tab\"> Week </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab3_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget4_tab1_content\">\n                      <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"400\" style=\"height: 400px; overflow: hidden;\">\n                        <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                          <div class=\"m-list-timeline__items\">\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab2_content\"></div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab3_content\"></div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;end:: Widgets/Audit Log&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section")])])])];
+      )), _hoisted_131])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Latest Updates")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet  m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Activities </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                        <a href=\"#\" class=\"m-portlet__nav-link m-portlet__nav-link&#45;&#45;icon m-portlet__nav-link&#45;&#45;icon-xl m-dropdown__toggle\">\n                          <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                        </a>\n                        <div class=\"m-dropdown__wrapper\">\n                          <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                          <div class=\"m-dropdown__inner\">\n                            <div class=\"m-dropdown__body\">\n                              <div class=\"m-dropdown__content\">\n                                <ul class=\"m-nav\">\n                                  <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                    <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                      <span class=\"m-nav__link-text\"> Activity </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                      <span class=\"m-nav__link-text\"> Messages </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                      <span class=\"m-nav__link-text\"> FAQ </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                      <span class=\"m-nav__link-text\"> Support </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit\"></li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Cancel </a>\n                                  </li>\n                                </ul>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide\" data-scrollbar-shown=\"true\" data-scrollable=\"true\" data-max-height=\"380\" style=\"overflow: visible; height: 380px; max-height: 380px; position: relative;\">\n                    &lt;!&ndash;Begin::Timeline 2 &ndash;&gt;\n                    <div class=\"m-timeline-2\">\n                      <div class=\"m-timeline-2__items  m&#45;&#45;padding-top-25 m&#45;&#45;padding-bottom-30\">\n                        <div class=\"m-timeline-2__item\">\n                          <span class=\"m-timeline-2__item-time\"> 10:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text  m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 12:45 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-success\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m-timeline-2__item-text&#45;&#45;bold\"> AEOL Meeting With </div>\n                          <div class=\"m-list-pics m-list-pics&#45;&#45;sm m&#45;&#45;padding-left-20\">\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_4.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_13.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_11.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_14.jpg\" title=\"\">\n                            </a>\n                          </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 14:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Make Deposit <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> USD 700 </a> To ESL. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-warning\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-info\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Placed a new order in <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> SIGNATURE MOBILE </a> marketplace. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Received a new feedback on <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> FinancePro App </a> product. </div>\n                        </div>\n                      </div>\n                    </div>\n                    &lt;!&ndash;End::Timeline 2 &ndash;&gt;\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Notifications </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget2_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget2_tab2_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget2_tab1_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget2_tab2_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-focus\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> There are many variations of passages of Lorem Ipsum available. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-primary\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-success\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> The standard chunk of Lorem Ipsum used since the 1500s is reproduced. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Latin words, combined with a handful of model sentence structures. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-info\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-danger\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem Ipsum is therefore always free from repetition, injected humour. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-8\">\n              <div class=\"m-portlet m-portlet&#45;&#45;mobile  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Exclusive Datatable Plugin </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item\">\n                        <div class=\"m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                          <a href=\"#\" class=\"m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill  m-dropdown__toggle\">\n                            <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                          </a>\n                          <div class=\"m-dropdown__wrapper\">\n                            <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                            <div class=\"m-dropdown__inner\">\n                              <div class=\"m-dropdown__body\">\n                                <div class=\"m-dropdown__content\">\n                                  <ul class=\"m-nav\">\n                                    <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                      <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                        <span class=\"m-nav__link-text\"> Create Post </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                        <span class=\"m-nav__link-text\"> Send Messages </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-multimedia-2\"></i>\n                                        <span class=\"m-nav__link-text\"> Upload File </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__section\">\n                                      <span class=\"m-nav__section-text\"> Useful Links </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                        <span class=\"m-nav__link-text\"> FAQ </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                        <span class=\"m-nav__link-text\"> Support </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit m&#45;&#45;hide\"></li>\n                                    <li class=\"m-nav__item m&#45;&#45;hide\">\n                                      <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Submit </a>\n                                    </li>\n                                  </ul>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  &lt;!&ndash;begin: Datatable &ndash;&gt;\n                  <div class=\"m_datatable\" id=\"m_datatable_latest_orders\"></div>\n                  &lt;!&ndash;end: Datatable &ndash;&gt;\n                </div>\n              </div>\n            </div>\n            <div class=\"col-xl-4\">\n              &lt;!&ndash;begin:: Widgets/Audit Log&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Audit Log </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget4_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab2_content\" role=\"tab\"> Week </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab3_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget4_tab1_content\">\n                      <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"400\" style=\"height: 400px; overflow: hidden;\">\n                        <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                          <div class=\"m-list-timeline__items\">\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab2_content\"></div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab3_content\"></div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;end:: Widgets/Audit Log&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section")])])])];
     }),
     _: 1
     /* STABLE */
@@ -31620,49 +31205,51 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_13 = {
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-sm-6"
-};
-var _hoisted_14 = ["set-value"];
-var _hoisted_15 = {
-  "class": "col-sm-6"
-};
-var _hoisted_16 = {
-  "class": "form-group"
-};
-
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Rental Amount", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                <DropdownList :label=\"'House'\" :endpoint=\"'house-list'\" :model=\"form.house_id\" @rowId=\"setHouse\" />"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                <input v-if=\"form.house_id == null\" :set-value=\"setHouse($page.props.user)\" type=\"hidden\" v-model=\"authUser\">"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  <div class=\"form-group\">\n                                                <label>House</label>\n                                                <v-select\n                                                    v-model=\"form.house_id\"\n                                                    :options=\"param.houses\"\n                                                    :reduce=\"option => option.id\"\n                                                    placeholder=\"-Select-\"\n                                                />\n                                               </div>")], -1
 /* HOISTED */
 );
 
+var _hoisted_14 = {
+  "class": "col-sm-6"
+};
+var _hoisted_15 = {
+  "class": "form-group"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Rental Amount", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "col-sm-6"
+};
 var _hoisted_18 = {
   "class": "col-sm-6"
 };
 var _hoisted_19 = {
-  "class": "col-sm-6"
-};
-var _hoisted_20 = {
   "class": "form-group"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Status", -1
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Status", -1
 /* HOISTED */
 );
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
+var _hoisted_22 = ["value"];
 var _hoisted_23 = ["value"];
-var _hoisted_24 = ["value"];
-var _hoisted_25 = {
+var _hoisted_24 = {
   "class": "form-check-label",
   "for": "product_active"
 };
-var _hoisted_26 = {
+var _hoisted_25 = {
   "class": "m-t-20 text-center"
 };
-var _hoisted_27 = {
+var _hoisted_26 = {
   "class": "modal fade",
   id: "m_modal_3",
   tabindex: "-1",
@@ -31670,15 +31257,15 @@ var _hoisted_27 = {
   "aria-labelledby": "exampleModalLabel",
   "aria-hidden": "true"
 };
-var _hoisted_28 = {
+var _hoisted_27 = {
   "class": "modal-dialog",
   role: "document"
 };
-var _hoisted_29 = {
+var _hoisted_28 = {
   "class": "modal-content"
 };
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "modal-header"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "modal-title",
@@ -31694,32 +31281,32 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = {
+var _hoisted_30 = {
   "class": "modal-body"
 };
-var _hoisted_32 = {
+var _hoisted_31 = {
   "class": "float-right"
 };
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "House Name:", -1
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "House Name:", -1
 /* HOISTED */
 );
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "Total: ", -1
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "Total: ", -1
 /* HOISTED */
 );
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 
-var _hoisted_37 = {
+var _hoisted_36 = {
   "class": "float-right"
 };
 
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "modal-footer"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
@@ -31739,37 +31326,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.name]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                <DropdownList :label=\"'House'\" :endpoint=\"'house-list'\" :model=\"form.house_id\" @rowId=\"setHouse\" />"), $data.form.house_id == null ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
-    key: 0,
-    "set-value": $options.setHouse(_ctx.$page.props.user),
-    type: "hidden",
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.authUser = $event;
-    })
-  }, null, 8
-  /* PROPS */
-  , _hoisted_14)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.authUser]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  <div class=\"form-group\">\n                                                <label>House</label>\n                                                <v-select\n                                                    v-model=\"form.house_id\"\n                                                    :options=\"param.houses\"\n                                                    :reduce=\"option => option.id\"\n                                                    placeholder=\"-Select-\"\n                                                />\n                                               </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.name]])])]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-control",
     min: "0",
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.form.rent = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.rent]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DropdownList, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.rent]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DropdownList, {
     label: 'Customer',
     endpoint: 'customer-list',
     model: $data.form.customer_id,
     onRowId: $options.setCustomer
   }, null, 8
   /* PROPS */
-  , ["model", "onRowId"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\">\n                                                    <label>Customer</label>\n                                                    <v-select\n                                                        v-model=\"form.customer_id\"\n                                                        :options=\"param.customers\"\n                                                        :reduce=\"option => option.id\"\n                                                        placeholder=\"Select Customer\"\n                                                        @input=\"customerFlat\"\n                                                    />\n                                                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, _hoisted_22, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.status, function (value, key, index) {
+  , ["model", "onRowId"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\">\n                                                    <label>Customer</label>\n                                                    <v-select\n                                                        v-model=\"form.customer_id\"\n                                                        :options=\"param.customers\"\n                                                        :reduce=\"option => option.id\"\n                                                        placeholder=\"Select Customer\"\n                                                        @input=\"customerFlat\"\n                                                    />\n                                                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, _hoisted_21, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.status, function (value, key, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: index,
       value: key,
       "class": "form-check form-check-inline"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-      "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
         return $data.form.status = $event;
       }),
       "class": "form-check-input",
@@ -31778,17 +31356,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       value: key
     }, null, 8
     /* PROPS */
-    , _hoisted_24), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(value), 1
+    , _hoisted_23), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.status]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(value), 1
     /* TEXT */
     )], 8
     /* PROPS */
-    , _hoisted_23);
+    , _hoisted_22);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary submit-btn",
-    onClick: _cache[4] || (_cache[4] = function ($event) {
+    onClick: _cache[3] || (_cache[3] = function ($event) {
       return $options.save($data.form);
     })
   }, " Save ", 512
@@ -31796,26 +31374,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, !$props.editMode]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary submit-btn",
-    onClick: _cache[5] || (_cache[5] = function ($event) {
+    onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.update($data.form);
     })
   }, " Update ", 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $props.editMode]])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Section")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Form")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Portlet")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.customerFlats, function (row) {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $props.editMode]])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Section")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Form")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Portlet")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.customerFlats, function (row) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: row.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Flat No: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name) + " ", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_32, "Rent: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_31, "Rent: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.house.name), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.house.name), 1
     /* TEXT */
-    )]), _hoisted_34]);
+    )]), _hoisted_33]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [_hoisted_35, _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.number2Decimal($data.totalRent)), 1
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [_hoisted_34, _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.number2Decimal($data.totalRent)), 1
   /* TEXT */
-  )])]), _hoisted_38])])])]);
+  )])]), _hoisted_37])])])]);
 }
 
 /***/ }),
@@ -32551,38 +32129,52 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_17 = ["value"];
-var _hoisted_18 = {
-  "class": "col-sm-3 col-md-2"
-};
-var _hoisted_19 = {
-  "class": "col-sm-3 col-md-2"
-};
-var _hoisted_20 = {
-  "class": "m-section"
-};
-var _hoisted_21 = {
-  "class": "m-section__content"
-};
-var _hoisted_22 = {
-  "class": "table table-striped m-table"
-};
-
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "#"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Month"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Renter"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Subtotal"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Additional Cost"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Discount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Payable Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Paid Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Due Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, " ")])], -1
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "paid",
+  selected: ""
+}, "Paid", -1
 /* HOISTED */
 );
 
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "due",
+  selected: ""
+}, "Due/Unpaid", -1
+/* HOISTED */
+);
+
+var _hoisted_19 = [_hoisted_16, _hoisted_17, _hoisted_18];
+var _hoisted_20 = {
+  "class": "col-sm-3 col-md-2"
+};
+var _hoisted_21 = {
+  "class": "col-sm-3 col-md-2"
+};
+var _hoisted_22 = {
+  "class": "m-section"
+};
+var _hoisted_23 = {
+  "class": "m-section__content"
+};
 var _hoisted_24 = {
+  "class": "table table-striped m-table"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "#"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Month"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Renter"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Subtotal"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Additional Cost"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Discount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Payable Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Paid Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Due Amount"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, " ")])], -1
+/* HOISTED */
+);
+
+var _hoisted_26 = {
   "class": "m-menu__link-text"
 };
-var _hoisted_25 = {
+var _hoisted_27 = {
   "class": "text-right"
 };
-var _hoisted_26 = {
+var _hoisted_28 = {
   "class": "dropdown dropdown-action"
 };
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
   "class": "action-icon dropdown-toggle",
   "data-toggle": "dropdown",
@@ -32593,34 +32185,42 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_28 = {
+var _hoisted_30 = {
   "class": "dropdown-menu dropdown-menu-right"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-pencil m-r-5"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  Edit ");
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  Edit ");
 
-var _hoisted_31 = ["onClick"];
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-pencil m-r-5"
+}, null, -1
+/* HOISTED */
+);
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  View ");
+
+var _hoisted_35 = ["onClick"];
+
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-trash-o m-r-5"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Delete");
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Delete");
 
-var _hoisted_34 = [_hoisted_32, _hoisted_33];
-var _hoisted_35 = {
+var _hoisted_38 = [_hoisted_36, _hoisted_37];
+var _hoisted_39 = {
   "class": "grand-total"
 };
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   colspan: "3"
 }, "Grand Total", -1
 /* HOISTED */
@@ -32661,30 +32261,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.query.status = $event;
     })
-  }, [_hoisted_16, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.status, function (value, key, index) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
-      key: index,
-      value: key
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(value), 9
-    /* TEXT, PROPS */
-    , _hoisted_17);
-  }), 128
-  /* KEYED_FRAGMENT */
-  ))], 512
+  }, _hoisted_19, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.query.status]])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.query.status]])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $options.getData();
     }),
     "class": "btn btn-success btn-block"
-  }, " Search ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, " Search ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.resetData();
     }),
     "class": "btn btn-warning btn-block"
-  }, " Reset ")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.data.data, function (row) {
+  }, " Reset ")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.data.data, function (row) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: row.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
@@ -32706,7 +32297,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       href: row.customer.url
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
         /* TEXT */
         )];
       }),
@@ -32731,12 +32322,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["m-badge m-badge--wide", $options.statusMap(row.status)])
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.status[row.status]), 3
     /* TEXT, CLASS */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
       href: row.link_edit,
       "class": "dropdown-item"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_29, _hoisted_30];
+        return [_hoisted_31, _hoisted_32];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
+      href: row.link_show,
+      "class": "dropdown-item"
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_33, _hoisted_34];
       }),
       _: 2
       /* DYNAMIC */
@@ -32750,12 +32353,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: function onClick($event) {
         return $options.deleteRow(row);
       }
-    }, _hoisted_34, 8
+    }, _hoisted_38, 8
     /* PROPS */
-    , _hoisted_31)])])])]);
+    , _hoisted_35)])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.subtotal), 1
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.subtotal), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.additional_cost), 1
   /* TEXT */
@@ -32768,6 +32371,264 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.due), 1
   /* TEXT */
   )])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Section")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Form")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Portlet")])])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "m-grid__item m-grid__item--fluid m-wrapper"
+};
+var _hoisted_2 = {
+  "class": "m-content"
+};
+var _hoisted_3 = {
+  "class": "row"
+};
+var _hoisted_4 = {
+  "class": "col-xl-12"
+};
+var _hoisted_5 = {
+  "class": "m-portlet"
+};
+var _hoisted_6 = {
+  "class": "m-portlet__body"
+};
+var _hoisted_7 = {
+  "class": "m-section"
+};
+var _hoisted_8 = {
+  "class": "m-section__content"
+};
+var _hoisted_9 = {
+  "class": "row"
+};
+var _hoisted_10 = {
+  "class": "col-sm-4"
+};
+var _hoisted_11 = {
+  "class": "form-group"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "Month")], -1
+/* HOISTED */
+);
+
+var _hoisted_13 = {
+  "class": "col-sm-4"
+};
+var _hoisted_14 = {
+  "class": "form-group"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "Flat")], -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(": ");
+
+var _hoisted_17 = {
+  "class": "col-sm-4"
+};
+var _hoisted_18 = {
+  "class": "form-group"
+};
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, "Status")], -1
+/* HOISTED */
+);
+
+var _hoisted_20 = {
+  "class": "row"
+};
+var _hoisted_21 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  style: {
+    "font-size": "15px"
+  }
+}, "Customer Details:")], -1
+/* HOISTED */
+);
+
+var _hoisted_23 = {
+  "class": "row"
+};
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Name")], -1
+/* HOISTED */
+);
+
+var _hoisted_25 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email")], -1
+/* HOISTED */
+);
+
+var _hoisted_27 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mobile")], -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Due")], -1
+/* HOISTED */
+);
+
+var _hoisted_31 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Advance")], -1
+/* HOISTED */
+);
+
+var _hoisted_33 = {
+  "class": "col-md-6"
+};
+var _hoisted_34 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  style: {
+    "font-size": "15px"
+  }
+}, "Invoice Details:")], -1
+/* HOISTED */
+);
+
+var _hoisted_36 = {
+  "class": "row"
+};
+
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Subtotal")], -1
+/* HOISTED */
+);
+
+var _hoisted_38 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Additional Amount")], -1
+/* HOISTED */
+);
+
+var _hoisted_40 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Discount")], -1
+/* HOISTED */
+);
+
+var _hoisted_42 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Total Amount")], -1
+/* HOISTED */
+);
+
+var _hoisted_44 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Paid Amount")], -1
+/* HOISTED */
+);
+
+var _hoisted_46 = {
+  "class": "col-md-6"
+};
+
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Due Amount")], -1
+/* HOISTED */
+);
+
+var _hoisted_48 = {
+  "class": "col-md-6"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Portlet"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(": " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.formatDate($props.param.data.date)), 1
+  /* TEXT */
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, _hoisted_16, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.data.invoice_items, function (row, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+      key: index
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.flat.name) + "(" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.amount) + ")", 1
+    /* TEXT */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(": " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.status), 1
+  /* TEXT */
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.customer.name), 1
+  /* TEXT */
+  )]), _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.customer.email), 1
+  /* TEXT */
+  )]), _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.customer.mobile), 1
+  /* TEXT */
+  )]), _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.customer.account_balance), 1
+  /* TEXT */
+  )]), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.customer.advance_balance), 1
+  /* TEXT */
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.subtotal), 1
+  /* TEXT */
+  )]), _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.additional_cost), 1
+  /* TEXT */
+  )]), _hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.discount), 1
+  /* TEXT */
+  )]), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.total), 1
+  /* TEXT */
+  )]), _hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.paid), 1
+  /* TEXT */
+  )]), _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.data.total - $props.param.data.paid), 1
+  /* TEXT */
+  )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Section")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Form")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Portlet")])])])]);
 }
 
 /***/ }),
@@ -32891,6 +32752,55 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Models"], {
         param: $props.param
+      }, {
+        header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Alert"], {
+            title: $props.title,
+            flash: $props.flash,
+            errors: $props.errors,
+            link: $props.link,
+            label: $props.label
+          }, null, 8
+          /* PROPS */
+          , ["title", "flash", "errors", "link", "label"])];
+        }),
+        _: 1
+        /* STABLE */
+
+      }, 8
+      /* PROPS */
+      , ["param"])])];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-page__container m-body"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["AppLayout"], null, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Show"], {
+        param: $props.param,
+        editMode: 1
       }, {
         header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Alert"], {
@@ -72502,6 +72412,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Invoice/components/Show.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Invoice/components/Show.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Show_vue_vue_type_template_id_2f328ffb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Show.vue?vue&type=template&id=2f328ffb */ "./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb");
+/* harmony import */ var _Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Show.vue?vue&type=script&lang=js */ "./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js");
+/* harmony import */ var _var_www_html_AnalyticalJ_Dev_rental_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_AnalyticalJ_Dev_rental_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Show_vue_vue_type_template_id_2f328ffb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Invoice/components/Show.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Invoice/create.vue":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/Invoice/create.vue ***!
@@ -72578,6 +72516,34 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_var_www_html_AnalyticalJ_Dev_rental_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_index_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_index_vue_vue_type_template_id_e17eb6d2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Invoice/index.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Invoice/show.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Invoice/show.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _show_vue_vue_type_template_id_1c2c6970__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./show.vue?vue&type=template&id=1c2c6970 */ "./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970");
+/* harmony import */ var _show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./show.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _var_www_html_AnalyticalJ_Dev_rental_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_AnalyticalJ_Dev_rental_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_show_vue_vue_type_template_id_1c2c6970__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Invoice/show.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -73960,6 +73926,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Invoice/create.vue?vue&type=script&setup=true&lang=js":
 /*!**********************************************************************************!*\
   !*** ./resources/js/Pages/Invoice/create.vue?vue&type=script&setup=true&lang=js ***!
@@ -74004,6 +73986,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_index_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_index_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/index.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_show_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./show.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
@@ -75224,6 +75222,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_2f328ffb__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_2f328ffb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=template&id=2f328ffb */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/components/Show.vue?vue&type=template&id=2f328ffb");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Invoice/create.vue?vue&type=template&id=feef8df2":
 /*!*****************************************************************************!*\
   !*** ./resources/js/Pages/Invoice/create.vue?vue&type=template&id=feef8df2 ***!
@@ -75268,6 +75282,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_index_vue_vue_type_template_id_e17eb6d2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_index_vue_vue_type_template_id_e17eb6d2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=template&id=e17eb6d2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/index.vue?vue&type=template&id=e17eb6d2");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970 ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_show_vue_vue_type_template_id_1c2c6970__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_show_vue_vue_type_template_id_1c2c6970__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./show.vue?vue&type=template&id=1c2c6970 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Invoice/show.vue?vue&type=template&id=1c2c6970");
 
 
 /***/ }),
@@ -75904,9 +75934,11 @@ var map = {
 	"./Flat/index.vue": "./resources/js/Pages/Flat/index.vue",
 	"./Invoice/components/Model.vue": "./resources/js/Pages/Invoice/components/Model.vue",
 	"./Invoice/components/Models.vue": "./resources/js/Pages/Invoice/components/Models.vue",
+	"./Invoice/components/Show.vue": "./resources/js/Pages/Invoice/components/Show.vue",
 	"./Invoice/create.vue": "./resources/js/Pages/Invoice/create.vue",
 	"./Invoice/edit.vue": "./resources/js/Pages/Invoice/edit.vue",
 	"./Invoice/index.vue": "./resources/js/Pages/Invoice/index.vue",
+	"./Invoice/show.vue": "./resources/js/Pages/Invoice/show.vue",
 	"./PrivacyPolicy.vue": "./resources/js/Pages/PrivacyPolicy.vue",
 	"./Profile/Partials/DeleteUserForm.vue": "./resources/js/Pages/Profile/Partials/DeleteUserForm.vue",
 	"./Profile/Partials/LogoutOtherBrowserSessionsForm.vue": "./resources/js/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue",

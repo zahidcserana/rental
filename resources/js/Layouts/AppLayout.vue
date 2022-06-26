@@ -48,12 +48,12 @@ const logout = () => {
 		</div>
 		<!-- end:: Page -->
     	            <!-- begin::Quick Sidebar -->
-		<div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
-			<div class="m-quick-sidebar__content m--hide">
+<!--		<div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar&#45;&#45;tabbed m-quick-sidebar&#45;&#45;skin-light">
+			<div class="m-quick-sidebar__content m&#45;&#45;hide">
 				<span id="m_quick_sidebar_close" class="m-quick-sidebar__close">
 					<i class="la la-close"></i>
 				</span>
-				<ul id="m_quick_sidebar_tabs" class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
+				<ul id="m_quick_sidebar_tabs" class="nav nav-tabs m-tabs m-tabs-line m-tabs-line&#45;&#45;brand" role="tablist">
 					<li class="nav-item m-tabs__item">
 						<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_quick_sidebar_tabs_messenger" role="tab">
 							Messages
@@ -72,10 +72,10 @@ const logout = () => {
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active m-scrollable" id="m_quick_sidebar_tabs_messenger" role="tabpanel">
-						<div class="m-messenger m-messenger--message-arrow m-messenger--skin-light">
+						<div class="m-messenger m-messenger&#45;&#45;message-arrow m-messenger&#45;&#45;skin-light">
 							<div class="m-messenger__messages">
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;in">
 										<div class="m-messenger__message-pic">
 											<img src="assets/app/media/img//users/user3.jpg" alt=""/>
 										</div>
@@ -93,7 +93,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;out">
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
 											<div class="m-messenger__message-content">
@@ -105,7 +105,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;in">
 										<div class="m-messenger__message-pic">
 											<img src="assets/app/media/img//users/user3.jpg" alt=""/>
 										</div>
@@ -123,7 +123,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;out">
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
 											<div class="m-messenger__message-content">
@@ -138,7 +138,7 @@ const logout = () => {
 									2:30PM
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;in">
 										<div class="m-messenger__message-pic">
 											<img src="assets/app/media/img//users/user3.jpg"  alt=""/>
 										</div>
@@ -156,7 +156,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;out">
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
 											<div class="m-messenger__message-content">
@@ -168,7 +168,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;out">
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
 											<div class="m-messenger__message-content">
@@ -183,8 +183,8 @@ const logout = () => {
 									3:15PM
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-no-pic m--bg-fill-danger">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;in">
+										<div class="m-messenger__message-no-pic m&#45;&#45;bg-fill-danger">
 											<span>
 												M
 											</span>
@@ -203,7 +203,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;out">
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
 											<div class="m-messenger__message-content">
@@ -215,7 +215,7 @@ const logout = () => {
 									</div>
 								</div>
 								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
+									<div class="m-messenger__message m-messenger__message&#45;&#45;in">
 										<div class="m-messenger__message-pic">
 											<img src="assets/app/media/img//users/user3.jpg"  alt=""/>
 										</div>
@@ -257,7 +257,7 @@ const logout = () => {
 										Email Notifications
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" checked="checked" name="">
 												<span></span>
@@ -270,7 +270,7 @@ const logout = () => {
 										Site Tracking
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -283,7 +283,7 @@ const logout = () => {
 										SMS Alerts
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -296,7 +296,7 @@ const logout = () => {
 										Backup Storage
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -309,7 +309,7 @@ const logout = () => {
 										Audit Logs
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" checked="checked" name="">
 												<span></span>
@@ -327,7 +327,7 @@ const logout = () => {
 										System Logs
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -340,7 +340,7 @@ const logout = () => {
 										Error Reporting
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -353,7 +353,7 @@ const logout = () => {
 										Applications Logs
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -366,7 +366,7 @@ const logout = () => {
 										Backup Servers
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" checked="checked" name="">
 												<span></span>
@@ -379,7 +379,7 @@ const logout = () => {
 										Audit Logs
 									</span>
 									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+										<span class="m-switch m-switch&#45;&#45;outline m-switch&#45;&#45;icon-check m-switch&#45;&#45;brand">
 											<label>
 												<input type="checkbox" name="">
 												<span></span>
@@ -398,10 +398,10 @@ const logout = () => {
 								</div>
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											12 new users registered
-											<span class="m-badge m-badge--warning m-badge--wide">
+											<span class="m-badge m-badge&#45;&#45;warning m-badge&#45;&#45;wide">
 												important
 											</span>
 										</a>
@@ -410,7 +410,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											System shutdown
 										</a>
@@ -419,7 +419,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger"></span>
 										<a href="" class="m-list-timeline__text">
 											New invoice received
 										</a>
@@ -428,10 +428,10 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning"></span>
 										<a href="" class="m-list-timeline__text">
 											Database overloaded 89%
-											<span class="m-badge m-badge--success m-badge--wide">
+											<span class="m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide">
 												resolved
 											</span>
 										</a>
@@ -440,7 +440,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											System error
 										</a>
@@ -449,10 +449,10 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server down
-											<span class="m-badge m-badge--danger m-badge--wide">
+											<span class="m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide">
 												pending
 											</span>
 										</a>
@@ -461,7 +461,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server up
 										</a>
@@ -477,10 +477,10 @@ const logout = () => {
 								</div>
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											New order received
-											<span class="m-badge m-badge--info m-badge--wide">
+											<span class="m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide">
 												urgent
 											</span>
 										</a>
@@ -489,7 +489,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											12 new users registered
 										</a>
@@ -498,7 +498,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											System shutdown
 										</a>
@@ -507,7 +507,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger"></span>
 										<a href="" class="m-list-timeline__text">
 											New invoices received
 										</a>
@@ -516,7 +516,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning"></span>
 										<a href="" class="m-list-timeline__text">
 											Database overloaded 89%
 										</a>
@@ -525,10 +525,10 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											System error
-											<span class="m-badge m-badge--info m-badge--wide">
+											<span class="m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide">
 												pending
 											</span>
 										</a>
@@ -537,7 +537,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server down
 										</a>
@@ -553,7 +553,7 @@ const logout = () => {
 								</div>
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server up
 										</a>
@@ -562,7 +562,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											New order received
 										</a>
@@ -571,7 +571,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											12 new users registered
 										</a>
@@ -580,7 +580,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											System shutdown
 										</a>
@@ -589,7 +589,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-danger"></span>
 										<a href="" class="m-list-timeline__text">
 											New invoice received
 										</a>
@@ -598,7 +598,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-warning"></span>
 										<a href="" class="m-list-timeline__text">
 											Database overloaded 89%
 										</a>
@@ -607,7 +607,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											System error
 										</a>
@@ -616,7 +616,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server down
 										</a>
@@ -625,7 +625,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-success"></span>
 										<a href="" class="m-list-timeline__text">
 											Production server up
 										</a>
@@ -634,7 +634,7 @@ const logout = () => {
 										</span>
 									</div>
 									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
+										<span class="m-list-timeline__badge m-list-timeline__badge&#45;&#45;state-info"></span>
 										<a href="" class="m-list-timeline__text">
 											New order received
 										</a>
@@ -648,15 +648,14 @@ const logout = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<!-- end::Quick Sidebar -->
 	    <!-- begin::Scroll Top -->
 		<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
 			<i class="la la-arrow-up"></i>
 		</div>
 		<!-- end::Scroll Top -->			<!-- begin::Quick Nav -->
-		<ul class="m-nav-sticky" style="margin-top: 30px;">
-			<!--
+<!--		<ul class="m-nav-sticky" style="margin-top: 30px;">
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
 				<a href="">
 					<i class="la la-eye"></i>
@@ -667,7 +666,6 @@ const logout = () => {
 					<i class="la la-comments-o"></i>
 				</a>
 			</li>
-			-->
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Purchase" data-placement="left">
 				<a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank">
 					<i class="la la-cart-arrow-down"></i>
@@ -683,5 +681,5 @@ const logout = () => {
 					<i class="la la-life-ring"></i>
 				</a>
 			</li>
-		</ul>
+		</ul>-->
 </template>

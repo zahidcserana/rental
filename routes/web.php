@@ -30,6 +30,8 @@ use App\Http\Controllers\HouseController;
 //    ]);
 //});
 
+Route::get('/reset', [DashboardController::class, 'reset'])->name('reset');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

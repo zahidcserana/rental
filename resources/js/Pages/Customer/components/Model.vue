@@ -26,10 +26,34 @@
                                                     <input class="form-control" type="text" v-model="form.mobile" />
                                                 </div>
                                             </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input class="form-control" type="text" v-model="form.email" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>NID</label>
+                                                    <input class="form-control" type="text" v-model="form.nid" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Address</label>
+                                                    <input class="form-control" type="text" v-model="form.address" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Advance Balance</label>
+                                                    <input class="form-control" type="text" v-model="form.advance_balance" />
+                                                </div>
+                                            </div>
 <!--                                            <div v-if="$page.props.isAdmin" class="col-sm-6" :class="{'d-none': !$page.props.isAdmin}">-->
 <!--                                                <user-list @userId="getUserId"/>-->
 <!--                                            </div>-->
-                                            <input v-if="form.house_id == null" :set-value="setUser($page.props.user)" type="hidden" v-model="authUser">
+<!--                                            <input v-if="form.house_id == null" :set-value="setUser($page.props.user)" type="hidden" v-model="authUser">-->
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -81,12 +105,14 @@ export default {
     props: ['param', 'editMode'],
     data () {
         return {
-            authUser: null,
             form: {
                 id: undefined,
-                house_id: null,
                 name: null,
                 mobile: null,
+                email: null,
+                nid: null,
+                address: null,
+                advance_balance: null,
                 status: 'pending'
             }
         }
@@ -95,8 +121,11 @@ export default {
         if (this.editMode) {
             this.form.id = this.param.data.id
             this.form.name = this.param.data.name
-            this.form.house_id = this.param.data.house_id
             this.form.mobile = this.param.data.mobile
+            this.form.email = this.param.data.email
+            this.form.nid = this.param.data.nid
+            this.form.address = this.param.data.address
+            this.form.advance_balance = this.param.data.advance_balance
             this.form.status = this.param.data.status
         }
     },
@@ -106,12 +135,16 @@ export default {
                 house_id: null,
                 name: null,
                 mobile: null,
+                email: null,
+                nid: null,
+                address: null,
+                advance_balance: null,
                 status: 'pending'
             }
         },
-        setUser (user) {
-          this.form.house_id = user.house_id
-        },
+        // setUser (user) {
+        //   this.form.house_id = user.house_id
+        // },
         // getUserId (data) {
         //     this.form.house_id = data
         // },

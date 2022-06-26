@@ -22,7 +22,7 @@
                                             </div>
                                             <div class="col-sm-6">
 <!--                                                <DropdownList :label="'House'" :endpoint="'house-list'" :model="form.house_id" @rowId="setHouse" />-->
-                                                <input v-if="form.house_id == null" :set-value="setHouse($page.props.user)" type="hidden" v-model="authUser">
+<!--                                                <input v-if="form.house_id == null" :set-value="setHouse($page.props.user)" type="hidden" v-model="authUser">-->
 
                                                  <!--  <div class="form-group">
                                                 <label>House</label>
@@ -151,7 +151,6 @@ export default {
                 id: undefined,
                 name: null,
                 rent: null,
-                house_id: '',
                 customer_id: '',
                 status: 'available'
             }
@@ -183,9 +182,9 @@ export default {
             data._method = 'PUT'
             this.$inertia.post('/flat/' + data.id, data)
         },
-        setHouse (user) {
-            this.form.house_id = user.house_id
-        },
+        // setHouse (user) {
+        //     this.form.house_id = user.house_id
+        // },
         // setHouse (rowId) {
         //     this.form.house_id = rowId
         // },

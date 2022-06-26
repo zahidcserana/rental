@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Flat;
 
 use App\Http\Requests\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRequest extends FormRequest
 {
@@ -26,5 +27,12 @@ class StoreRequest extends FormRequest
                 'sometimes'
             ],
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'house_id' => Auth::user()->house_id
+        ]);
     }
 }

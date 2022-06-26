@@ -7,8 +7,11 @@ use App\Http\Resources\InvoiceTableResource;
 use App\Models\Customer;
 use App\Models\Flat;
 use App\Models\Invoice;
+use App\Providers\RouteServiceProvider;
+use Database\Seeders\ResetSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -22,6 +25,9 @@ class DashboardController extends Controller
         $flatAvailable = FlatTableResource::collection($flatAvailable);
         $flatRented = Flat::where($where)->where('status', Flat::STATUS_RENTED)->get();
 
+        $invoices = Invoice::where($where)->whereMonth('date', '=', date('m'))->whereYear('date', '=', date('Y'))->get();
+        $lastMonthCollect = $invoices->sum('paid');
+
         $invoiceCollection = Invoice::where($where);
         $dueInvoice = $invoiceCollection->where('status', '<>', Invoice::STATUS_PAID);
         $dueInvoiceData = InvoiceTableResource::collection($dueInvoice->get());
@@ -34,18 +40,49 @@ class DashboardController extends Controller
         return Inertia::render('Dashboard', [
             'title' => 'Dashboard',
             'param' => [
-                'flat' => $flatAvailable,
+                'flatAvailable' => $flatAvailable,
+                'flatAvailableCount' => $flatAvailable->count(),
+                'flatRentedCount' => $flatRented->count(),
                 'invoice' => $dueInvoiceData,
                 'invoiceLastMonth' => $dueInvoiceLastMonthData,
                 'customer' => $customer,
+                'lastMonthCollect' => $lastMonthCollect,
+                'customerCount' => $customer->count(),
                 'summary' => [
                     'totalDue' => $totalDue,
                     'totalLastMonthDue' => $totalLastMonthDue,
-                    'customer' => $customer->count(),
-                    'flat' => $flatRented->count(),
                     'invoice' => $dueInvoice->count(),
                 ],
             ],
         ]);
+    }
+
+    public function reset(Request $request)
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        DB::table('flats')->truncate();
+        DB::table('houses')->truncate();
+        DB::table('customers')->truncate();
+        DB::table('invoice_items')->truncate();
+        DB::table('invoices')->truncate();
+        DB::table('users')->truncate();
+
+        $seeder = new ResetSeeder();
+
+        $seeder->run();
+
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

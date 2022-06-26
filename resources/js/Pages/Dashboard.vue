@@ -25,7 +25,7 @@ const formatDate = (value) => {
               <h3 class="m-subheader__title "> Dashboard </h3>
             </div>
             <div>
-                <span>{{ $page.props.auth.today }}</span>
+                <span class="title-total">{{ $page.props.auth.today }}</span>
 <!--              <span class="m-subheader__daterange" id="m_dashboard_daterangepicker">
                 <span class="m-subheader__daterange-label">
                   <span class="m-subheader__daterange-title"></span>
@@ -52,46 +52,7 @@ const formatDate = (value) => {
                     </div>
                   </div>
                   <div class="m-portlet__head-tools">
-                    <ul class="m-portlet__nav">
-                      <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
-                        <a href="#" class="m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"> All </a>
-                        <div class="m-dropdown__wrapper">
-                          <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust" style="left: auto; right: 36.5px;"></span>
-                          <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                              <div class="m-dropdown__content">
-                                <ul class="m-nav">
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-share"></i>
-                                      <span class="m-nav__link-text"> Activity </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                      <span class="m-nav__link-text"> Messages </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-info"></i>
-                                      <span class="m-nav__link-text"> FAQ </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                      <span class="m-nav__link-text"> Support </span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                      <span class="title-total">{{ param.customerCount }}</span>
                   </div>
                 </div>
                 <div class="m-portlet__body">
@@ -125,59 +86,15 @@ const formatDate = (value) => {
                 <div class="m-portlet__head">
                   <div class="m-portlet__head-caption">
                     <div class="m-portlet__head-title">
-                      <h3 class="m-portlet__head-text m--font-light"> Activity </h3>
+                      <h3 class="m-portlet__head-text m--font-light">
+                          <span class="title-total">{{ $page.props.config.company.title }}</span><br>
+                          <span class="title-total"><small>{{ $page.props.config.company.mobile }}</small></span><br>
+                      </h3>
                     </div>
                   </div>
                   <div class="m-portlet__head-tools">
-                    <ul class="m-portlet__nav">
-                      <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover">
-                        <a href="#" class="m-portlet__nav-link m-portlet__nav-link--icon m-portlet__nav-link--icon-xl">
-                          <i class="fa fa-genderless m--font-light"></i>
-                        </a>
-                        <div class="m-dropdown__wrapper">
-                          <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                          <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                              <div class="m-dropdown__content">
-                                <ul class="m-nav">
-                                  <li class="m-nav__section m-nav__section--first">
-                                    <span class="m-nav__section-text"> Quick Actions </span>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-share"></i>
-                                      <span class="m-nav__link-text"> Activity </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                      <span class="m-nav__link-text"> Messages </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-info"></i>
-                                      <span class="m-nav__link-text"> FAQ </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                      <span class="m-nav__link-text"> Support </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__separator m-nav__separator--fit"></li>
-                                  <li class="m-nav__item">
-                                    <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm"> Cancel </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                      <span class="title-caption">{{ $page.props.config.company.caption }}</span><br>
+                      <span class="title-caption"><small>{{ $page.props.config.company.email }}</small></span><br>
                   </div>
                 </div>
                 <div class="m-portlet__body">
@@ -194,14 +111,14 @@ const formatDate = (value) => {
                             <i class="flaticon-truck m--font-brand"></i>
                           </span>
                           <span class="m-widget17__subtitle"> Customer </span>
-                          <span class="m-widget17__desc"> Total: &nbsp; {{ param.summary.customer }} </span>
+                          <span class="m-widget17__desc"> Total: &nbsp; {{ param.customerCount }} </span>
                         </div>
                         <div class="m-widget17__item">
                           <span class="m-widget17__icon">
                             <i class="flaticon-paper-plane m--font-info"></i>
                           </span>
                           <span class="m-widget17__subtitle"> Flat </span>
-                          <span class="m-widget17__desc">Total: &nbsp; {{ param.summary.flat }} </span>
+                          <span class="m-widget17__desc">Rented: &nbsp; {{ param.flatRentedCount }} </span>
                         </div>
                       </div>
                       <div class="m-widget17__items m-widget17__items-col2">
@@ -239,14 +156,14 @@ const formatDate = (value) => {
                 <div class="m-portlet__body">
                   <div class="m-widget19">
                     <div class="m-widget19__pic m-portlet-fit--top m-portlet-fit--sides" style="min-height-: 286px">
-                      <img src="assets/images/house.jpg" alt="">
+                      <img :src="$page.props.config.images.house" alt="">
                       <h3 class="m-widget19__title m--font-light"> House Rent Mangement </h3>
                       <div class="m-widget19__shadow"></div>
                     </div>
                     <div class="m-widget19__content">
                       <div class="m-widget19__header">
                         <div class="m-widget19__user-img">
-                          <img class="m-widget19__img" src="assets/images/user.png" alt="">
+                          <img class="m-widget19__img" :src="$page.props.config.images.user" alt="">
                         </div>
                         <div class="m-widget19__info">
                           <span class="m-widget19__username"> {{ $page.props.user.name }} </span>
@@ -254,8 +171,8 @@ const formatDate = (value) => {
                           <span class="m-widget19__time"> {{ $page.props.user.email }} </span>
                         </div>
                         <div class="m-widget19__stats">
-                          <span class="m-widget19__number m--font-brand"> 18 </span>
-                          <span class="m-widget19__comment"> Comments </span>
+                          <span class="m-widget19__number m--font-brand"> {{ param.lastMonthCollect }} </span>
+                          <span class="m-widget19__comment"> Tk. Paid </span>
                         </div>
                       </div>
                       <div class="m-widget19__body">
@@ -265,7 +182,7 @@ const formatDate = (value) => {
                       </div>
                     </div>
                     <div class="m-widget19__action">
-                      <button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"> Read More </button>
+                      <a :href="$page.props.config.company.contact" type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"> Read More </a>
                     </div>
                   </div>
                 </div>
@@ -345,7 +262,7 @@ const formatDate = (value) => {
                           <!--end::Table-->
                         </div>
                         <div class="m-widget11__action m--align-right">
-                          <button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"> Generate Report </button>
+                            <a :href="route('invoice.index', {'status':'due'})" type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"> View </a>
                         </div>
                       </div>
                       <!--end::Widget 11-->
@@ -359,12 +276,12 @@ const formatDate = (value) => {
                             <!--begin::Thead-->
                             <thead>
                               <tr>
-                                <td class="m-widget11__label"> # </td>
-                                <td class="m-widget11__app"> Application </td>
-                                <td class="m-widget11__sales"> Sales </td>
-                                <td class="m-widget11__change"> Change </td>
-                                <td class="m-widget11__price"> Avg Price </td>
-                                <td class="m-widget11__total m--align-right"> Total </td>
+                                  <td class="m-widget11__label"> # </td>
+                                  <td class="m-widget11__app"> Customer </td>
+                                  <td class="m-widget11__sales"> Invoice </td>
+                                  <td class="m-widget11__change">Month </td>
+                                  <td class="m-widget11__price"> Total(Tk) </td>
+                                  <td class="m-widget11__total m--align-right"> Due(Tk) </td>
                               </tr>
                             </thead>
                             <!--end::Thead-->
@@ -397,7 +314,7 @@ const formatDate = (value) => {
                           <!--end::Table-->
                         </div>
                         <div class="m-widget11__action m--align-right">
-                          <button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"> Generate Report </button>
+                          <a :href="route('invoice.index')" type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"> View </a>
                         </div>
                       </div>
                       <!--end::Widget 11-->
@@ -417,51 +334,12 @@ const formatDate = (value) => {
                     </div>
                   </div>
                   <div class="m-portlet__head-tools">
-                    <ul class="m-portlet__nav">
-                      <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover">
-                        <a href="#" class="m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"> Today </a>
-                        <div class="m-dropdown__wrapper">
-                          <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                          <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                              <div class="m-dropdown__content">
-                                <ul class="m-nav">
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-share"></i>
-                                      <span class="m-nav__link-text"> Activity </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                      <span class="m-nav__link-text"> Messages </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-info"></i>
-                                      <span class="m-nav__link-text"> FAQ </span>
-                                    </a>
-                                  </li>
-                                  <li class="m-nav__item">
-                                    <a href="" class="m-nav__link">
-                                      <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                      <span class="m-nav__link-text"> Support </span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                      <span class="title-total">{{ param.flatAvailableCount }}</span>
                   </div>
                 </div>
                 <div class="m-portlet__body">
                   <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 350px">
-                    <div v-for="row in param.flat.data" :key="row.id" class="m-widget4__item">
+                    <div v-for="row in param.flatAvailable.data" :key="row.id" class="m-widget4__item">
                       <div class="m-widget4__ext">
                         <a href="#" class="m-widget4__icon m--font-brand">
                             <i class="flaticon-line-graph"></i>

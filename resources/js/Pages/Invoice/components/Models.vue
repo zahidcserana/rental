@@ -28,7 +28,8 @@
                                             <div class="form-group form-focus">
                                                 <select class="form-control select mb-2 mr-sm-2"  v-model="query.status">
                                                     <option value="" selected>-- Status --</option>
-                                                    <option  v-for="(value, key, index) in param.status" :key="index" :value="key">{{value }}</option>
+                                                    <option value="paid" selected>Paid</option>
+                                                    <option value="due" selected>Due/Unpaid</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -93,6 +94,9 @@
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <jet-responsive-nav-link :href="row.link_edit" class="dropdown-item">
                                                                 <i class="fa fa-pencil m-r-5"></i>&nbsp; Edit
+                                                            </jet-responsive-nav-link>
+                                                            <jet-responsive-nav-link :href="row.link_show" class="dropdown-item">
+                                                                <i class="fa fa-pencil m-r-5"></i>&nbsp; View
                                                             </jet-responsive-nav-link>
                                                             <a class="dropdown-item" href="#" data-toggle="modal" @click="deleteRow(row)"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                         </div>

@@ -44,12 +44,11 @@ const getMenu = (menu, prefix) => {
             <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
               <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
                   <li :class="getMenu('dashboard', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
-                    <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')" class="m-menu__link m-menu__toggle">
-                        <span class="m-menu__link-text"> Dashboard </span>
-                        <i class="m-menu__hor-arrow la la-angle-down"></i>
-                        <i class="m-menu__ver-arrow la la-angle-right"></i>
-                    </JetNavLink>
-
+                      <a :href="route('dashboard')" class="m-menu__link m-menu__toggle" :active="route().current('dashboard')">
+                          <span class="m-menu__link-text">Dashboard</span>
+                          <i class="m-menu__hor-arrow la la-angle-down"></i>
+                          <i class="m-menu__ver-arrow la la-angle-right"></i>
+                      </a>
                   <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs">
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
@@ -648,8 +647,8 @@ const getMenu = (menu, prefix) => {
 
                 </li>
                   <li :class="getMenu('settings', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
-                  <a href="#" class="m-menu__link m-menu__toggle">
-                    <span class="m-menu__link-text"> House </span>
+                  <a :href="route('flat.index')" class="m-menu__link m-menu__toggle">
+                    <span class="m-menu__link-text"> Settings </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                   </a>
@@ -674,7 +673,7 @@ const getMenu = (menu, prefix) => {
                                 <span class="m-menu__link-text"> Customer </span>
                             </Link>
                         </li>
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+<!--                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="builder.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-analytics"></i>
                           <span class="m-menu__link-text"> Bills </span>
@@ -698,21 +697,21 @@ const getMenu = (menu, prefix) => {
                           <span class="m-menu__link-text"> Invoices </span>
                         </a>
                       </li>
-                      <li class="m-menu__item  m-menu__item--actions" aria-haspopup="true">
-                        <div class="m-menu__link m-menu__link--toggle-skip">
-                          <a href="#" class="btn btn-danger m-btn m-btn--icon m-btn--pill">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;actions" aria-haspopup="true">
+                        <div class="m-menu__link m-menu__link&#45;&#45;toggle-skip">
+                          <a href="#" class="btn btn-danger m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;pill">
                             <span>
                               <i class="la la-cloud-download"></i>
                               <span> Generate report </span>
                             </span>
                           </a>
                         </div>
-                      </li>
+                      </li>-->
                     </ul>
                   </div>
                 </li>
                   <li :class="getMenu('accounts', $page.props.route.prefix)" data-menu-submenu-toggle="tab" aria-haspopup="true">
-                  <a href="#" class="m-menu__link m-menu__toggle">
+                  <a :href="route('invoice.index')" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__link-text"> Account </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -726,7 +725,7 @@ const getMenu = (menu, prefix) => {
                                 <span class="m-menu__link-text"> Invoice </span>
                             </Link>
                         </li>
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+<!--                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="builder.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-analytics"></i>
                           <span class="m-menu__link-text"> Customers </span>
@@ -750,10 +749,10 @@ const getMenu = (menu, prefix) => {
                           <span class="m-menu__link-text"> Bills </span>
                         </a>
                       </li>
-                      <li class="m-menu__item  m-menu__item--actions" aria-haspopup="true">
-                        <div class="m-menu__link m-menu__link--toggle-skip">
+                      <li class="m-menu__item  m-menu__item&#45;&#45;actions" aria-haspopup="true">
+                        <div class="m-menu__link m-menu__link&#45;&#45;toggle-skip">
                           <div class="dropdown">
-                            <a href="#" class="btn btn-primary m-btn m-btn--icon m-btn--pill m-btn--air   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="btn btn-primary m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;pill m-btn&#45;&#45;air   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="la la-cloud-download"></i> &nbsp;&nbsp;Export </a>
                             <div class="dropdown-menu dropdown-menu-right">
                               <a class="dropdown-item" href="#">
@@ -765,7 +764,7 @@ const getMenu = (menu, prefix) => {
                             </div>
                           </div>
                         </div>
-                      </li>
+                      </li>-->
                     </ul>
                   </div>
                 </li>
@@ -779,18 +778,18 @@ const getMenu = (menu, prefix) => {
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                        <a href="builder.html" class="m-menu__link ">
+                        <a href="javascript:void(0)" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-graphic-2"></i>
-                          <span class="m-menu__link-text"> Pending </span>
+                          <span class="m-menu__link-text"> Invoice </span>
                         </a>
                       </li>
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                        <a href="builder.html" class="m-menu__link ">
+                        <a href="javascript:void(0)" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-analytics"></i>
-                          <span class="m-menu__link-text"> Delivered </span>
+                          <span class="m-menu__link-text"> Customer </span>
                         </a>
                       </li>
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+<!--                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="builder.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-notes"></i>
                           <span class="m-menu__link-text"> Canceled </span>
@@ -807,7 +806,7 @@ const getMenu = (menu, prefix) => {
                           <i class="m-menu__link-icon flaticon-alarm-1"></i>
                           <span class="m-menu__link-text"> Payments </span>
                         </a>
-                      </li>
+                      </li>-->
                     </ul>
                   </div>
                 </li>
@@ -821,18 +820,18 @@ const getMenu = (menu, prefix) => {
                     <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                     <ul class="m-menu__subnav">
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                        <a href="inner.html" class="m-menu__link ">
+                        <a href="javascript:void(0)" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-settings-1"></i>
-                          <span class="m-menu__link-text"> Orders </span>
+                          <span class="m-menu__link-text"> Expense </span>
                         </a>
                       </li>
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                        <a href="inner.html" class="m-menu__link ">
+                        <a href="javascript:void(0)" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-imac"></i>
-                          <span class="m-menu__link-text"> Feedbacks </span>
+                          <span class="m-menu__link-text"> Type </span>
                         </a>
                       </li>
-                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+<!--                      <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="inner.html" class="m-menu__link ">
                           <i class="m-menu__link-icon flaticon-paper-plane"></i>
                           <span class="m-menu__link-text"> Customer Support </span>
@@ -843,18 +842,18 @@ const getMenu = (menu, prefix) => {
                           <i class="m-menu__link-icon flaticon-multimedia"></i>
                           <span class="m-menu__link-text"> Statistics </span>
                         </a>
-                      </li>
+                      </li>-->
                     </ul>
                   </div>
                 </li>
-                <li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
+<!--                <li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;tabs" data-menu-submenu-toggle="tab" aria-haspopup="true">
                   <a href="#" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__link-text"> Tools </span>
                     <i class="m-menu__hor-arrow la la-angle-down"></i>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                   </a>
-                  <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--tabs">
-                    <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                  <div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left m-menu__submenu&#45;&#45;tabs">
+                    <span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>
                     <ul class="m-menu__subnav">
                       <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
                         <a href="inner.html" class="m-menu__link ">
@@ -882,7 +881,7 @@ const getMenu = (menu, prefix) => {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li>-->
               </ul>
             </div>
           </div>

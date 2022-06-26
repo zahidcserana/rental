@@ -36,7 +36,11 @@ class InvoiceController extends Controller
         $year = $request['date_invoice']['year'] ?? date('Y');
 
         $dataCollection->when($request['status'], function ($q) use ($request) {
-            return $q->where('status', $request['status']);
+            if ($request['status'] == 'paid') {
+                return $q->where('status', 'paid');
+            } else {
+                return $q->where('status', '<>', 'paid');
+            }
         });
 
         $dataCollection->when($month, function ($q) use ($month, $year) {
@@ -99,6 +103,18 @@ class InvoiceController extends Controller
 //        return Inertia::render('invoice/edit', ['param' => $invoice]);
         return Inertia::render('Invoice/edit', [
             'title' => 'Update Invoice',
+            'link' => 'invoice.index',
+            'label' => 'Invoice List',
+            'param' => $param,
+        ]);
+    }
+
+    public function show(Invoice $invoice)
+    {
+        $param = new InvoiceResource($invoice);
+
+        return Inertia::render('Invoice/show', [
+            'title' => 'View Invoice',
             'link' => 'invoice.index',
             'label' => 'Invoice List',
             'param' => $param,

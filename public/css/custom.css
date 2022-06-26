@@ -1,3 +1,24 @@
 .grand-total {
     font-weight: bold;
 }
+.header-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+.title-total {
+    font-size: 18px;
+    font-weight: 500;
+}
+.title-caption {
+    font-size: 18px;
+    font-weight: 500;
+    color: navajowhite;
+}
+.m-portlet .m-portlet__body {
+    color: #575962;
+    border-top: 1px solid #ebf0f2;
+}
+.m-portlet .m-portlet__head {
+    border-bottom: none;
+}
