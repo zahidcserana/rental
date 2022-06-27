@@ -90,7 +90,7 @@ class DashboardController extends Controller
 
     public function register()
     {
-        $this->truncates();
+//        $this->truncates();
         $this->houseDhaka();
         $this->houseMirpur(2);
         $this->houseGazipur(3);
