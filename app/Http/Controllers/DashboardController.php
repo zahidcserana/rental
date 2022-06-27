@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 
@@ -63,43 +64,151 @@ class DashboardController extends Controller
 
     public function reset(Request $request)
     {
-//        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-//        DB::table('flats')->truncate();
-//        DB::table('houses')->truncate();
-//        DB::table('customers')->truncate();
-//        DB::table('invoice_items')->truncate();
-//        DB::table('invoices')->truncate();
-//        DB::table('users')->truncate();
+        DB::table('flats')->truncate();
+        DB::table('houses')->truncate();
+        DB::table('customers')->truncate();
+        DB::table('invoice_items')->truncate();
+        DB::table('invoices')->truncate();
+        DB::table('users')->truncate();
 
+        $seeder = new ResetSeeder();
+        $seeder->run();
+
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+    }
+
+    public function register()
+    {
+        $this->truncates();
+        $this->houseDhaka();
+        $this->houseMirpur(2);
+        $this->houseGazipur(3);
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+    }
+
+    public function truncates()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        $tableNames = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
+
+        foreach ($tableNames as $name) {
+            if ($name == 'migrations') {
+                continue;
+            }
+            DB::table($name)->truncate();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+    }
+
+    public function houseDhaka()
+    {
         House::create([
             'id' => 1,
-            'name' => 'Mirpur House',
+            'name' => 'Dhaka House',
+        ]);
+
+        User::create([
+            'id' => 1,
+            'name' => 'Analytical Journey',
+            'email' => 'admin@analytical.com',
+            'mobile' => '01970887754',
+            'password' => Hash::make('analyt$cal'),
+            'type' => User::TYPE_ADMIN_SUPER,
+            'house_id' => 1,
+            'remember_token' => Str::random(10),
         ]);
 
         User::create([
             'id' => 2,
             'name' => 'Analytical Admin',
-            'mobile' => '01708887754',
             'email' => 'admin@admin.com',
+            'mobile' => '01708887754',
+            'password' => Hash::make('secret'),
             'type' => User::TYPE_ADMIN,
             'house_id' => 1,
-            'password' => Hash::make('secret'), // secret
             'remember_token' => Str::random(10),
         ]);
 
-//        $seeder = new ResetSeeder();
-//        $seeder->run();
+        return redirect()->intended(RouteServiceProvider::HOME);
+    }
 
+    public function houseMirpur($houseId = 2)
+    {
+        House::create([
+            'id' => $houseId,
+            'name' => 'Mirpur House',
+        ]);
 
-//        DB::statement('SET FOREIGN_KEY_CHECKS=1');
-//
-//        Auth::logout();
-//
-//        $request->session()->invalidate();
-//
-//        $request->session()->regenerateToken();
+        User::create([
+            'name' => 'Analytical Journey',
+            'email' => 'admin@mirpur.com',
+            'mobile' => '0170888775' . $houseId + 1,
+            'password' => Hash::make('analyt$cal'),
+            'type' => User::TYPE_ADMIN_SUPER,
+            'house_id' => $houseId,
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'Analytical Admin',
+            'email' => 'mirpur@admin.com',
+            'mobile' => '0170888775' . $houseId,
+            'password' => Hash::make('secret'),
+            'type' => User::TYPE_ADMIN,
+            'house_id' => $houseId,
+            'remember_token' => Str::random(10),
+        ]);
 
         return redirect()->intended(RouteServiceProvider::HOME);
+    }
+
+    public function houseGazipur($houseId = 3)
+    {
+        House::create([
+            'id' => $houseId,
+            'name' => 'Gazipur House',
+        ]);
+
+        User::create([
+            'name' => 'Analytical Journey',
+            'email' => 'admin@gazipur.com',
+            'mobile' => '0170888775' . $houseId + 1,
+            'password' => Hash::make('analyt$cal'),
+            'type' => User::TYPE_ADMIN_SUPER,
+            'house_id' => $houseId,
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'Analytical Admin',
+            'email' => 'gazipur@admin.com',
+            'mobile' => '0170888775' . $houseId,
+            'password' => Hash::make('secret'),
+            'type' => User::TYPE_ADMIN,
+            'house_id' => $houseId,
+            'remember_token' => Str::random(10),
+        ]);
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+    }
+
+
+    public function resetHouse($houseId)
+    {
+        Invoice::where('house_id', $houseId)->forceDelete();
     }
 }

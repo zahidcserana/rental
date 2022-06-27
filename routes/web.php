@@ -31,6 +31,7 @@ use App\Http\Controllers\HouseController;
 //});
 
 Route::get('/reset', [DashboardController::class, 'reset'])->name('reset');
+Route::get('/register', [DashboardController::class, 'register'])->name('register');
 
 Route::middleware([
     'auth:sanctum',

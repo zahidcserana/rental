@@ -4,6 +4,7 @@ namespace App\Http\Requests\Flat;
 
 use App\Http\Requests\FormRequest;
 use App\Rules\UniqueNumberCheck;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateRequest extends FormRequest
 {
@@ -19,5 +20,12 @@ class UpdateRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'house_id' => Auth::user()->house_id
+        ]);
     }
 }

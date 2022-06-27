@@ -26,6 +26,8 @@ class CustomerComponent extends BaseComponent
 
         $customer->update($input);
 
+        $customer->refresh();
+
         return $customer;
     }
 
