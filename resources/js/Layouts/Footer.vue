@@ -25,6 +25,11 @@
                         <span class="m-nav__link-text"> Flat </span>
                     </a>
                 </li>
+                <li class="m-nav__item">
+                    <a :href="route('customer.index')" class="m-nav__link">
+                        <span class="m-nav__link-text"> Customer </span>
+                    </a>
+                </li>
               <li class="m-nav__item">
                 <a :href="$page.props.config.company.contact" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
                   <i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
