@@ -12,7 +12,7 @@
                             <!--begin::Section-->
                             <div class="m-section">
                                 <div class="m-section__content">
-                                    <table class="table table-striped m-table">
+                                    <table class="table table-responsive m-table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
