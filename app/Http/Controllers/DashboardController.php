@@ -142,8 +142,6 @@ class DashboardController extends Controller
             'house_id' => 1,
             'remember_token' => Str::random(10),
         ]);
-
-        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function houseMirpur($houseId = 2)
@@ -172,8 +170,6 @@ class DashboardController extends Controller
             'house_id' => $houseId,
             'remember_token' => Str::random(10),
         ]);
-
-        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function houseGazipur($houseId = 3)
@@ -202,8 +198,6 @@ class DashboardController extends Controller
             'house_id' => $houseId,
             'remember_token' => Str::random(10),
         ]);
-
-        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
 
