@@ -24,7 +24,7 @@ return [
             'logo' => 'assets/images/aj/logo.jpg',
             'top' => 'assets/images/analytical-logo.png',
             'profile' => 'assets/images/aj/profile.png',
-            'sidebar' => 'assets/images/aj/sidebar.png',
+            'sidebar' => 'assets/images/aj/sm_sidebar.png',
             'header' => 'assets/images/aj/header.png',
         ],
     ],

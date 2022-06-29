@@ -220,7 +220,7 @@ const formatDate = (value) => {
                       <div class="m-widget11">
                         <div class="table-responsive">
                           <!--begin::Table-->
-                          <table class="table">
+                          <table class="table table-responsive">
                             <!--begin::Thead-->
                             <thead>
                               <tr>
@@ -272,7 +272,7 @@ const formatDate = (value) => {
                       <div class="m-widget11">
                         <div class="table-responsive">
                           <!--begin::Table-->
-                          <table class="table">
+                          <table class="table table-responsive">
                             <!--begin::Thead-->
                             <thead>
                               <tr>

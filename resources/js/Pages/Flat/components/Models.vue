@@ -10,7 +10,7 @@
                             <!--begin::Section-->
                             <div class="m-section">
                                 <div class="m-section__content">
-                                    <table class="table table-responsive m-table">
+                                    <table class="table table-responsive-md">
                                         <thead>
                                         <tr>
                                             <th>#</th>
