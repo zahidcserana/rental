@@ -35046,8 +35046,8 @@ __webpack_require__.r(__webpack_exports__);
  // const HTTP = axios s
 
 var HTTP = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  // baseURL: process.env.MIX_DOMAIN,
-  baseURL: "http://hrent-aj.herokuapp.com/",
+  baseURL: "http://rental.local/",
+  // baseURL: `http://hrent-aj.herokuapp.com/`,
   // baseURL: `http://rental.local/`,
   headers: {
     Authorization: 'Bearer {token}'
