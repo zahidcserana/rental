@@ -4,8 +4,8 @@ return [
     'title' => 'House Rent Management',
     'domain' => env('APP_URL', 'http://hrent-aj.herokuapp.com/'),
     'images' => [
-        'house' => 'assets/images/house.jpg',
-        'user' => 'assets/images/user.png',
+        'house' => '/assets/images/house.jpg',
+        'user' => '/assets/images/user.png',
     ],
     'company' => [
         'year' => '2021',
