@@ -58,9 +58,15 @@ const formatDate = (value) => {
                 <div class="m-portlet__body">
                   <!--begin::Widget5-->
                   <div class="m-widget4">
-                    <div class="m-widget4__chart m-portlet-fit--sides m--margin-top-10 m--margin-top-20" style="height:260px;">
-                      <canvas id="m_chart_trends_stats"></canvas>
-                    </div>
+<!--                    <div class="m-widget4__chart m-portlet-fit&#45;&#45;sides m&#45;&#45;margin-top-10 m&#45;&#45;margin-top-20" style="height:260px;">-->
+<!--                      <canvas id="m_chart_trends_stats"></canvas>-->
+<!--                    </div>-->
+
+                      <div class="m-portlet__head-caption mt-3">
+                          <div class="m-portlet__head-title">
+                              <h5 class="m-portlet__head-text text-center">Top 5 Due Customer</h5>
+                          </div>
+                      </div>
                     <div v-for="row in param.customer" :key="row.id" class="m-widget4__item">
                       <div class="m-widget4__img m-widget4__img--logo">
                         <img src="assets/app/media/img/client-logos/logo3.png" alt="">
@@ -74,6 +80,11 @@ const formatDate = (value) => {
                         <span class="m-widget4__number m--font-danger"> {{ row.account_balance }} </span>
                       </span>
                     </div>
+                      <div class="m-portlet__head-caption mt-3">
+                          <div class="m-portlet__head-title">
+                              <h5 class="m-portlet__head-text text-center">Total Due: {{ param.customerBalanceTotal }}</h5>
+                          </div>
+                      </div>
                   </div>
                   <!--end::Widget 5-->
                 </div>
@@ -127,7 +138,7 @@ const formatDate = (value) => {
                             <i class="flaticon-pie-chart m--font-success"></i>
                           </span>
                           <span class="m-widget17__subtitle"> Invoice </span>
-                          <span class="m-widget17__desc">Due No: &nbsp; {{ param.summary.invoice }} </span>
+                          <span class="m-widget17__desc">Due No: &nbsp; {{ param.summary.invoiceCount }} </span>
                         </div>
                         <div class="m-widget17__item">
                           <span class="m-widget17__icon">
@@ -172,7 +183,7 @@ const formatDate = (value) => {
                         </div>
                         <div class="m-widget19__stats">
                           <span class="m-widget19__number m--font-brand"> {{ param.lastMonthCollect }} </span>
-                          <span class="m-widget19__comment"> Tk. Paid </span>
+                          <span class="m-widget19__comment"> Paid </span>
                         </div>
                       </div>
                       <div class="m-widget19__body">
@@ -182,7 +193,7 @@ const formatDate = (value) => {
                       </div>
                     </div>
                     <div class="m-widget19__action">
-                      <a :href="$page.props.config.company.contact" type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"> Read More </a>
+                      <a :href="$page.props.config.company.contact" target="_blank" type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"> Read More </a>
                     </div>
                   </div>
                 </div>

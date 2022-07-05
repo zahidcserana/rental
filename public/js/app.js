@@ -23978,7 +23978,7 @@ __webpack_require__.r(__webpack_exports__);
         nid: null,
         address: null,
         advance_balance: null,
-        status: 'pending'
+        status: 'active'
       }
     };
   },
@@ -30371,13 +30371,12 @@ var _hoisted_16 = {
 };
 
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-widget4__chart m-portlet-fit--sides m--margin-top-10 m--margin-top-20",
-  style: {
-    "height": "260px"
-  }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("canvas", {
-  id: "m_chart_trends_stats"
-})], -1
+  "class": "m-portlet__head-caption mt-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "m-portlet__head-title"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "m-portlet__head-text text-center"
+}, "Top 5 Due Customer")])], -1
 /* HOISTED */
 );
 
@@ -30411,44 +30410,42 @@ var _hoisted_24 = {
   "class": "m-widget4__number m--font-danger"
 };
 var _hoisted_25 = {
-  "class": "col-xl-4"
+  "class": "m-portlet__head-caption mt-3"
 };
 var _hoisted_26 = {
-  "class": "m-portlet m-portlet--bordered-semi m-portlet--widget-fit m-portlet--full-height m-portlet--skin-light m-portlet--rounded m-portlet--rounded-force"
-};
-var _hoisted_27 = {
-  "class": "m-portlet__head"
-};
-var _hoisted_28 = {
-  "class": "m-portlet__head-caption"
-};
-var _hoisted_29 = {
   "class": "m-portlet__head-title"
 };
+var _hoisted_27 = {
+  "class": "m-portlet__head-text text-center"
+};
+var _hoisted_28 = {
+  "class": "col-xl-4"
+};
+var _hoisted_29 = {
+  "class": "m-portlet m-portlet--bordered-semi m-portlet--widget-fit m-portlet--full-height m-portlet--skin-light m-portlet--rounded m-portlet--rounded-force"
+};
 var _hoisted_30 = {
-  "class": "m-portlet__head-text m--font-light"
+  "class": "m-portlet__head"
 };
 var _hoisted_31 = {
-  "class": "title-total"
+  "class": "m-portlet__head-caption"
 };
-
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
-/* HOISTED */
-);
-
+var _hoisted_32 = {
+  "class": "m-portlet__head-title"
+};
 var _hoisted_33 = {
+  "class": "m-portlet__head-text m--font-light"
+};
+var _hoisted_34 = {
   "class": "title-total"
 };
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_35 = {
-  "class": "m-portlet__head-tools"
-};
 var _hoisted_36 = {
-  "class": "title-caption"
+  "class": "title-total"
 };
 
 var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
@@ -30456,21 +30453,32 @@ var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_38 = {
+  "class": "m-portlet__head-tools"
+};
+var _hoisted_39 = {
   "class": "title-caption"
 };
 
-var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_40 = {
+var _hoisted_41 = {
+  "class": "title-caption"
+};
+
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_43 = {
   "class": "m-portlet__body"
 };
-var _hoisted_41 = {
+var _hoisted_44 = {
   "class": "m-widget17"
 };
 
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget17__visual m-widget17__visual--chart m-portlet-fit--top m-portlet-fit--sides m--bg-danger"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget17__chart",
@@ -30483,17 +30491,17 @@ var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_43 = {
+var _hoisted_46 = {
   "class": "m-widget17__stats"
 };
-var _hoisted_44 = {
+var _hoisted_47 = {
   "class": "m-widget17__items m-widget17__items-col1"
 };
-var _hoisted_45 = {
+var _hoisted_48 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-truck m--font-brand"
@@ -30501,20 +30509,20 @@ var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Customer ", -1
 /* HOISTED */
 );
 
-var _hoisted_48 = {
+var _hoisted_51 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_49 = {
+var _hoisted_52 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-paper-plane m--font-info"
@@ -30522,23 +30530,23 @@ var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Flat ", -1
 /* HOISTED */
 );
 
-var _hoisted_52 = {
+var _hoisted_55 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_53 = {
+var _hoisted_56 = {
   "class": "m-widget17__items m-widget17__items-col2"
 };
-var _hoisted_54 = {
+var _hoisted_57 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-pie-chart m--font-success"
@@ -30546,20 +30554,20 @@ var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_57 = {
+var _hoisted_60 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_58 = {
+var _hoisted_61 = {
   "class": "m-widget17__item"
 };
 
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__icon"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "flaticon-time m--font-danger"
@@ -30567,23 +30575,23 @@ var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget17__subtitle"
 }, " Invoice ", -1
 /* HOISTED */
 );
 
-var _hoisted_61 = {
+var _hoisted_64 = {
   "class": "m-widget17__desc"
 };
-var _hoisted_62 = {
+var _hoisted_65 = {
   "class": "col-xl-4"
 };
-var _hoisted_63 = {
+var _hoisted_66 = {
   "class": "m-portlet m-portlet--bordered-semi m-portlet--full-height m-portlet--rounded m-portlet--rounded-force"
 };
 
-var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head m-portlet__head--fit"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-caption"
@@ -30596,112 +30604,112 @@ var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_65 = {
+var _hoisted_68 = {
   "class": "m-portlet__body"
 };
-var _hoisted_66 = {
+var _hoisted_69 = {
   "class": "m-widget19"
 };
-var _hoisted_67 = {
+var _hoisted_70 = {
   "class": "m-widget19__pic m-portlet-fit--top m-portlet-fit--sides",
   style: {
     "min-height-": "286px"
   }
 };
-var _hoisted_68 = ["src"];
+var _hoisted_71 = ["src"];
 
-var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "m-widget19__title m--font-light"
 }, " House Rent Mangement ", -1
 /* HOISTED */
 );
 
-var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget19__shadow"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_71 = {
+var _hoisted_74 = {
   "class": "m-widget19__content"
 };
-var _hoisted_72 = {
+var _hoisted_75 = {
   "class": "m-widget19__header"
 };
-var _hoisted_73 = {
+var _hoisted_76 = {
   "class": "m-widget19__user-img"
 };
-var _hoisted_74 = ["src"];
-var _hoisted_75 = {
+var _hoisted_77 = ["src"];
+var _hoisted_78 = {
   "class": "m-widget19__info"
 };
-var _hoisted_76 = {
+var _hoisted_79 = {
   "class": "m-widget19__username"
 };
 
-var _hoisted_77 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_78 = {
+var _hoisted_81 = {
   "class": "m-widget19__time"
 };
-var _hoisted_79 = {
+var _hoisted_82 = {
   "class": "m-widget19__stats"
 };
-var _hoisted_80 = {
+var _hoisted_83 = {
   "class": "m-widget19__number m--font-brand"
 };
 
-var _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "m-widget19__comment"
-}, " Tk. Paid ", -1
+}, " Paid ", -1
 /* HOISTED */
 );
 
-var _hoisted_82 = {
+var _hoisted_85 = {
   "class": "m-widget19__body"
 };
 
-var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_87 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_88 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_86 = {
+var _hoisted_89 = {
   "class": "m-widget19__action"
 };
-var _hoisted_87 = ["href"];
-var _hoisted_88 = {
+var _hoisted_90 = ["href"];
+var _hoisted_91 = {
   "class": "row"
 };
-var _hoisted_89 = {
+var _hoisted_92 = {
   "class": "col-xl-8"
 };
-var _hoisted_90 = {
+var _hoisted_93 = {
   "class": "m-portlet m-portlet--full-height m-portlet--rounded"
 };
-var _hoisted_91 = {
+var _hoisted_94 = {
   "class": "m-portlet__head"
 };
-var _hoisted_92 = {
+var _hoisted_95 = {
   "class": "m-portlet__head-caption"
 };
-var _hoisted_93 = {
+var _hoisted_96 = {
   "class": "m-portlet__head-title"
 };
-var _hoisted_94 = {
+var _hoisted_97 = {
   "class": "m-portlet__head-text"
 };
 
-var _hoisted_95 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_98 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-tools"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm",
@@ -30724,27 +30732,27 @@ var _hoisted_95 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_96 = {
+var _hoisted_99 = {
   "class": "m-portlet__body"
 };
-var _hoisted_97 = {
+var _hoisted_100 = {
   "class": "tab-content"
 };
-var _hoisted_98 = {
+var _hoisted_101 = {
   "class": "tab-pane active",
   id: "m_widget11_tab1_content"
 };
-var _hoisted_99 = {
+var _hoisted_102 = {
   "class": "m-widget11"
 };
-var _hoisted_100 = {
+var _hoisted_103 = {
   "class": "table-responsive"
 };
-var _hoisted_101 = {
+var _hoisted_104 = {
   "class": "table table-responsive"
 };
 
-var _hoisted_102 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_105 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__label"
 }, " # "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__app"
@@ -30760,7 +30768,7 @@ var _hoisted_102 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_103 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_106 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox"
@@ -30768,31 +30776,31 @@ var _hoisted_103 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_104 = {
+var _hoisted_107 = {
   "class": "m-menu__link-text"
 };
-var _hoisted_105 = {
+var _hoisted_108 = {
   "class": "m--align-right m--font-brand"
 };
-var _hoisted_106 = {
+var _hoisted_109 = {
   "class": "m-widget11__action m--align-right"
 };
-var _hoisted_107 = ["href"];
-var _hoisted_108 = {
+var _hoisted_110 = ["href"];
+var _hoisted_111 = {
   "class": "tab-pane",
   id: "m_widget11_tab2_content"
 };
-var _hoisted_109 = {
+var _hoisted_112 = {
   "class": "m-widget11"
 };
-var _hoisted_110 = {
+var _hoisted_113 = {
   "class": "table-responsive"
 };
-var _hoisted_111 = {
+var _hoisted_114 = {
   "class": "table table-responsive"
 };
 
-var _hoisted_112 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_115 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__label"
 }, " # "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "m-widget11__app"
@@ -30808,7 +30816,7 @@ var _hoisted_112 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_113 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_116 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox"
@@ -30816,27 +30824,27 @@ var _hoisted_113 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_114 = {
+var _hoisted_117 = {
   "class": "m-menu__link-text"
 };
-var _hoisted_115 = {
+var _hoisted_118 = {
   "class": "m--align-right m--font-brand"
 };
-var _hoisted_116 = {
+var _hoisted_119 = {
   "class": "m-widget11__action m--align-right"
 };
-var _hoisted_117 = ["href"];
-var _hoisted_118 = {
+var _hoisted_120 = ["href"];
+var _hoisted_121 = {
   "class": "col-xl-4"
 };
-var _hoisted_119 = {
+var _hoisted_122 = {
   "class": "m-portlet m-portlet--full-height m-portlet--fit m-portlet--rounded"
 };
-var _hoisted_120 = {
+var _hoisted_123 = {
   "class": "m-portlet__head"
 };
 
-var _hoisted_121 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_124 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-caption"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-portlet__head-title"
@@ -30846,23 +30854,23 @@ var _hoisted_121 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_122 = {
+var _hoisted_125 = {
   "class": "m-portlet__head-tools"
 };
-var _hoisted_123 = {
+var _hoisted_126 = {
   "class": "title-total"
 };
-var _hoisted_124 = {
+var _hoisted_127 = {
   "class": "m-portlet__body"
 };
-var _hoisted_125 = {
+var _hoisted_128 = {
   "class": "m-widget4 m-widget4--chart-bottom",
   style: {
     "min-height": "350px"
   }
 };
 
-var _hoisted_126 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_129 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__ext"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
@@ -30873,20 +30881,20 @@ var _hoisted_126 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 /* HOISTED */
 );
 
-var _hoisted_127 = {
+var _hoisted_130 = {
   "class": "m-widget4__info"
 };
-var _hoisted_128 = {
+var _hoisted_131 = {
   "class": "m-widget4__text"
 };
-var _hoisted_129 = {
+var _hoisted_132 = {
   "class": "m-widget4__ext"
 };
-var _hoisted_130 = {
+var _hoisted_133 = {
   "class": "m-widget4__number m--font-accent"
 };
 
-var _hoisted_131 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_134 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "m-widget4__chart m-portlet-fit--sides m--margin-top-20 m-portlet-fit--bottom1",
   style: {
     "height": "120px"
@@ -30904,7 +30912,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* TEXT */
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("              <span class=\"m-subheader__daterange\" id=\"m_dashboard_daterangepicker\">\n                <span class=\"m-subheader__daterange-label\">\n                  <span class=\"m-subheader__daterange-title\"></span>\n                  <span class=\"m-subheader__daterange-date m&#45;&#45;font-brand\"></span>\n                </span>\n                <a href=\"#\" class=\"btn btn-sm btn-brand m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;custom m-btn&#45;&#45;pill\">\n                  <i class=\"la la-angle-down\"></i>\n                </a>\n              </span>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" END: Subheader "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Top Products"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerCount), 1
       /* TEXT */
-      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget5"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.customer, function (row) {
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget5"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"m-widget4__chart m-portlet-fit&#45;&#45;sides m&#45;&#45;margin-top-10 m&#45;&#45;margin-top-20\" style=\"height:260px;\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                      <canvas id=\"m_chart_trends_stats\"></canvas>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), _hoisted_17, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.customer, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: row.id,
           "class": "m-widget4__item"
@@ -30917,61 +30925,64 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         )])]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 5")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Top Products")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Activity"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.title), 1
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_27, "Total Due: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerBalanceTotal), 1
       /* TEXT */
-      ), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.mobile), 1
+      )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 5")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Top Products")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Activity"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.title), 1
       /* TEXT */
-      )]), _hoisted_34])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.caption), 1
+      ), _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.mobile), 1
       /* TEXT */
-      ), _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.email), 1
+      )]), _hoisted_37])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.caption), 1
       /* TEXT */
-      )]), _hoisted_39])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_48, " Total:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerCount), 1
+      ), _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.config.company.email), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_hoisted_50, _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_52, "Rented:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatRentedCount), 1
+      )]), _hoisted_42])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_hoisted_49, _hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_51, " Total:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.customerCount), 1
       /* TEXT */
-      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [_hoisted_55, _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_57, "Due No:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.invoice), 1
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [_hoisted_53, _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_55, "Rented:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatRentedCount), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, [_hoisted_59, _hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_61, " Last Month Due:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_56, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, [_hoisted_58, _hoisted_59, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_60, "Due No:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.invoiceCount), 1
       /* TEXT */
-      )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Activity")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Blog"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [_hoisted_64, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [_hoisted_62, _hoisted_63, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_64, " Last Month Due:   " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      /* TEXT */
+      )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Activity")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Blog"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [_hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_69, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
         src: _ctx.$page.props.config.images.house,
         alt: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_68), _hoisted_69, _hoisted_70]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      , _hoisted_71), _hoisted_72, _hoisted_73]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
         "class": "m-widget19__img",
         src: _ctx.$page.props.config.images.user,
         alt: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_74)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_76, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
+      , _hoisted_77)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_78, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_79, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name), 1
       /* TEXT */
-      ), _hoisted_77, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.email), 1
+      ), _hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_81, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.email), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_79, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.lastMonthCollect), 1
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_83, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.lastMonthCollect), 1
       /* TEXT */
-      ), _hoisted_81])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" House:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.name) + " ", 1
+      ), _hoisted_84])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" House:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.name) + " ", 1
       /* TEXT */
-      ), _hoisted_83, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Code:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.code) + " ", 1
+      ), _hoisted_86, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Code:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.code) + " ", 1
       /* TEXT */
-      ), _hoisted_84, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Address:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.address) + " ", 1
+      ), _hoisted_87, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Address:  " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.house.address) + " ", 1
       /* TEXT */
-      ), _hoisted_85])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      ), _hoisted_88])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_89, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         href: _ctx.$page.props.config.company.contact,
+        target: "_blank",
         type: "button",
         "class": "btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom"
       }, " Read More ", 8
       /* PROPS */
-      , _hoisted_87)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Blog")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_88, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_89, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Application Sales"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_90, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_94, " Invoice Due Total: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalDue) + " Tk,   Last Month Due: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
+      , _hoisted_90)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Blog")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Application Sales"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_94, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_95, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_96, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_97, " Invoice Due Total: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalDue) + " Tk,   Last Month Due: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.summary.totalLastMonthDue), 1
       /* TEXT */
-      )])]), _hoisted_95]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_96, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_97, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_98, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_101, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_102, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoiceLastMonth.data, function (row) {
+      )])]), _hoisted_98]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_101, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_102, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_103, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_104, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_105, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoiceLastMonth.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
           key: row.id
-        }, [_hoisted_103, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_106, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.customer.url
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_104, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_107, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
             /* TEXT */
             )];
           }),
@@ -30997,12 +31008,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_105, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_108, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
         /* TEXT */
         )]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_106, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         href: _ctx.route('invoice.index', {
           'status': 'due'
         }),
@@ -31010,14 +31021,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
       }, " View ", 8
       /* PROPS */
-      , _hoisted_107)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_108, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_110, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_111, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_112, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoice.data, function (row) {
+      , _hoisted_110)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_111, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Widget 11"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_112, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_113, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_114, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Thead"), _hoisted_115, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Thead"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin::Tbody"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.invoice.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
           key: row.id
-        }, [_hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_116, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.customer.url
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_114, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_117, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.customer.name), 1
             /* TEXT */
             )];
           }),
@@ -31043,28 +31054,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_115, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_118, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.total - row.paid), 1
         /* TEXT */
         )]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_116, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Tbody")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Table")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         href: _ctx.route('invoice.index'),
         type: "button",
         "class": "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--hover-brand"
       }, " View ", 8
       /* PROPS */
-      , _hoisted_117)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Application Sales")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_118, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Latest Updates"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_120, [_hoisted_121, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_123, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatAvailableCount), 1
+      , _hoisted_120)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end::Widget 11")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Application Sales")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_121, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("begin:: Widgets/Latest Updates"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_123, [_hoisted_124, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_125, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_126, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.param.flatAvailableCount), 1
       /* TEXT */
-      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_124, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_125, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.flatAvailable.data, function (row) {
+      )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_127, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_128, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.param.flatAvailable.data, function (row) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: row.id,
           "class": "m-widget4__item"
-        }, [_hoisted_126, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_127, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
+        }, [_hoisted_129, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_130, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetResponsiveNavLink"], {
           href: row.link_edit
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_128, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_131, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.name), 1
             /* TEXT */
             )];
           }),
@@ -31073,12 +31084,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_129, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_130, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
+        , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_132, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_133, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(row.rent), 1
         /* TEXT */
         )])]);
       }), 128
       /* KEYED_FRAGMENT */
-      )), _hoisted_131])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Latest Updates")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet  m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Activities </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                        <a href=\"#\" class=\"m-portlet__nav-link m-portlet__nav-link&#45;&#45;icon m-portlet__nav-link&#45;&#45;icon-xl m-dropdown__toggle\">\n                          <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                        </a>\n                        <div class=\"m-dropdown__wrapper\">\n                          <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                          <div class=\"m-dropdown__inner\">\n                            <div class=\"m-dropdown__body\">\n                              <div class=\"m-dropdown__content\">\n                                <ul class=\"m-nav\">\n                                  <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                    <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                      <span class=\"m-nav__link-text\"> Activity </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                      <span class=\"m-nav__link-text\"> Messages </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                      <span class=\"m-nav__link-text\"> FAQ </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                      <span class=\"m-nav__link-text\"> Support </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit\"></li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Cancel </a>\n                                  </li>\n                                </ul>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide\" data-scrollbar-shown=\"true\" data-scrollable=\"true\" data-max-height=\"380\" style=\"overflow: visible; height: 380px; max-height: 380px; position: relative;\">\n                    &lt;!&ndash;Begin::Timeline 2 &ndash;&gt;\n                    <div class=\"m-timeline-2\">\n                      <div class=\"m-timeline-2__items  m&#45;&#45;padding-top-25 m&#45;&#45;padding-bottom-30\">\n                        <div class=\"m-timeline-2__item\">\n                          <span class=\"m-timeline-2__item-time\"> 10:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text  m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 12:45 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-success\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m-timeline-2__item-text&#45;&#45;bold\"> AEOL Meeting With </div>\n                          <div class=\"m-list-pics m-list-pics&#45;&#45;sm m&#45;&#45;padding-left-20\">\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_4.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_13.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_11.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_14.jpg\" title=\"\">\n                            </a>\n                          </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 14:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Make Deposit <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> USD 700 </a> To ESL. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-warning\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-info\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Placed a new order in <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> SIGNATURE MOBILE </a> marketplace. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Received a new feedback on <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> FinancePro App </a> product. </div>\n                        </div>\n                      </div>\n                    </div>\n                    &lt;!&ndash;End::Timeline 2 &ndash;&gt;\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Notifications </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget2_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget2_tab2_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget2_tab1_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget2_tab2_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-focus\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> There are many variations of passages of Lorem Ipsum available. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-primary\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-success\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> The standard chunk of Lorem Ipsum used since the 1500s is reproduced. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Latin words, combined with a handful of model sentence structures. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-info\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-danger\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem Ipsum is therefore always free from repetition, injected humour. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-8\">\n              <div class=\"m-portlet m-portlet&#45;&#45;mobile  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Exclusive Datatable Plugin </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item\">\n                        <div class=\"m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                          <a href=\"#\" class=\"m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill  m-dropdown__toggle\">\n                            <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                          </a>\n                          <div class=\"m-dropdown__wrapper\">\n                            <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                            <div class=\"m-dropdown__inner\">\n                              <div class=\"m-dropdown__body\">\n                                <div class=\"m-dropdown__content\">\n                                  <ul class=\"m-nav\">\n                                    <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                      <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                        <span class=\"m-nav__link-text\"> Create Post </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                        <span class=\"m-nav__link-text\"> Send Messages </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-multimedia-2\"></i>\n                                        <span class=\"m-nav__link-text\"> Upload File </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__section\">\n                                      <span class=\"m-nav__section-text\"> Useful Links </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                        <span class=\"m-nav__link-text\"> FAQ </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                        <span class=\"m-nav__link-text\"> Support </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit m&#45;&#45;hide\"></li>\n                                    <li class=\"m-nav__item m&#45;&#45;hide\">\n                                      <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Submit </a>\n                                    </li>\n                                  </ul>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  &lt;!&ndash;begin: Datatable &ndash;&gt;\n                  <div class=\"m_datatable\" id=\"m_datatable_latest_orders\"></div>\n                  &lt;!&ndash;end: Datatable &ndash;&gt;\n                </div>\n              </div>\n            </div>\n            <div class=\"col-xl-4\">\n              &lt;!&ndash;begin:: Widgets/Audit Log&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Audit Log </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget4_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab2_content\" role=\"tab\"> Week </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab3_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget4_tab1_content\">\n                      <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"400\" style=\"height: 400px; overflow: hidden;\">\n                        <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                          <div class=\"m-list-timeline__items\">\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab2_content\"></div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab3_content\"></div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;end:: Widgets/Audit Log&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section")])])])];
+      )), _hoisted_134])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end:: Widgets/Latest Updates")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet  m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Activities </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                        <a href=\"#\" class=\"m-portlet__nav-link m-portlet__nav-link&#45;&#45;icon m-portlet__nav-link&#45;&#45;icon-xl m-dropdown__toggle\">\n                          <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                        </a>\n                        <div class=\"m-dropdown__wrapper\">\n                          <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                          <div class=\"m-dropdown__inner\">\n                            <div class=\"m-dropdown__body\">\n                              <div class=\"m-dropdown__content\">\n                                <ul class=\"m-nav\">\n                                  <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                    <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                      <span class=\"m-nav__link-text\"> Activity </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                      <span class=\"m-nav__link-text\"> Messages </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                      <span class=\"m-nav__link-text\"> FAQ </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"\" class=\"m-nav__link\">\n                                      <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                      <span class=\"m-nav__link-text\"> Support </span>\n                                    </a>\n                                  </li>\n                                  <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit\"></li>\n                                  <li class=\"m-nav__item\">\n                                    <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Cancel </a>\n                                  </li>\n                                </ul>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide\" data-scrollbar-shown=\"true\" data-scrollable=\"true\" data-max-height=\"380\" style=\"overflow: visible; height: 380px; max-height: 380px; position: relative;\">\n                    &lt;!&ndash;Begin::Timeline 2 &ndash;&gt;\n                    <div class=\"m-timeline-2\">\n                      <div class=\"m-timeline-2__items  m&#45;&#45;padding-top-25 m&#45;&#45;padding-bottom-30\">\n                        <div class=\"m-timeline-2__item\">\n                          <span class=\"m-timeline-2__item-time\"> 10:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text  m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 12:45 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-success\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m-timeline-2__item-text&#45;&#45;bold\"> AEOL Meeting With </div>\n                          <div class=\"m-list-pics m-list-pics&#45;&#45;sm m&#45;&#45;padding-left-20\">\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_4.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_13.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_11.jpg\" title=\"\">\n                            </a>\n                            <a href=\"#\">\n                              <img src=\"assets/app/media/img/users/100_14.jpg\" title=\"\">\n                            </a>\n                          </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 14:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Make Deposit <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> USD 700 </a> To ESL. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-warning\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-info\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Placed a new order in <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> SIGNATURE MOBILE </a> marketplace. </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 16:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-brand\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor <br> incididunt ut labore et dolore magna elit enim at minim <br> veniam quis nostrud </div>\n                        </div>\n                        <div class=\"m-timeline-2__item m&#45;&#45;margin-top-30\">\n                          <span class=\"m-timeline-2__item-time\"> 17:00 </span>\n                          <div class=\"m-timeline-2__item-cricle\">\n                            <i class=\"fa fa-genderless m&#45;&#45;font-danger\"></i>\n                          </div>\n                          <div class=\"m-timeline-2__item-text m&#45;&#45;padding-top-5\"> Received a new feedback on <a href=\"#\" class=\"m-link m-link&#45;&#45;brand m&#45;&#45;font-bolder\"> FinancePro App </a> product. </div>\n                        </div>\n                      </div>\n                    </div>\n                    &lt;!&ndash;End::Timeline 2 &ndash;&gt;\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n            <div class=\"col-xl-6 col-lg-12\">\n              &lt;!&ndash;Begin::Portlet&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Recent Notifications </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget2_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget2_tab2_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget2_tab1_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur eiusmdd </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit amit,consectetur </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem ipsum dolor sit consectetur eiusmdd tempor </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget2_tab2_content\">\n                      &lt;!&ndash;Begin::Timeline 3 &ndash;&gt;\n                      <div class=\"m-timeline-3\">\n                        <div class=\"m-timeline-3__items\">\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-focus\"> 09:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Bob </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;warning\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 10:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> There are many variations of passages of Lorem Ipsum available. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Sean </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-primary\"> 11:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;success\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-success\"> 12:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> The standard chunk of Lorem Ipsum used since the 1500s is reproduced. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By James </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;danger\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-warning\"> 14:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Latin words, combined with a handful of model sentence structures. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Derrick </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;info\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-info\"> 15:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Contrary to popular belief, Lorem Ipsum is not simply random text. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Iman </a>\n                              </span>\n                            </div>\n                          </div>\n                          <div class=\"m-timeline-3__item m-timeline-3__item&#45;&#45;brand\">\n                            <span class=\"m-timeline-3__item-time m&#45;&#45;font-danger\"> 17:00 </span>\n                            <div class=\"m-timeline-3__item-desc\">\n                              <span class=\"m-timeline-3__item-text\"> Lorem Ipsum is therefore always free from repetition, injected humour. </span>\n                              <br>\n                              <span class=\"m-timeline-3__item-user-name\">\n                                <a href=\"#\" class=\"m-link m-link&#45;&#45;metal m-timeline-3__item-link\"> By Aziko </a>\n                              </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      &lt;!&ndash;End::Timeline 3 &ndash;&gt;\n                    </div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;End::Portlet&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Begin::Section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("          <div class=\"row\">\n            <div class=\"col-xl-8\">\n              <div class=\"m-portlet m-portlet&#45;&#45;mobile  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Exclusive Datatable Plugin </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"m-portlet__nav\">\n                      <li class=\"m-portlet__nav-item\">\n                        <div class=\"m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push\" data-dropdown-toggle=\"hover\" aria-expanded=\"true\">\n                          <a href=\"#\" class=\"m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill  m-dropdown__toggle\">\n                            <i class=\"la la-ellipsis-h m&#45;&#45;font-brand\"></i>\n                          </a>\n                          <div class=\"m-dropdown__wrapper\">\n                            <span class=\"m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust\"></span>\n                            <div class=\"m-dropdown__inner\">\n                              <div class=\"m-dropdown__body\">\n                                <div class=\"m-dropdown__content\">\n                                  <ul class=\"m-nav\">\n                                    <li class=\"m-nav__section m-nav__section&#45;&#45;first\">\n                                      <span class=\"m-nav__section-text\"> Quick Actions </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-share\"></i>\n                                        <span class=\"m-nav__link-text\"> Create Post </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-chat-1\"></i>\n                                        <span class=\"m-nav__link-text\"> Send Messages </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-multimedia-2\"></i>\n                                        <span class=\"m-nav__link-text\"> Upload File </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__section\">\n                                      <span class=\"m-nav__section-text\"> Useful Links </span>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-info\"></i>\n                                        <span class=\"m-nav__link-text\"> FAQ </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__item\">\n                                      <a href=\"\" class=\"m-nav__link\">\n                                        <i class=\"m-nav__link-icon flaticon-lifebuoy\"></i>\n                                        <span class=\"m-nav__link-text\"> Support </span>\n                                      </a>\n                                    </li>\n                                    <li class=\"m-nav__separator m-nav__separator&#45;&#45;fit m&#45;&#45;hide\"></li>\n                                    <li class=\"m-nav__item m&#45;&#45;hide\">\n                                      <a href=\"#\" class=\"btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm\"> Submit </a>\n                                    </li>\n                                  </ul>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  &lt;!&ndash;begin: Datatable &ndash;&gt;\n                  <div class=\"m_datatable\" id=\"m_datatable_latest_orders\"></div>\n                  &lt;!&ndash;end: Datatable &ndash;&gt;\n                </div>\n              </div>\n            </div>\n            <div class=\"col-xl-4\">\n              &lt;!&ndash;begin:: Widgets/Audit Log&ndash;&gt;\n              <div class=\"m-portlet m-portlet&#45;&#45;full-height  m-portlet&#45;&#45;rounded\">\n                <div class=\"m-portlet__head\">\n                  <div class=\"m-portlet__head-caption\">\n                    <div class=\"m-portlet__head-title\">\n                      <h3 class=\"m-portlet__head-text\"> Audit Log </h3>\n                    </div>\n                  </div>\n                  <div class=\"m-portlet__head-tools\">\n                    <ul class=\"nav nav-pills nav-pills&#45;&#45;brand m-nav-pills&#45;&#45;align-right m-nav-pills&#45;&#45;btn-pill m-nav-pills&#45;&#45;btn-sm\" role=\"tablist\">\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link active\" data-toggle=\"tab\" href=\"#m_widget4_tab1_content\" role=\"tab\"> Today </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab2_content\" role=\"tab\"> Week </a>\n                      </li>\n                      <li class=\"nav-item m-tabs__item\">\n                        <a class=\"nav-link m-tabs__link\" data-toggle=\"tab\" href=\"#m_widget4_tab3_content\" role=\"tab\"> Month </a>\n                      </li>\n                    </ul>\n                  </div>\n                </div>\n                <div class=\"m-portlet__body\">\n                  <div class=\"tab-content\">\n                    <div class=\"tab-pane active\" id=\"m_widget4_tab1_content\">\n                      <div class=\"m-scrollable\" data-scrollable=\"true\" data-max-height=\"400\" style=\"height: 400px; overflow: hidden;\">\n                        <div class=\"m-list-timeline m-list-timeline&#45;&#45;skin-light\">\n                          <div class=\"m-list-timeline__items\">\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span class=\"m-list-timeline__text\"> 12 new users registered </span>\n                              <span class=\"m-list-timeline__time\"> Just now </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> System shutdown <span class=\"m-badge m-badge&#45;&#45;success m-badge&#45;&#45;wide\"> pending </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 14 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;danger\"></span>\n                              <span class=\"m-list-timeline__text\"> New invoice received </span>\n                              <span class=\"m-list-timeline__time\"> 20 mins </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;accent\"></span>\n                              <span class=\"m-list-timeline__text\"> DB overloaded 80% <span class=\"m-badge m-badge&#45;&#45;info m-badge&#45;&#45;wide\"> settled </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 1 hr </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;warning\"></span>\n                              <span class=\"m-list-timeline__text\"> System error - <a href=\"#\" class=\"m-link\"> Check </a>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 2 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;brand\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server down </span>\n                              <span class=\"m-list-timeline__time\"> 3 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;info\"></span>\n                              <span class=\"m-list-timeline__text\"> Production server up </span>\n                              <span class=\"m-list-timeline__time\"> 5 hrs </span>\n                            </div>\n                            <div class=\"m-list-timeline__item\">\n                              <span class=\"m-list-timeline__badge m-list-timeline__badge&#45;&#45;success\"></span>\n                              <span href=\"\" class=\"m-list-timeline__text\"> New order received <span class=\"m-badge m-badge&#45;&#45;danger m-badge&#45;&#45;wide\"> urgent </span>\n                              </span>\n                              <span class=\"m-list-timeline__time\"> 7 hrs </span>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab2_content\"></div>\n                    <div class=\"tab-pane\" id=\"m_widget4_tab3_content\"></div>\n                  </div>\n                </div>\n              </div>\n              &lt;!&ndash;end:: Widgets/Audit Log&ndash;&gt;\n            </div>\n          </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End::Section")])])])];
     }),
     _: 1
     /* STABLE */
@@ -35046,8 +35057,8 @@ __webpack_require__.r(__webpack_exports__);
  // const HTTP = axios s
 
 var HTTP = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: "http://rental.local/",
-  // baseURL: `http://hrent-aj.herokuapp.com/`,
+  // baseURL: process.env.MIX_DOMAIN,
+  baseURL: "http://hrent-aj.herokuapp.com/",
   // baseURL: `http://rental.local/`,
   headers: {
     Authorization: 'Bearer {token}'

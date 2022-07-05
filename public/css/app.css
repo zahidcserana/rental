@@ -1057,6 +1057,9 @@ select {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mt-3\.5 {
+  margin-top: 0.875rem;
+}
 .block {
   display: block;
 }

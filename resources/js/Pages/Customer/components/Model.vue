@@ -113,7 +113,7 @@ export default {
                 nid: null,
                 address: null,
                 advance_balance: null,
-                status: 'pending'
+                status: 'active'
             }
         }
     },

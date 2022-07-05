@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $where = array(['house_id', Auth::user()->house_id]);
-        $customer = Customer::where($where)->orderBy('account_balance', 'desc')->get();
+        $customer = Customer::where($where)->orderBy('account_balance', 'desc');
 
         $flatAvailable = Flat::where($where)->where('status', Flat::STATUS_AVAILABLE)->get();
         $flatAvailable = FlatTableResource::collection($flatAvailable);
@@ -50,13 +50,14 @@ class DashboardController extends Controller
                 'flatRentedCount' => $flatRented->count(),
                 'invoice' => $dueInvoiceData,
                 'invoiceLastMonth' => $dueInvoiceLastMonthData,
-                'customer' => $customer,
-                'lastMonthCollect' => $lastMonthCollect,
                 'customerCount' => $customer->count(),
+                'customerBalanceTotal' => $customer->sum('account_balance'),
+                'customer' => $customer->limit(5)->get(),
+                'lastMonthCollect' => $lastMonthCollect,
                 'summary' => [
                     'totalDue' => $totalDue,
                     'totalLastMonthDue' => $totalLastMonthDue,
-                    'invoice' => $dueInvoice->count(),
+                    'invoiceCount' => $dueInvoice->count(),
                 ],
             ],
         ]);
